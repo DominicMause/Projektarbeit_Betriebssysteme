@@ -1,12 +1,14 @@
-#include "mainwindow.h"
-
 #include <QApplication>
+#include <simulationworker.h>
+#include <simulationcontroller.h>
+using namespace Simulation;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    w.setFixedSize(800,800);
-    return a.exec();
+
+    SimulationController * controller = new SimulationController();
+
+    a.exec();
+    return 0;
 }

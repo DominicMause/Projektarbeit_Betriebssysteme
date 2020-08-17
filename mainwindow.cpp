@@ -4,6 +4,7 @@
 #include "QTextEdit"
 #include "QLabel"
 #include "QComboBox"
+#include "QHBoxLayout"
 
 QTextEdit *logBox;
 QComboBox *algoSelectComboBox;
