@@ -16,7 +16,6 @@ public:
     QString output;
 
     QList<Process> processTable;
-    QList<Process> * sortedProcessTable;
     QList<Algorithm*> algorithms;
     Algorithm * activeAlgorithm = nullptr;
 
@@ -36,7 +35,6 @@ signals:
     void operate();
     void getActiveAlgorithm(Algorithm * activeAlgorithm);
     void getAlgorithms(QList<QString> algorithms);
-    void getSortedProcessTable(QList<Process> * sortedProcessTable);
 };
 
 #endif // SIMULATIONCONTROLLER_H

@@ -10,15 +10,21 @@ class SimulationWorker : public QObject
 
 public:
     void activeAlgorithmChanged(Algorithm * algorithm);
+    void setProcessTable(QList<Process> * list);
+
+    ~SimulationWorker();
 
 private:
     Algorithm * currentAlgorithm = nullptr;
+    QList<Process> * processTable = nullptr;
+    QList<Process> sortedProcessTable;
 
 public slots:
     void doWork();
 
 signals:
-    void resultReady(const QString &par);
+    void resultReady(QList<Process> * processes);
+    void pushActiveAlgorithm(Algorithm * algorithmus);
 };
 
 #endif // SIMULATIONWORKER_H

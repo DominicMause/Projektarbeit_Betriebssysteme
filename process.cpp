@@ -1,6 +1,6 @@
 #include "process.h"
 
-Process::Process(int id, QString name, int size = 0)
+Process::Process(int id, QString name, int size)
 {
     this->ID = id;
     this->name = name;

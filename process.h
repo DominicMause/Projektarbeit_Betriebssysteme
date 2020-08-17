@@ -7,7 +7,7 @@ class Process
 {
 
 public:
-    Process(int id, QString name, int size);
+    Process(int id, QString name, int size = 0);
 
     int getId();
     QString getName();

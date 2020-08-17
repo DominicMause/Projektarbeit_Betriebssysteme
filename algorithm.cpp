@@ -18,6 +18,6 @@ void Algorithm::setFunction(func func){
     this->function_ = func;
 }
 
-QList<Process> Algorithm::execute(QList<Process> list){
-    return this->function_(list);
+QList<Process> Algorithm::execute(QList<Process> * list){
+    return this->function_(*list);
 }

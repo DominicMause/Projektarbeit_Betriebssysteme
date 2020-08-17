@@ -1,11 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
-
 #include "QtDebug"
-
-
-
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -50,16 +45,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     //Tests
     if(isTesting){
-    QList<QString> *list = new QList<QString>;
-    QList<Process> *list2 = new QList<Process>;
+    QList<QString> list = *new QList<QString>;
+    QList<Process> list2 = *new QList<Process>;
         for (int i = 0;i<6;i++) {
-            QString *s = new QString("Test " + QString::number(i));
-            Process *p = new Process(i,*s);
-            list2->append(*p);
-            list->append(*s);
+            QString s = QString("Test " + QString::number(i));
+            Process p = Process(i,s);
+            list2.append(p);
+            list.append(s);
         }
-    algorithmusBoxUpdate(*list);
-    processListUpdate(*list2);
+    algorithmusBoxUpdate(list);
+    processListUpdate(&list2);
 
     }
     //Tests end
@@ -77,11 +72,11 @@ void MainWindow::logUpdate(QString string)
 
 }
 
-void MainWindow::processListUpdate(QList<Process> inputProcessList)
+void MainWindow::processListUpdate(QList<Process> * inputProcessList)
 {
     //Update the Process list
     processList->clear();
-    foreach(Process v, inputProcessList){
+    for(Process v : *inputProcessList){
         QListWidgetItem *tmpItem = new QListWidgetItem;
         tmpItem->setText(QString::number(v.getId()) + "; " + v.getName());
         processList->addItem(tmpItem);
@@ -101,7 +96,8 @@ void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
 
 void MainWindow::activeAlgorithmData(Algorithm * a)
 {
-    if(a == nullptr){
+    if(a != nullptr){
+        qDebug() << a->getName();
         if(a->getId()!=currentAlgorythm->getId()){
             currentAlgorythm = a;
         }

@@ -1,6 +1,8 @@
 #include "simulationcontroller.h"
 #include "helper.h"
 #include "QtDebug"
+#include "QRandomGenerator"
+#include "process.h"
 
 SimulationController::SimulationController()
 {
@@ -14,14 +16,19 @@ SimulationController::SimulationController()
     a->setFunction(Helper::firstComeFirstServed);
     algorithms.append(a);
 
-    setAlgorithm("FirstComeFirstServed");
+    for(int i = 0; i < 100; i++){
+        processTable.append(Process(i,"Ululu",QRandomGenerator::global()->generate()));
+    }
+
+    worker->setProcessTable(&processTable);
 
     thread.start();
 }
 
 void SimulationController::setWindow(MainWindow * mainWindow){
     this->mainWindow = mainWindow;
-    connect(worker,&SimulationWorker::resultReady,mainWindow,&MainWindow::logUpdate);
+    connect(worker,&SimulationWorker::resultReady,mainWindow,&MainWindow::processListUpdate);
+    //connect(worker,&SimulationWorker::pushActiveAlgorithm,mainWindow,&MainWindow::activeAlgorithmData);
 }
 
 void SimulationController::setAlgorithm(QString name){
@@ -37,4 +44,11 @@ void SimulationController::setAlgorithm(QString name){
 SimulationController::~SimulationController(){
     thread.quit();
     thread.wait();
+
+    delete worker;
+    delete mainWindow;
+    delete activeAlgorithm;
+    for(Algorithm * a : algorithms){
+        delete a;
+    }
 }

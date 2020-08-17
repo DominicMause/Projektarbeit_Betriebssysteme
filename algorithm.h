@@ -16,7 +16,7 @@ public:
     int getId();
     QString getName();
     void setFunction(QList<Process> (*func) (QList<Process>));
-    QList<Process> execute(QList<Process>);
+    QList<Process> execute(QList<Process> *);
 
 private:
     int ID;

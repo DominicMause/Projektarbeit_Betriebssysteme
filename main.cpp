@@ -14,5 +14,7 @@ int main(int argc, char *argv[])
     controller->setWindow(&mainWindow);
     controller->operate();
 
+    controller->setAlgorithm("FirstComeFirstServed");
+
     return a.exec();
 }

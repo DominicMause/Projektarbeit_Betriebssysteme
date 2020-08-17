@@ -13,8 +13,6 @@
 #include "algorithm.h"
 #include "myinfolabel.h"
 
-using namespace Model;
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -29,7 +27,7 @@ public:
 public slots:
     void logUpdate(QString);
     void logClear();
-    void processListUpdate(QList<Process>);
+    void processListUpdate(QList<Process> *);
     void algorithmusBoxUpdate(QList<QString>);
     void activeAlgorithmData(Algorithm*);
 signals:
@@ -42,7 +40,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    bool isTesting = true;
+    bool isTesting = false;
     QTextEdit *logBox;
     QComboBox *algoSelectComboBox;
     QListWidget *processList;
