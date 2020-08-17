@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     algorithm.cpp \
+    helper.cpp \
     main.cpp \
     mainwindow.cpp \
     myinfolabel.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 
 HEADERS += \
     algorithm.h \
+    helper.h \
     mainwindow.h \
     myinfolabel.h \
     process.h \

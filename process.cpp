@@ -1,11 +1,10 @@
 #include "process.h"
 
-namespace Model {
-
-Process::Process(int id, QString name)
+Process::Process(int id, QString name, int size = 0)
 {
     this->ID = id;
     this->name = name;
+    this->processSize = size;
 }
 
 int Process::getId(){
@@ -16,5 +15,10 @@ QString Process::getName(){
     return this->name;
 }
 
+void Process::setProcessSize(int size){
+    this->processSize = size;
 }
 
+int Process::getProcessSize(){
+    return this->processSize;
+}

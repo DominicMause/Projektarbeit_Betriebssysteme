@@ -1,16 +1,18 @@
 #include "simulationworker.h"
 #include <QtDebug>
 
-namespace Simulation {
-
-int counter = 0;
-
 void SimulationWorker::doWork(){
     while(true){
-        counter++;
-        emit resultReady(QString::number(counter));
+
+        if(this->currentAlgorithm != nullptr){
+            //this->currentAlgorithm->execute()
+            //emit resultReady();
+            qDebug() << currentAlgorithm->getName();
+        }
         _sleep(10);
     }
 }
 
+void SimulationWorker::activeAlgorithmChanged(Algorithm *algorithm){
+    this->currentAlgorithm = algorithm;
 }

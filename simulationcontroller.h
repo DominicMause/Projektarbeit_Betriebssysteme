@@ -3,10 +3,10 @@
 
 #include <QObject>
 #include <QThread>
-#include <simulationworker.h>
+#include "simulationworker.h"
 #include "mainwindow.h"
-
-namespace Simulation {
+#include "process.h"
+#include "algorithm.h"
 
 class SimulationController : public QObject
 {
@@ -14,6 +14,11 @@ class SimulationController : public QObject
 public:
     QThread thread;
     QString output;
+
+    QList<Process> processTable;
+    QList<Process> * sortedProcessTable;
+    QList<Algorithm*> algorithms;
+    Algorithm * activeAlgorithm = nullptr;
 
     SimulationController();
     ~SimulationController();
@@ -24,11 +29,14 @@ private:
     MainWindow * mainWindow;
     SimulationWorker * worker;
 
+public slots:
+    void setAlgorithm(QString name);
+
 signals:
     void operate();
-
+    void getActiveAlgorithm(Algorithm * activeAlgorithm);
+    void getAlgorithms(QList<QString> algorithms);
+    void getSortedProcessTable(QList<Process> * sortedProcessTable);
 };
-
-}
 
 #endif // SIMULATIONCONTROLLER_H
