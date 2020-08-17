@@ -23,7 +23,7 @@ SOURCES += \
     myinfolabel.cpp \
     process.cpp \
     simulationcontroller.cpp \
-    simulationworker.cpp
+    simulationthread.cpp
 
 HEADERS += \
     algorithm.h \
@@ -32,7 +32,7 @@ HEADERS += \
     myinfolabel.h \
     process.h \
     simulationcontroller.h \
-    simulationworker.h
+    simulationthread.h
 
 FORMS += \
     mainwindow.ui \

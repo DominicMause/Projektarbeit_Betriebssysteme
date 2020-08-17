@@ -1,8 +1,10 @@
-#include "simulationworker.h"
-#include <QElapsedTimer>
+#include "simulationthread.h"
 
-void SimulationWorker::doWork(){
+void SimulationThread::run(){
+    exec();
+}
 
+int SimulationThread::exec(){
     while(true){
         if(currentAlgorithm != nullptr){
             sortedProcessTable.clear();
@@ -15,15 +17,15 @@ void SimulationWorker::doWork(){
             }
             emit resultReady(&sortedProcessTable, currentAlgorithm);
         }
-        _sleep(100);
+        msleep(100);
     }
 }
 
-void SimulationWorker::activeAlgorithmChanged(Algorithm * algorithm){
+void SimulationThread::activeAlgorithmChanged(Algorithm * algorithm){
     currentAlgorithm = algorithm;
 }
 
-void SimulationWorker::setProcessTable(QList<Process> * list){
+void SimulationThread::setProcessTable(QList<Process> * list){
     processTable = new QList<Process>();
     processTable->clear();
     for(Process p: *list){
@@ -31,7 +33,7 @@ void SimulationWorker::setProcessTable(QList<Process> * list){
     }
 }
 
-SimulationWorker::~SimulationWorker(){
-    delete currentAlgorithm;
+SimulationThread::~SimulationThread(){
     delete processTable;
+    delete currentAlgorithm;
 }

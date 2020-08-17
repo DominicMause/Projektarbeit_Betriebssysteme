@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QThread>
-#include "simulationworker.h"
+#include "simulationthread.h"
 #include "mainwindow.h"
 #include "process.h"
 #include "algorithm.h"
@@ -12,7 +12,6 @@ class SimulationController : public QObject
 {
     Q_OBJECT
 public:
-    QThread thread;
     QString output;
 
     QList<Process> * processTable;
@@ -25,8 +24,8 @@ public:
     void setWindow(MainWindow * mainWindow);
 
 private:
+    SimulationThread * thread;
     MainWindow * mainWindow;
-    SimulationWorker * worker;
 
 public slots:
     void setAlgorithm(QString name);

@@ -1,6 +1,6 @@
 #include <QApplication>
-#include <simulationworker.h>
 #include <simulationcontroller.h>
+#include <simulationthread.h>
 #include "mainwindow.h"
 
 int main(int argc, char *argv[])
