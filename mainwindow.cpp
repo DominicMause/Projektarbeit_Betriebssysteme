@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
             Process p =  Process(i,s);
             list2.append(p);
             list.append(s);
-            qDebug("Hallo");
+
         }
     algorithmusBoxUpdate(list);
     processListUpdate(&list2);
@@ -83,13 +83,10 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList)
         QString s = QString::number(v.getId()) + "; " + v.getName();
         tmpItem.append(s);
     }
-    qDebug("222");
+
     processList->addItems(tmpItem);
 
     processList->update();
-
-    //activeAlgorithmData(currentAlgorythm);
-    //qDebug("333");
 }
 
 void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
@@ -102,15 +99,16 @@ void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
 
 void MainWindow::activeAlgorithmData(Algorithm * a)
 {
-    if(a != nullptr){
-        if(a->getId()!=currentAlgorythm->getId()){
+
+        if(currentAlgorythm == nullptr || a->getId()!= currentAlgorythm->getId()){
             currentAlgorythm = a;
         }
+
         // Active Algorithm data Updated
         algoID->setValue(currentAlgorythm->getId());
         algoName->setValue(currentAlgorythm->getName());
         algoWorktime->setValue("sec");
-    }
+
 }
 
 void MainWindow::boxChanged(int)

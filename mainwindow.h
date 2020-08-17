@@ -47,7 +47,7 @@ private:
     QComboBox *algoSelectComboBox;
     QListWidget *processList;
     MyInfoLabel *algoID, *algoName, *algoWorktime, *algoSize;
-    Algorithm *currentAlgorythm;
+    Algorithm *currentAlgorythm = nullptr;
     QList<QString> tmpItem;
     QLabel *algoSelectLabel;
     QHBoxLayout *algorithmusSelector;
