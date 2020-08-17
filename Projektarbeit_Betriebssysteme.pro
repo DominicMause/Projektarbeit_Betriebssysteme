@@ -19,6 +19,7 @@ SOURCES += \
     algorithm.cpp \
     main.cpp \
     mainwindow.cpp \
+    myinfolabel.cpp \
     process.cpp \
     simulationcontroller.cpp \
     simulationworker.cpp
@@ -26,12 +27,14 @@ SOURCES += \
 HEADERS += \
     algorithm.h \
     mainwindow.h \
+    myinfolabel.h \
     process.h \
     simulationcontroller.h \
     simulationworker.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    myinfolabel.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

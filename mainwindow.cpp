@@ -1,17 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "QListWidget"
-#include "QTextEdit"
-#include "QLabel"
-#include "QComboBox"
-#include "QHBoxLayout"
 
-QTextEdit *logBox;
-QComboBox *algoSelectComboBox;
-QListWidget *processList;
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+#include "QtDebug"
+
+
+
+
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -22,12 +18,19 @@ MainWindow::MainWindow(QWidget *parent)
     QHBoxLayout *topChildLayout = new QHBoxLayout;
     QVBoxLayout *infoLayout = new QVBoxLayout;
     QHBoxLayout *algorithmusSelector = new QHBoxLayout;
-    processList = new QListWidget();
+    processList = new QListWidget(this);
     logBox = new QTextEdit();
+    logBox->setReadOnly(true);
     QLabel *algoSelectLabel = new QLabel("Algorithmus");
     algoSelectComboBox = new QComboBox();
     algoSelectComboBox->setPlaceholderText("empty");
-    connect(algoSelectComboBox, SIGNAL(currentIndexChanged(int)), this, SIGNAL(algorithmusBoxChanged(int)));
+    connect(algoSelectComboBox, SIGNAL(activated(int)), this,SLOT(boxChanged(int)));
+
+     algoID = new MyInfoLabel("ID ");
+     algoName = new MyInfoLabel("Name ");
+     algoWorktime = new MyInfoLabel("Worktime ");
+     algoSize = new MyInfoLabel("Size ");
+
 
     mainBox->addLayout(topLayout);
     mainBox->addWidget(logBox);
@@ -36,16 +39,31 @@ MainWindow::MainWindow(QWidget *parent)
     topChildLayout->addWidget(processList);
 
     infoLayout->addLayout(algorithmusSelector);
+    infoLayout->addLayout(algoID);
+    infoLayout->addLayout(algoName);
+    infoLayout->addLayout(algoWorktime);
+    infoLayout->addLayout(algoSize);
     algorithmusSelector->addWidget(algoSelectLabel);
     algorithmusSelector->addWidget(algoSelectComboBox);
     centralWidget()->setLayout(mainBox);
 
-    //slot Tests
 
-    logUpdate("Test 123");
+    //Tests
+    if(isTesting){
+    QList<QString> *list = new QList<QString>;
+    QList<Process> *list2 = new QList<Process>;
+        for (int i = 0;i<6;i++) {
+            QString *s = new QString("Test " + QString::number(i));
+            Process *p = new Process(i,*s);
+            list2->append(*p);
+            list->append(*s);
+        }
+    algorithmusBoxUpdate(*list);
+    processListUpdate(*list2);
 
+    }
+    //Tests end
 }
-
 
 void MainWindow::logClear()
 {
@@ -54,22 +72,62 @@ void MainWindow::logClear()
 
 void MainWindow::logUpdate(QString string)
 {
+    //Updating the Log Text Box's content
     logBox->append(string);
+
 }
 
-void MainWindow::processListUpdate()
+void MainWindow::processListUpdate(QList<Process> inputProcessList)
 {
     //Update the Process list
+    processList->clear();
+    foreach(Process v, inputProcessList){
+        QListWidgetItem *tmpItem = new QListWidgetItem;
+        tmpItem->setText(QString::number(v.getId()) + "; " + v.getName());
+        processList->addItem(tmpItem);
+    }
+    processList->update();
+    activeAlgorithmData(currentAlgorythm);
 }
 
-void MainWindow::algorithmusBoxUpdate()
+void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
 {
     //Update the content of the algorithm Drop-Down
+    foreach(QString s,inputAlgoList){
+        algoSelectComboBox->addItem(s);
+    }
+
 }
 
+void MainWindow::activeAlgorithmData(Algorithm * a)
+{
+    if(a == nullptr){
+        if(a->getId()!=currentAlgorythm->getId()){
+            currentAlgorythm = a;
+        }
+        // Active Algorithm data Updated
+        algoID->setValue(currentAlgorythm->getId());
+        algoName->setValue(currentAlgorythm->getName());
+        algoWorktime->setValue("asd");
+    }
+}
 
+void MainWindow::boxChanged(int)
+{
+    QString selectedName = algoSelectComboBox->currentText();
+    qDebug() << selectedName;
+    emit algorithmusBoxChanged(selectedName);
+}
 
+void MainWindow::debugSlot(int s)
+{
+    qDebug() << s;
+}
 
+void MainWindow::debugSlot(QString s)
+{
+    qDebug() << s;
+}
 
 MainWindow::~MainWindow()
 {
