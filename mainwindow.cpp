@@ -8,15 +8,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     ui->setupUi(this);
     this->setFixedSize(800,800);
     this->setWindowTitle("Scheduling Simulator");
-    QHBoxLayout *topLayout = new QHBoxLayout;
-    QVBoxLayout *mainBox = new QVBoxLayout;
-    QHBoxLayout *topChildLayout = new QHBoxLayout;
-    QVBoxLayout *infoLayout = new QVBoxLayout;
-    QHBoxLayout *algorithmusSelector = new QHBoxLayout;
+    topLayout = new QHBoxLayout;
+    mainBox = new QVBoxLayout;
+    topChildLayout = new QHBoxLayout;
+    infoLayout = new QVBoxLayout;
+    algorithmusSelector = new QHBoxLayout;
     processList = new QListWidget(this);
     logBox = new QTextEdit();
     logBox->setReadOnly(true);
-    QLabel *algoSelectLabel = new QLabel("Algorithmus");
+    algoSelectLabel = new QLabel("Algorithmus");
     algoSelectComboBox = new QComboBox();
     algoSelectComboBox->setPlaceholderText("empty");
     connect(algoSelectComboBox, SIGNAL(activated(int)), this,SLOT(boxChanged(int)));
@@ -45,13 +45,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     //Tests
     if(isTesting){
-    QList<QString> list = *new QList<QString>;
-    QList<Process> list2 = *new QList<Process>;
+    QList<QString> list = QList<QString>();
+    QList<Process> list2 = QList<Process>();
         for (int i = 0;i<6;i++) {
-            QString s = QString("Test " + QString::number(i));
-            Process p = Process(i,s);
+            QString s =  QString("Test " + QString::number(i));
+            Process p =  Process(i,s);
             list2.append(p);
             list.append(s);
+            qDebug("Hallo");
         }
     algorithmusBoxUpdate(list);
     processListUpdate(&list2);
@@ -76,13 +77,19 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList)
 {
     //Update the Process list
     processList->clear();
-    for(Process v : *inputProcessList){
-        QListWidgetItem *tmpItem = new QListWidgetItem;
-        tmpItem->setText(QString::number(v.getId()) + "; " + v.getName());
-        processList->addItem(tmpItem);
+    tmpItem = QList<QString>();
+    foreach(Process v, *inputProcessList){
+
+        QString s = QString::number(v.getId()) + "; " + v.getName();
+        tmpItem.append(s);
     }
+    qDebug("222");
+    processList->addItems(tmpItem);
+
     processList->update();
     activeAlgorithmData(currentAlgorythm);
+    qDebug("333");
+
 }
 
 void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
@@ -97,7 +104,6 @@ void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
 void MainWindow::activeAlgorithmData(Algorithm * a)
 {
     if(a != nullptr){
-        qDebug() << a->getName();
         if(a->getId()!=currentAlgorythm->getId()){
             currentAlgorythm = a;
         }
@@ -127,6 +133,21 @@ void MainWindow::debugSlot(QString s)
 
 MainWindow::~MainWindow()
 {
+    delete currentAlgorythm;
+    delete algoID;
+    delete algoName;
+    delete algoWorktime;
+    delete algoSize;
+    delete processList;
+    delete algoSelectComboBox;
+    delete logBox;
+    delete algoSelectLabel;
+    delete algorithmusSelector;
+    delete infoLayout;
+    delete topChildLayout;
+    delete mainBox;
+    delete topLayout;
+
     delete ui;
 }
 
