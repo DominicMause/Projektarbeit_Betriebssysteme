@@ -29,9 +29,8 @@ public:
 public slots:
     void logUpdate(QString);
     void logClear();
-    void processListUpdate(QList<Process> *);
+    void processListUpdate(QList<Process> *, Algorithm *);
     void algorithmusBoxUpdate(QList<QString>);
-    void activeAlgorithmData(Algorithm*);
 signals:
     void algorithmusBoxChanged(QString);
 

@@ -73,7 +73,7 @@ void MainWindow::logUpdate(QString string)
 
 }
 
-void MainWindow::processListUpdate(QList<Process> * inputProcessList)
+void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm * a)
 {
     //Update the Process list
     processList->clear();
@@ -86,6 +86,15 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList)
 
     processList->addItems(tmpItem);
 
+    if(currentAlgorythm == nullptr || a->getId()!= currentAlgorythm->getId()){
+        currentAlgorythm = a;
+    }
+
+    // Active Algorithm data Updated
+    algoID->setValue(currentAlgorythm->getId());
+    algoName->setValue(currentAlgorythm->getName());
+    algoWorktime->setValue("sec");
+
     processList->update();
 }
 
@@ -97,19 +106,6 @@ void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
     }
 }
 
-void MainWindow::activeAlgorithmData(Algorithm * a)
-{
-
-        if(currentAlgorythm == nullptr || a->getId()!= currentAlgorythm->getId()){
-            currentAlgorythm = a;
-        }
-
-        // Active Algorithm data Updated
-        algoID->setValue(currentAlgorythm->getId());
-        algoName->setValue(currentAlgorythm->getName());
-        algoWorktime->setValue("sec");
-
-}
 
 void MainWindow::boxChanged(int)
 {
