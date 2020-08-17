@@ -9,11 +9,11 @@ class SimulationWorker : public QObject
 {
     Q_OBJECT
 
-//public slots:
-//    void doWork(const QString &par);
-//
-//signals:
-//    void resultReady(const QString &par);
+public slots:
+    void doWork(const QString &par);
+
+signals:
+    void resultReady(const QString &par);
 };
 
 }

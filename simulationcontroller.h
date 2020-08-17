@@ -19,11 +19,8 @@ public:
     SimulationController();
     ~SimulationController();
 
-//public slots:
-//    void handleResults(const QString &par);
-//
-//signals:
-//    void operate(const QString &par);
+signals:
+    void operate(const QString &par);
 
 };
 

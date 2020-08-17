@@ -9,11 +9,12 @@ SimulationController::SimulationController()
 
     SimulationWorker *worker = new SimulationWorker;
     worker->moveToThread(&thread);
-    //connect(&thread,&QThread::finished,worker,&QObject::deleteLater);
-    //connect(this,SIGNAL(operate()),worker,SLOT(doWork()));
-    //connect(worker,SIGNAL(resultReady()),&mainWindow,SLOT(updateLabel()));
+    connect(&thread,&QThread::finished,worker,&QObject::deleteLater);
+    connect(this,&SimulationController::operate,worker,&SimulationWorker::doWork);
+    connect(worker,&SimulationWorker::resultReady,&mainWindow,&MainWindow::logUpdate);
 
     thread.start();
+    this->operate("");
 }
 
 SimulationController::~SimulationController(){
