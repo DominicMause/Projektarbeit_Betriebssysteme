@@ -23,8 +23,7 @@ public slots:
     void doWork();
 
 signals:
-    void resultReady(QList<Process> * processes);
-    void pushActiveAlgorithm(Algorithm * algorithmus);
+    void resultReady(QList<Process> * processes,Algorithm * algorithmus);
 };
 
 #endif // SIMULATIONWORKER_H

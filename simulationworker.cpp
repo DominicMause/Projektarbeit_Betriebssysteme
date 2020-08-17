@@ -1,18 +1,21 @@
 #include "simulationworker.h"
-#include <QtDebug>
+#include <QElapsedTimer>
 
 void SimulationWorker::doWork(){
 
     while(true){
         if(currentAlgorithm != nullptr){
             sortedProcessTable.clear();
-            for(Process p : currentAlgorithm->execute(processTable)){
+            QElapsedTimer timer;
+            timer.start();
+            QList<Process> tmpList = currentAlgorithm->execute(processTable);
+            currentAlgorithm->setWorkTime(timer.elapsed());
+            for(Process p : tmpList){
                 sortedProcessTable.append(p);
             }
-            emit resultReady(&sortedProcessTable);
-            emit pushActiveAlgorithm(currentAlgorithm);
+            emit resultReady(&sortedProcessTable, currentAlgorithm);
         }
-        _sleep(10);
+        _sleep(100);
     }
 }
 
@@ -26,7 +29,6 @@ void SimulationWorker::setProcessTable(QList<Process> * list){
     for(Process p: *list){
         processTable->append(p);
     }
-    qDebug() << processTable->count();
 }
 
 SimulationWorker::~SimulationWorker(){

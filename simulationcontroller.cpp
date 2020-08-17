@@ -17,7 +17,7 @@ SimulationController::SimulationController()
     algorithms.append(a);
 
     processTable = new QList<Process>();
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i < 10000; i++){
         processTable->append(Process(i,"Ululu",QRandomGenerator::global()->generate()));
     }
 
@@ -29,7 +29,6 @@ SimulationController::SimulationController()
 void SimulationController::setWindow(MainWindow * mainWindow){
     this->mainWindow = mainWindow;
     connect(worker,&SimulationWorker::resultReady,mainWindow,&MainWindow::processListUpdate);
-    connect(worker,&SimulationWorker::pushActiveAlgorithm,mainWindow,&MainWindow::activeAlgorithmData);
 }
 
 void SimulationController::setAlgorithm(QString name){

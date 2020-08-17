@@ -55,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
         }
     algorithmusBoxUpdate(list);
-    processListUpdate(&list2);
+    //processListUpdate(&list2);
 
     }
     //Tests end
@@ -93,7 +93,7 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
     // Active Algorithm data Updated
     algoID->setValue(currentAlgorythm->getId());
     algoName->setValue(currentAlgorythm->getName());
-    algoWorktime->setValue("sec");
+    algoWorktime->setValue(QString::number(currentAlgorythm->getWorkTime()) + " ms");
 
     processList->update();
 }
