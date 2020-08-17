@@ -12,15 +12,20 @@ class SimulationController : public QObject
 {
     Q_OBJECT
 public:
-    MainWindow mainWindow;
     QThread thread;
     QString output;
 
     SimulationController();
     ~SimulationController();
 
+    void setWindow(MainWindow * mainWindow);
+
+private:
+    MainWindow * mainWindow;
+    SimulationWorker * worker;
+
 signals:
-    void operate(const QString &par);
+    void operate();
 
 };
 

@@ -10,7 +10,7 @@ class SimulationWorker : public QObject
     Q_OBJECT
 
 public slots:
-    void doWork(const QString &par);
+    void doWork();
 
 signals:
     void resultReady(const QString &par);
