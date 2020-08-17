@@ -14,6 +14,15 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+public slots:
+    void logUpdate(QString);
+    void logClear();
+    void processListUpdate();
+    void algorithmusBoxUpdate();
+
+signals:
+    void algorithmusBoxChanged();
+
 
 private:
     Ui::MainWindow *ui;
