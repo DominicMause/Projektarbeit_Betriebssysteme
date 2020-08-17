@@ -19,8 +19,8 @@ MyInfoLabel::MyInfoLabel(QString _valueName)
 
 MyInfoLabel::~MyInfoLabel()
 {
-    delete(valueName);
-    delete(value);
+    delete valueName;
+    delete value;
 }
 
 

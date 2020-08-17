@@ -13,6 +13,8 @@
 #include "algorithm.h"
 #include "myinfolabel.h"
 
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -46,5 +48,13 @@ private:
     QListWidget *processList;
     MyInfoLabel *algoID, *algoName, *algoWorktime, *algoSize;
     Algorithm *currentAlgorythm;
+    QList<QString> tmpItem;
+    QLabel *algoSelectLabel;
+    QHBoxLayout *algorithmusSelector;
+    QVBoxLayout *infoLayout;
+    QHBoxLayout *topChildLayout;
+    QVBoxLayout *mainBox;
+    QHBoxLayout *topLayout;
+
 };
 #endif // MAINWINDOW_H
