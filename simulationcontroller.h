@@ -15,7 +15,7 @@ public:
     QThread thread;
     QString output;
 
-    QList<Process> processTable;
+    QList<Process> * processTable;
     QList<Algorithm*> algorithms;
     Algorithm * activeAlgorithm = nullptr;
 

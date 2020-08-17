@@ -17,11 +17,14 @@ public:
     QString getName();
     void setFunction(QList<Process> (*func) (QList<Process>));
     QList<Process> execute(QList<Process> *);
+    void setWorkTime(qint64 elapsedTime);
+    qint64 getWorkTime();
 
 private:
     int ID;
     QString name;
     func function_;
+    qint64 workTime;
 };
 
 #endif // ALGORITHM_H

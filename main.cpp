@@ -10,11 +10,11 @@ int main(int argc, char *argv[])
     MainWindow mainWindow;
     mainWindow.show();
 
-    SimulationController * controller = new SimulationController();
-    controller->setWindow(&mainWindow);
-    controller->operate();
+    SimulationController controller;
+    controller.setWindow(&mainWindow);
+    controller.operate();
 
-    controller->setAlgorithm("FirstComeFirstServed");
+    controller.setAlgorithm("FirstComeFirstServed");
 
     return a.exec();
 }

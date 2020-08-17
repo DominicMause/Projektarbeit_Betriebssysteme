@@ -7,8 +7,6 @@ MyInfoLabel::MyInfoLabel(QString _valueName,QString _value)
     value = new QLabel(_value);
     this->addWidget(valueName);
     this->addWidget(value);
-
-
 }
 
 MyInfoLabel::MyInfoLabel(QString _valueName)
@@ -17,8 +15,6 @@ MyInfoLabel::MyInfoLabel(QString _valueName)
     value = new QLabel("-----");
     this->addWidget(valueName);
     this->addWidget(value);
-
-
 }
 
 MyInfoLabel::~MyInfoLabel()

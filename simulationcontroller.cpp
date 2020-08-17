@@ -16,11 +16,12 @@ SimulationController::SimulationController()
     a->setFunction(Helper::firstComeFirstServed);
     algorithms.append(a);
 
+    processTable = new QList<Process>();
     for(int i = 0; i < 100; i++){
-        processTable.append(Process(i,"Ululu",QRandomGenerator::global()->generate()));
+        processTable->append(Process(i,"Ululu",QRandomGenerator::global()->generate()));
     }
 
-    worker->setProcessTable(&processTable);
+    worker->setProcessTable(processTable);
 
     thread.start();
 }
@@ -28,11 +29,11 @@ SimulationController::SimulationController()
 void SimulationController::setWindow(MainWindow * mainWindow){
     this->mainWindow = mainWindow;
     connect(worker,&SimulationWorker::resultReady,mainWindow,&MainWindow::processListUpdate);
-    //connect(worker,&SimulationWorker::pushActiveAlgorithm,mainWindow,&MainWindow::activeAlgorithmData);
+    connect(worker,&SimulationWorker::pushActiveAlgorithm,mainWindow,&MainWindow::activeAlgorithmData);
 }
 
 void SimulationController::setAlgorithm(QString name){
-    for(Algorithm * a: this->algorithms){
+    for(Algorithm * a: algorithms){
         if(a->getName().compare(name) == 0){
             this->activeAlgorithm = a;
             worker->activeAlgorithmChanged(a);
@@ -42,13 +43,14 @@ void SimulationController::setAlgorithm(QString name){
 }
 
 SimulationController::~SimulationController(){
-    thread.quit();
-    thread.wait();
-
     delete worker;
     delete mainWindow;
     delete activeAlgorithm;
+    delete processTable;
     for(Algorithm * a : algorithms){
         delete a;
     }
+
+    thread.quit();
+    thread.wait();
 }

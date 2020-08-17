@@ -82,7 +82,6 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList)
         processList->addItem(tmpItem);
     }
     processList->update();
-    activeAlgorithmData(currentAlgorythm);
 }
 
 void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
@@ -91,7 +90,6 @@ void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
     foreach(QString s,inputAlgoList){
         algoSelectComboBox->addItem(s);
     }
-
 }
 
 void MainWindow::activeAlgorithmData(Algorithm * a)
@@ -104,7 +102,7 @@ void MainWindow::activeAlgorithmData(Algorithm * a)
         // Active Algorithm data Updated
         algoID->setValue(currentAlgorythm->getId());
         algoName->setValue(currentAlgorythm->getName());
-        algoWorktime->setValue("asd");
+        algoWorktime->setValue("sec");
     }
 }
 
