@@ -3,7 +3,6 @@
 
 void processListDataGnereration::run()
 {
-
     tmpItem.clear();
     tmpItem = QList<QString>();
     foreach(Process v, input){

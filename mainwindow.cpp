@@ -3,6 +3,8 @@
 #include "QtDebug"
 #include "processlistdatagnereration.h"
 
+
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
@@ -17,22 +19,23 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     processList = new QListWidget(this);
     logBox = new QTextEdit();
     logBox->setReadOnly(true);
-    algoSelectLabel = new QLabel("Algorithmus");
+    algoSelectLabel = new QLabel("Algorithm");
     algoSelectComboBox = new QComboBox();
     algoSelectComboBox->setPlaceholderText("empty");
     connect(algoSelectComboBox, SIGNAL(activated(int)), this,SLOT(boxChanged(int)));
-
-     algoID = new MyInfoLabel("ID ");
-     algoName = new MyInfoLabel("Name ");
-     algoWorktime = new MyInfoLabel("Worktime ");
-     algoSize = new MyInfoLabel("Size ");
-     processCount = new MyInfoLabel("Process Count ");
-
+    algoSelectComboBox->setMinimumWidth(150);
+    algoID = new MyInfoLabel("ID ");
+    algoName = new MyInfoLabel("Name ");
+    algoWorktime = new MyInfoLabel("Worktime ");
+    algoSize = new MyInfoLabel("Size ");
+    processCount = new MyInfoLabel("Process Count ");
 
     mainBox->addLayout(topLayout);
     mainBox->addWidget(logBox);
-    topLayout->addLayout(topChildLayout);
+    topLayout->addLayout(topChildLayout,2);
+    topChildLayout->addItem(new QSpacerItem(50, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
     topChildLayout->addLayout(infoLayout);
+    topChildLayout->addItem(new QSpacerItem(100, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
     topChildLayout->addWidget(processList);
 
     infoLayout->addLayout(algorithmusSelector);
@@ -75,12 +78,12 @@ void MainWindow::logUpdate(QString string)
 
 }
 
-void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm * a)
+void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm * a,bool hasChanged)
 {
     //Update the Process list
     //Start thread
 
-    processListDataGnereration *workerThread = new processListDataGnereration();
+    workerThread = new processListDataGnereration();
     workerThread->input = *inputProcessList;
     connect(workerThread, SIGNAL(processListOut(QList<QString> *)), this, SLOT(setProcessList(QList<QString> *)));
     connect(workerThread, SIGNAL(finished()), workerThread, SLOT(deleteLater()));
@@ -106,7 +109,7 @@ void MainWindow::setProcessList(QList<QString> *s)
 {
     processList->clear();
     processList->addItems(*s);
-    processList->update();
+    workerThread->quit();
 }
 
 void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
@@ -152,7 +155,7 @@ MainWindow::~MainWindow()
     delete mainBox;
     delete topLayout;
     delete processCount;
-
+    delete workerThread;
     delete ui;
 }
 

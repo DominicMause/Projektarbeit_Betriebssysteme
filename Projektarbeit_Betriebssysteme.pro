@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     algorithm.cpp \
+    customlistitem.cpp \
     helper.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -24,10 +25,12 @@ SOURCES += \
     process.cpp \
     processlistdatagnereration.cpp \
     simulationcontroller.cpp \
+    simulationthread.cpp \
     simulationthread.cpp
 
 HEADERS += \
     algorithm.h \
+    customlistitem.h \
     helper.h \
     mainwindow.h \
     myinfolabel.h \

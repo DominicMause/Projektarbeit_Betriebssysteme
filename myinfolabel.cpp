@@ -5,6 +5,7 @@ MyInfoLabel::MyInfoLabel(QString _valueName,QString _value)
 {
     valueName = new QLabel(_valueName);
     value = new QLabel(_value);
+    valueName->setAlignment(Qt::AlignCenter);
     this->addWidget(valueName);
     this->addWidget(value);
 }
@@ -13,8 +14,10 @@ MyInfoLabel::MyInfoLabel(QString _valueName)
 {
     valueName = new QLabel(_valueName);
     value = new QLabel("-----");
+    valueName->setAlignment(Qt::AlignCenter);
     this->addWidget(valueName);
     this->addWidget(value);
+
 }
 
 MyInfoLabel::~MyInfoLabel()

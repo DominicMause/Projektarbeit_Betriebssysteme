@@ -5,6 +5,8 @@
 #include "algorithm.h"
 #include "QMetaType"
 
+#include <QTableWidget>
+
 class processListDataGnereration : public QThread
 {
     Q_OBJECT
@@ -12,10 +14,8 @@ class processListDataGnereration : public QThread
 public:
     QList<Process> input;
     void run();
-
 signals:
     void processListOut(QList<QString> *);
-
 private:
     QList<QString> tmpItem;
 };

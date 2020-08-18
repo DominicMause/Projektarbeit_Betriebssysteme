@@ -15,6 +15,9 @@
 #include "QThread"
 #include "processlistdatagnereration.h"
 #include "QMetaType"
+#include "QSpacerItem"
+#include <QTableWidget>
+#include "QTableWidgetItem"
 
 
 QT_BEGIN_NAMESPACE
@@ -32,7 +35,7 @@ public:
 public slots:
     void logUpdate(QString);
     void logClear();
-    void processListUpdate(QList<Process> *, Algorithm *);
+    void processListUpdate(QList<Process> *, Algorithm *, bool hasChanged);
     void setProcessList(QList<QString> *);
     void algorithmusBoxUpdate(QList<QString>);
 signals:
@@ -60,6 +63,7 @@ private:
     QHBoxLayout *topLayout;
     MyInfoLabel *processCount;
     processListDataGnereration *worker;
+    processListDataGnereration *workerThread;
 
 };
 #endif // MAINWINDOW_H
