@@ -46,6 +46,7 @@ int SimulationThread::exec(){
         msleep(1);
         counter++;
     }
+    return 0;
 }
 
 void SimulationThread::activeAlgorithmChanged(Algorithm * algorithm){
