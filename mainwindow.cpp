@@ -112,7 +112,6 @@ void MainWindow::setProcessList(QList<QString> *s)
     processList->clear();
     processList->addItems(*s);
     workerThread->quit();
-    QCoreApplication::exit();
 }
 
 void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)

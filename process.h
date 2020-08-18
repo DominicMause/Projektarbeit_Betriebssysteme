@@ -16,6 +16,9 @@ public:
     int getProcessSize();
     int getPriority();
 
+    ///
+    /// \brief setProcessSize
+    ///
     void setProcessSize(int);
     void setPriotity(Priority);
 

@@ -8,6 +8,9 @@ int SimulationThread::exec(){
     uint counter = 0;
     qint64 ms = 0;
     bool changed = false;
+
+    int cycles = 10;
+
     while(true){
         if(currentAlgorithm != nullptr){
             QElapsedTimer timer;
@@ -30,9 +33,9 @@ int SimulationThread::exec(){
                 sortedProcessTable.clear();
                 sortedProcessTable.append(tmpList);
             }
-            if(counter%100==0){
+            if(counter%cycles==0){
                 emit resultReady(&sortedProcessTable, currentAlgorithm,changed);
-                emit updateLog(QString::number(ms) + " ms for the last 100 cycles of " + QString::number(sortedProcessTable.count()) + " processes");
+                emit updateLog(QString::number(ms) + " ms for the last " + QString::number(cycles) + " cycles of " + QString::number(sortedProcessTable.count()) + " processes");
                 ms = 0;
                 changed = false;
             }
