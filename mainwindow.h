@@ -12,7 +12,9 @@
 #include "QListWidgetItem"
 #include "algorithm.h"
 #include "myinfolabel.h"
-
+#include "QThread"
+#include "processlistdatagnereration.h"
+#include "QMetaType"
 
 
 QT_BEGIN_NAMESPACE
@@ -26,10 +28,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QThread thread;
 public slots:
     void logUpdate(QString);
     void logClear();
     void processListUpdate(QList<Process> *, Algorithm *);
+    void setProcessList(QList<QString> *);
     void algorithmusBoxUpdate(QList<QString>);
 signals:
     void algorithmusBoxChanged(QString);
@@ -54,6 +58,8 @@ private:
     QHBoxLayout *topChildLayout;
     QVBoxLayout *mainBox;
     QHBoxLayout *topLayout;
+    MyInfoLabel *processCount;
+    processListDataGnereration *worker;
 
 };
 #endif // MAINWINDOW_H

@@ -22,6 +22,7 @@ SOURCES += \
     mainwindow.cpp \
     myinfolabel.cpp \
     process.cpp \
+    processlistdatagnereration.cpp \
     simulationcontroller.cpp \
     simulationthread.cpp
 
@@ -31,6 +32,7 @@ HEADERS += \
     mainwindow.h \
     myinfolabel.h \
     process.h \
+    processlistdatagnereration.h \
     simulationcontroller.h \
     simulationthread.h
 
