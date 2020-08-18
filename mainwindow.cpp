@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QtDebug"
+#include "processlistdatagnereration.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -25,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
      algoName = new MyInfoLabel("Name ");
      algoWorktime = new MyInfoLabel("Worktime ");
      algoSize = new MyInfoLabel("Size ");
+     processCount = new MyInfoLabel("Process Count ");
 
 
     mainBox->addLayout(topLayout);
@@ -38,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     infoLayout->addLayout(algoName);
     infoLayout->addLayout(algoWorktime);
     infoLayout->addLayout(algoSize);
+    infoLayout->addLayout(processCount);
     algorithmusSelector->addWidget(algoSelectLabel);
     algorithmusSelector->addWidget(algoSelectComboBox);
     centralWidget()->setLayout(mainBox);
@@ -55,7 +58,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
         }
     algorithmusBoxUpdate(list);
-    //processListUpdate(&list2);
 
     }
     //Tests end
@@ -76,15 +78,14 @@ void MainWindow::logUpdate(QString string)
 void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm * a)
 {
     //Update the Process list
-    processList->clear();
-    tmpItem = QList<QString>();
-    foreach(Process v, *inputProcessList){
+    //Start thread
 
-        QString s = QString::number(v.getId()) + "; " + v.getName();
-        tmpItem.append(s);
-    }
+    processListDataGnereration *workerThread = new processListDataGnereration();
+    workerThread->input = *inputProcessList;
+    connect(workerThread, SIGNAL(processListOut(QList<QString> *)), this, SLOT(setProcessList(QList<QString> *)));
+    connect(workerThread, SIGNAL(finished()), workerThread, SLOT(deleteLater()));
+    workerThread->start();
 
-    processList->addItems(tmpItem);
 
     if(currentAlgorythm == nullptr || a->getId()!= currentAlgorythm->getId()){
         currentAlgorythm = a;
@@ -94,7 +95,15 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
     algoID->setValue(currentAlgorythm->getId());
     algoName->setValue(currentAlgorythm->getName());
     algoWorktime->setValue(QString::number(currentAlgorythm->getWorkTime()) + " ms");
+    processCount->setValue(inputProcessList->count());
 
+
+}
+
+void MainWindow::setProcessList(QList<QString> *s)
+{
+    processList->clear();
+    processList->addItems(*s);
     processList->update();
 }
 
@@ -140,6 +149,7 @@ MainWindow::~MainWindow()
     delete topChildLayout;
     delete mainBox;
     delete topLayout;
+    delete processCount;
 
     delete ui;
 }
