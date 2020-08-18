@@ -7,8 +7,8 @@ void SimulationThread::run(){
 int SimulationThread::exec(){
     uint counter = 0;
     qint64 ms = 0;
+    bool changed = false;
     while(true){
-        bool changed = false;
         if(currentAlgorithm != nullptr){
             QElapsedTimer timer;
             timer.start();
@@ -34,6 +34,7 @@ int SimulationThread::exec(){
                 emit resultReady(&sortedProcessTable, currentAlgorithm,changed);
                 emit updateLog(QString::number(ms) + " ms for the last 100 cycles of " + QString::number(sortedProcessTable.count()) + " processes");
                 ms = 0;
+                changed = false;
             }
         }
         msleep(1);
