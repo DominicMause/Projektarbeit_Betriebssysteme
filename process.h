@@ -11,7 +11,7 @@ public:
 
     int getId();
     QString getName();
-    void setProcessSize(int size);
+    void setProcessSize(int);
     int getProcessSize();
 
 private:

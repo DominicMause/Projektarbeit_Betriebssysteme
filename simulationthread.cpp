@@ -17,17 +17,25 @@ int SimulationThread::exec(){
             for(Process p : tmpList){
                 sortedProcessTable.append(p);
             }
-            currentAlgorithm->setWorkTime(ms);
-            emit resultReady(&sortedProcessTable, currentAlgorithm);
-            ms=0;
+            if(counter%100==0){
+                qDebug() << ms << " ms";
+                emit updateLog(QString::number(ms) + " ms for the last 100 cycles of " + QString::number(sortedProcessTable.count()) + " processes");
+                currentAlgorithm->setWorkTime(ms/100);
+                emit resultReady(&sortedProcessTable, currentAlgorithm);
+                ms = 0;
+            }
         }
-        msleep(100);
+        msleep(1);
         counter++;
     }
 }
 
 void SimulationThread::activeAlgorithmChanged(Algorithm * algorithm){
     currentAlgorithm = algorithm;
+
+    emit updateLog("\n----------------------------------------------------------------------------------------------\n");
+    emit updateLog("Active algorithm changed to " + algorithm->getName());
+    emit updateLog("\n----------------------------------------------------------------------------------------------\n");
 }
 
 void SimulationThread::setProcessTable(QList<Process> * list){

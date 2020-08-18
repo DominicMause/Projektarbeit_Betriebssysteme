@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QThread>
+#include <QList>
+#include <QString>
 #include "simulationthread.h"
 #include "mainwindow.h"
 #include "process.h"
@@ -21,19 +23,23 @@ public:
     SimulationController();
     ~SimulationController();
 
-    void setWindow(MainWindow * mainWindow);
+    void setWindow(MainWindow *);
+    void addAlgorithm(Algorithm *);
+    void addExampleAlgorithms();
+    void pushAlgorithmList();
 
 private:
     SimulationThread * thread;
     MainWindow * mainWindow;
 
+
 public slots:
-    void setAlgorithm(QString name);
+    void setActiveAlgorithm(QString);
 
 signals:
-    void operate();
-    void getActiveAlgorithm(Algorithm * activeAlgorithm);
-    void getAlgorithms(QList<QString> algorithms);
+    void updateLog(QString);
+    void getActiveAlgorithm(Algorithm *);
+    void getAlgorithms(QList<QString>);
 };
 
 #endif // SIMULATIONCONTROLLER_H

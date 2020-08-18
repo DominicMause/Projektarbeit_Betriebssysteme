@@ -2,6 +2,7 @@
 #include <simulationcontroller.h>
 #include <simulationthread.h>
 #include "mainwindow.h"
+#include "helper.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,9 +13,8 @@ int main(int argc, char *argv[])
 
     SimulationController controller;
     controller.setWindow(&mainWindow);
-    controller.operate();
-
-    controller.setAlgorithm("FirstComeFirstServed");
+    controller.addExampleAlgorithms();
+    controller.setActiveAlgorithm("FirstComeFirstServed");
 
     return a.exec();
 }

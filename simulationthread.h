@@ -13,8 +13,8 @@ class SimulationThread : public QThread
 public:
     ~SimulationThread();
 
-    void activeAlgorithmChanged(Algorithm * algorithm);
-    void setProcessTable(QList<Process> * list);
+    void activeAlgorithmChanged(Algorithm *);
+    void setProcessTable(QList<Process> *);
     void doWork();
 
 private:
@@ -26,7 +26,8 @@ private:
     QList<Process> sortedProcessTable;
 
 signals:
-    void resultReady(QList<Process> * processes,Algorithm * algorithmus);
+    void resultReady(QList<Process> *,Algorithm *);
+    void updateLog(QString);
 };
 
 #endif // SIMULATIONTHREAD_H

@@ -1,8 +1,7 @@
 #include "algorithm.h"
 
-Algorithm::Algorithm(int id, QString name)
+Algorithm::Algorithm(QString name)
 {
-    this->ID = id;
     this->name = name;
 }
 
@@ -12,6 +11,10 @@ int Algorithm::getId(){
 
 QString Algorithm::getName(){
     return name;
+}
+
+void Algorithm::setId(int id){
+    ID = id;
 }
 
 void Algorithm::setFunction(func func){

@@ -9,17 +9,20 @@ class Algorithm
 {
 
 public:
-    Algorithm(int id, QString name);
+    Algorithm(QString name);
 
-    typedef QList<Process> (*func)(QList<Process> list);
+    typedef QList<Process> (*func)(QList<Process>);
+
+    void setId(int);
+    void setFunction(func);
+    void setWorkTime(qint64);
 
     int getId();
     QString getName();
-    void setFunction(QList<Process> (*func) (QList<Process>));
-    QList<Process> execute(QList<Process> *);
-    void setWorkTime(qint64 elapsedTime);
     qint64 getWorkTime();
     long getSize();
+
+    QList<Process> execute(QList<Process> *);
 
 private:
     int ID;

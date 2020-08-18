@@ -7,12 +7,9 @@
 SimulationController::SimulationController()
 {
     thread = new SimulationThread();
-    Algorithm * a = new Algorithm(0,"FirstComeFirstServed");
-    a->setFunction(Helper::firstComeFirstServed);
-    algorithms.append(a);
 
     processTable = new QList<Process>();
-    for(int i = 0; i < 50000; i++){
+    for(int i = 0; i < 100000; i++){
         processTable->append(Process(i,"TestProcess ",QRandomGenerator::global()->generate()));
     }
 
@@ -20,17 +17,62 @@ SimulationController::SimulationController()
     thread->start();
 }
 
+void SimulationController::pushAlgorithmList(){
+    QList<QString> list;
+    for(Algorithm * a : algorithms){
+        list.append(a->getName());
+    }
+    emit getAlgorithms(list);
+}
+
 void SimulationController::setWindow(MainWindow * mainWindow){
     this->mainWindow = mainWindow;
     connect(thread,&SimulationThread::resultReady,mainWindow,&MainWindow::processListUpdate);
-    connect(mainWindow,&MainWindow::algorithmusBoxChanged,this,&SimulationController::setAlgorithm);
+    connect(mainWindow,&MainWindow::algorithmusBoxChanged,this,&SimulationController::setActiveAlgorithm);
+    connect(this,&SimulationController::getAlgorithms,mainWindow,&MainWindow::algorithmusBoxUpdate);
+    connect(mainWindow,&MainWindow::algorithmusBoxChanged,this,&SimulationController::setActiveAlgorithm);
+    connect(this,&SimulationController::updateLog,mainWindow,&MainWindow::logUpdate);
+    connect(thread,&SimulationThread::updateLog,mainWindow,&MainWindow::logUpdate);
 }
 
-void SimulationController::setAlgorithm(QString name){
+void SimulationController::addExampleAlgorithms(){
+
+    emit updateLog("----------------------------------------------------------------------------------------------\n");
+    emit updateLog("Adding example algorithms to list\n");
+
+    Algorithm * firstCome = new Algorithm("FirstComeFirstServed");
+    firstCome->setFunction(Helper::firstComeFirstServed);
+    addAlgorithm(firstCome);
+
+    Algorithm * shortestJob = new Algorithm("ShortestJobFirst");
+    shortestJob->setFunction(Helper::shortestJobFirst);
+    addAlgorithm(shortestJob);
+
+    pushAlgorithmList();
+}
+
+void SimulationController::addAlgorithm(Algorithm *algorithm){
+    if(algorithms.count() > 0){
+        for(Algorithm * a : algorithms){
+            if(a->getName().compare(algorithm->getName()) == 0){
+                return;
+            }
+        }
+        algorithm->setId(algorithms.last()->getId()+1);
+    }else{
+        algorithm->setId(0);
+    }
+    emit updateLog(algorithm->getName() + " added to algorithm list");
+    algorithms.append(algorithm);
+}
+
+void SimulationController::setActiveAlgorithm(QString name){
     for(Algorithm * a: algorithms){
         if(a->getName().compare(name) == 0){
-            this->activeAlgorithm = a;
-            thread->activeAlgorithmChanged(a);
+            if(activeAlgorithm == nullptr || activeAlgorithm->getId()!=a->getId()){
+                activeAlgorithm = a;
+                thread->activeAlgorithmChanged(a);
+            }
             break;
         }
     }
