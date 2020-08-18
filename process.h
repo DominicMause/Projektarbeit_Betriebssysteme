@@ -7,17 +7,23 @@ class Process
 {
 
 public:
-    Process(int id, QString name, int size = 0);
+    enum Priority { low, middle, high };
+
+    Process(int, QString, int = 0, Priority = middle);
 
     int getId();
     QString getName();
-    void setProcessSize(int);
     int getProcessSize();
+    int getPriority();
+
+    void setProcessSize(int);
+    void setPriotity(Priority);
 
 private:
     int ID;
     QString name;
     int processSize;
+    Priority priority;
 
 };
 
