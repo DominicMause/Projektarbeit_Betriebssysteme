@@ -12,7 +12,7 @@ int SimulationThread::exec(){
 
     int cycles = 100;
 
-    while(true){
+    while(isRunning){
         if(currentAlgorithm != nullptr){
             QElapsedTimer timer;
             timer.start();

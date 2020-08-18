@@ -17,6 +17,8 @@ public:
     void setProcessTable(QList<Process> *);
     void doWork();
 
+    bool isRunning = true;
+
 private:
     void run() override;
     int exec();

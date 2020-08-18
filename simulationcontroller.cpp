@@ -83,6 +83,12 @@ void SimulationController::setActiveAlgorithm(QString name){
 }
 
 SimulationController::~SimulationController(){
+
+    thread->isRunning = false;
+    thread->quit();
+    thread->wait();
+    delete thread;
+
     delete mainWindow;
     delete activeAlgorithm;
     delete processTable;
@@ -91,7 +97,5 @@ SimulationController::~SimulationController(){
         delete a;
     }
 
-    delete thread;
-    thread->quit();
-    thread->wait();
+
 }
