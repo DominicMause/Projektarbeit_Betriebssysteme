@@ -26,7 +26,7 @@ private:
     QList<Process> sortedProcessTable;
 
 signals:
-    void resultReady(QList<Process> *,Algorithm *);
+    void resultReady(QList<Process> *,Algorithm *,bool);
     void updateLog(QString);
 };
 

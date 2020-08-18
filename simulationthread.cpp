@@ -21,7 +21,7 @@ int SimulationThread::exec(){
                 qDebug() << ms << " ms";
                 emit updateLog(QString::number(ms) + " ms for the last 100 cycles of " + QString::number(sortedProcessTable.count()) + " processes");
                 currentAlgorithm->setWorkTime(ms/100);
-                emit resultReady(&sortedProcessTable, currentAlgorithm);
+                emit resultReady(&sortedProcessTable, currentAlgorithm,true);
                 ms = 0;
             }
         }
