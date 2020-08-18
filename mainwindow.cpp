@@ -82,13 +82,15 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
 {
     //Update the Process list
     //Start thread
+    qDebug()<< hasChanged;
+    if(hasChanged){
 
     workerThread = new processListDataGnereration();
     workerThread->input = *inputProcessList;
     connect(workerThread, SIGNAL(processListOut(QList<QString> *)), this, SLOT(setProcessList(QList<QString> *)));
     connect(workerThread, SIGNAL(finished()), workerThread, SLOT(deleteLater()));
     workerThread->start();
-
+    }
 
     if(currentAlgorythm == nullptr || a->getId()!= currentAlgorythm->getId()){
         currentAlgorythm = a;
@@ -110,6 +112,7 @@ void MainWindow::setProcessList(QList<QString> *s)
     processList->clear();
     processList->addItems(*s);
     workerThread->quit();
+    QCoreApplication::exit();
 }
 
 void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
