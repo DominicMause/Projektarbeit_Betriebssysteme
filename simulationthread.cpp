@@ -7,15 +7,15 @@ void SimulationThread::run(){
 int SimulationThread::exec(){
     uint counter = 0;
     qint64 ms = 0;
-    bool changed = false;
     while(true){
+        bool changed = false;
         if(currentAlgorithm != nullptr){
-
             QElapsedTimer timer;
             timer.start();
             QList<Process> tmpList = currentAlgorithm->execute(processTable);
             ms += timer.elapsed();
             currentAlgorithm->setWorkTime(timer.elapsed());
+
             if(sortedProcessTable.count()>0){
                 for(int i = 0; i < tmpList.count(); i++){
                     if(tmpList[i].getId() != sortedProcessTable[i].getId()){
@@ -28,7 +28,7 @@ int SimulationThread::exec(){
             }
             if(changed){
                 sortedProcessTable.clear();
-                sortedProcessTable = tmpList;
+                sortedProcessTable.append(tmpList);
             }
             if(counter%100==0){
                 emit resultReady(&sortedProcessTable, currentAlgorithm,changed);
