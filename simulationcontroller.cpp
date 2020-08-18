@@ -13,8 +13,8 @@ SimulationController::SimulationController()
 
     processTable = new QList<Process>();
     for(int i = 0; i < 50000; i++){
-
         processTable->append(Process(i,"TestProcess ",QRandomGenerator::global()->generate()));
+    }
 
     thread->setProcessTable(processTable);
     thread->start();

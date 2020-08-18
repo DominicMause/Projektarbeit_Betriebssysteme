@@ -17,14 +17,11 @@ int SimulationThread::exec(){
             for(Process p : tmpList){
                 sortedProcessTable.append(p);
             }
-            qDebug() << counter%1000;
-            if(counter%1000==0){
-                currentAlgorithm->setWorkTime(ms/1000);
-                emit resultReady(&sortedProcessTable, currentAlgorithm);
-                ms=0;
-            }
+            currentAlgorithm->setWorkTime(ms);
+            emit resultReady(&sortedProcessTable, currentAlgorithm);
+            ms=0;
         }
-        msleep(1);
+        msleep(100);
         counter++;
     }
 }
