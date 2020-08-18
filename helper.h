@@ -10,7 +10,6 @@ class Helper
 public:
     static QList<Process> firstComeFirstServed(QList<Process>);
     static QList<Process> shortestJobFirst(QList<Process>);
-    static void writeFile();
 };
 
 #endif // HELPER_H

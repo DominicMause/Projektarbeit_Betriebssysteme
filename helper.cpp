@@ -13,13 +13,4 @@ QList<Process> Helper::shortestJobFirst(QList<Process> list){
     return list;
 }
 
-void Helper::writeFile(){
-    QFile file("out.txt");
-    if(!file.open(QIODevice::ReadWrite | QIODevice::Text)){
-        qDebug("Error writing File");
-        return;
-    }
 
-    QTextStream out(&file);
-    out << "";
-}

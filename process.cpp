@@ -1,24 +1,33 @@
 #include "process.h"
 
-Process::Process(int id, QString name, int size)
+Process::Process(int id, QString name, int size, Priority priority)
 {
-    this->ID = id;
+    ID = id;
     this->name = name;
-    this->processSize = size;
+    processSize = size;
+    this->priority = priority;
 }
 
 int Process::getId(){
-    return this->ID;
+    return ID;
 }
 
 QString Process::getName(){
-    return this->name;
-}
-
-void Process::setProcessSize(int size){
-    this->processSize = size;
+    return name;
 }
 
 int Process::getProcessSize(){
-    return this->processSize;
+    return processSize;
+}
+
+int Process::getPriority(){
+    return priority;
+}
+
+void Process::setProcessSize(int size){
+    processSize = size;
+}
+
+void Process::setPriotity(Priority priority){
+    this->priority = priority;
 }
