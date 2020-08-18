@@ -1,4 +1,5 @@
 #include "simulationthread.h"
+#include <QDateTime>
 
 void SimulationThread::run(){
     exec();
@@ -9,7 +10,7 @@ int SimulationThread::exec(){
     qint64 ms = 0;
     bool changed = false;
 
-    int cycles = 10;
+    int cycles = 100;
 
     while(true){
         if(currentAlgorithm != nullptr){
@@ -17,6 +18,7 @@ int SimulationThread::exec(){
             timer.start();
             QList<Process> tmpList = currentAlgorithm->execute(processTable);
             ms += timer.elapsed();
+
             currentAlgorithm->setWorkTime(timer.elapsed());
 
             if(sortedProcessTable.count()>0){
@@ -33,11 +35,12 @@ int SimulationThread::exec(){
                 sortedProcessTable.clear();
                 sortedProcessTable.append(tmpList);
             }
+            emit resultReady(&sortedProcessTable, currentAlgorithm,changed);
+            changed = false;
             if(counter%cycles==0){
-                emit resultReady(&sortedProcessTable, currentAlgorithm,changed);
-                emit updateLog(QString::number(ms) + " ms for the last " + QString::number(cycles) + " cycles of " + QString::number(sortedProcessTable.count()) + " processes");
+                QDateTime dateTime(QDateTime::currentDateTimeUtc());
+                emit updateLog(dateTime.toLocalTime().toString("hh:mm:ss")+ " - " + QString::number(ms) + " ms for the last " + QString::number(cycles) + " cycles of " + QString::number(sortedProcessTable.count()) + " processes");
                 ms = 0;
-                changed = false;
             }
         }
         msleep(1);

@@ -9,6 +9,7 @@ class Helper
 {
 public:
     static QList<Process> firstComeFirstServed(QList<Process>);
+    static QList<Process> lastComeFirstServed(QList<Process>);
     static QList<Process> shortestJobFirst(QList<Process>);
 };
 

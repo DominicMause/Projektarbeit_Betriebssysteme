@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     SimulationController controller;
     controller.setWindow(&mainWindow);
     controller.addExampleAlgorithms();
-    controller.setActiveAlgorithm("FirstComeFirstServed");
+    controller.setActiveAlgorithm("First Come First Served");
 
     return a.exec();
 }

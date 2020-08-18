@@ -7,7 +7,6 @@
 
 class Algorithm
 {
-
 public:
     Algorithm(QString name);
 

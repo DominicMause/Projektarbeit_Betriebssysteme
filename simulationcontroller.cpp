@@ -9,7 +9,7 @@ SimulationController::SimulationController()
     thread = new SimulationThread();
 
     processTable = new QList<Process>();
-    for(int i = 0; i < 100000; i++){
+    for(int i = 0; i < 500000; i++){
         processTable->append(Process(i,"TestProcess ",QRandomGenerator::global()->generate()));
     }
 
@@ -40,11 +40,15 @@ void SimulationController::addExampleAlgorithms(){
     emit updateLog("----------------------------------------------------------------------------------------------\n");
     emit updateLog("Adding example algorithms to list\n");
 
-    Algorithm * firstCome = new Algorithm("FirstComeFirstServed");
+    Algorithm * firstCome = new Algorithm("First Come First Served");
     firstCome->setFunction(Helper::firstComeFirstServed);
     addAlgorithm(firstCome);
 
-    Algorithm * shortestJob = new Algorithm("ShortestJobFirst");
+    Algorithm * lastCome = new Algorithm("Last Come First Served");
+    lastCome->setFunction(Helper::lastComeFirstServed);
+    addAlgorithm(lastCome);
+
+    Algorithm * shortestJob = new Algorithm("Shortest Job First");
     shortestJob->setFunction(Helper::shortestJobFirst);
     addAlgorithm(shortestJob);
 
@@ -82,11 +86,12 @@ SimulationController::~SimulationController(){
     delete mainWindow;
     delete activeAlgorithm;
     delete processTable;
+
     for(Algorithm * a : algorithms){
         delete a;
     }
 
+    delete thread;
     thread->quit();
     thread->wait();
-    delete thread;
 }

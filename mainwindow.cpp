@@ -82,7 +82,6 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
 {
     //Update the Process list
     //Start thread
-    qDebug()<< hasChanged;
     if(hasChanged){
 
     workerThread = new processListDataGnereration();
@@ -103,8 +102,6 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
     algoSize->setValue(QString::number(currentAlgorythm->getSize()) + " bytes");
 
     processCount->setValue(inputProcessList->count());
-
-
 }
 
 void MainWindow::setProcessList(QList<QString> *s)

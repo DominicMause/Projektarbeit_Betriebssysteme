@@ -2,6 +2,10 @@
 #include "QtDebug"
 
 QList<Process> Helper::firstComeFirstServed(QList<Process> list){
+    return list;
+}
+
+QList<Process> Helper::lastComeFirstServed(QList<Process> list){
     QList<Process> result;
     result.reserve(list.size());
     std::reverse_copy(list.begin(),list.end(),std::back_inserter(result));
