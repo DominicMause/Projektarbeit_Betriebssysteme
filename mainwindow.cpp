@@ -94,7 +94,7 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
     algoID->setValue(currentAlgorythm->getId());
     algoName->setValue(currentAlgorythm->getName());
     algoWorktime->setValue(QString::number(currentAlgorythm->getWorkTime()) + " ms");
-
+    algoSize->setValue(QString::number(currentAlgorythm->getSize()) + " bytes");
     processList->update();
 }
 

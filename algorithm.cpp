@@ -7,19 +7,20 @@ Algorithm::Algorithm(int id, QString name)
 }
 
 int Algorithm::getId(){
-    return this->ID;
+    return ID;
 }
 
 QString Algorithm::getName(){
-    return this->name;
+    return name;
 }
 
 void Algorithm::setFunction(func func){
-    this->function_ = func;
+    function_ = func;
+    size = sizeof (func);
 }
 
 QList<Process> Algorithm::execute(QList<Process> * list){
-    return this->function_(*list);
+    return function_(*list);
 }
 
 void Algorithm::setWorkTime(qint64 elapsedTime){
@@ -28,4 +29,8 @@ void Algorithm::setWorkTime(qint64 elapsedTime){
 
 qint64 Algorithm::getWorkTime(){
     return workTime;
+}
+
+long Algorithm::getSize(){
+    return size;
 }

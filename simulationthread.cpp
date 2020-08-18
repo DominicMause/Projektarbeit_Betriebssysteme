@@ -5,19 +5,27 @@ void SimulationThread::run(){
 }
 
 int SimulationThread::exec(){
+    uint counter = 0;
+    qint64 ms = 0;
     while(true){
         if(currentAlgorithm != nullptr){
             sortedProcessTable.clear();
             QElapsedTimer timer;
             timer.start();
             QList<Process> tmpList = currentAlgorithm->execute(processTable);
-            currentAlgorithm->setWorkTime(timer.elapsed());
+            ms += timer.elapsed();
             for(Process p : tmpList){
                 sortedProcessTable.append(p);
             }
-            emit resultReady(&sortedProcessTable, currentAlgorithm);
+            qDebug() << counter%1000;
+            if(counter%1000==0){
+                currentAlgorithm->setWorkTime(ms/1000);
+                emit resultReady(&sortedProcessTable, currentAlgorithm);
+                ms=0;
+            }
         }
-        msleep(100);
+        msleep(1);
+        counter++;
     }
 }
 

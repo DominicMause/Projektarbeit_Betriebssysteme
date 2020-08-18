@@ -19,12 +19,14 @@ public:
     QList<Process> execute(QList<Process> *);
     void setWorkTime(qint64 elapsedTime);
     qint64 getWorkTime();
+    long getSize();
 
 private:
     int ID;
     QString name;
     func function_;
     qint64 workTime;
+    long size;
 };
 
 #endif // ALGORITHM_H
