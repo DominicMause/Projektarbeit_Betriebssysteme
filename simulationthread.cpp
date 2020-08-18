@@ -7,21 +7,32 @@ void SimulationThread::run(){
 int SimulationThread::exec(){
     uint counter = 0;
     qint64 ms = 0;
+    bool changed = false;
     while(true){
         if(currentAlgorithm != nullptr){
-            sortedProcessTable.clear();
+
             QElapsedTimer timer;
             timer.start();
             QList<Process> tmpList = currentAlgorithm->execute(processTable);
             ms += timer.elapsed();
-            for(Process p : tmpList){
-                sortedProcessTable.append(p);
+            currentAlgorithm->setWorkTime(timer.elapsed());
+            if(sortedProcessTable.count()>0){
+                for(int i = 0; i < tmpList.count(); i++){
+                    if(tmpList[i].getId() != sortedProcessTable[i].getId()){
+                        changed = true;
+                        break;
+                    }
+                }
+            }else{
+                changed = true;
+            }
+            if(changed){
+                sortedProcessTable.clear();
+                sortedProcessTable = tmpList;
             }
             if(counter%100==0){
-                qDebug() << ms << " ms";
+                emit resultReady(&sortedProcessTable, currentAlgorithm,changed);
                 emit updateLog(QString::number(ms) + " ms for the last 100 cycles of " + QString::number(sortedProcessTable.count()) + " processes");
-                currentAlgorithm->setWorkTime(ms/100);
-                emit resultReady(&sortedProcessTable, currentAlgorithm,true);
                 ms = 0;
             }
         }
