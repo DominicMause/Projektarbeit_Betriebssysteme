@@ -40,7 +40,7 @@ int ProcessListModel::rowCount(const QModelIndex &parent) const
 
     if(processList != nullptr || listSet){
         //return processList->count();
-        return processList->length();
+        return processList->length()+1;
     }
     return 0;
 }
@@ -52,12 +52,15 @@ QVariant ProcessListModel::data(const QModelIndex &index, int role) const
         return QVariant();
     }
     if (role == Qt::DisplayRole){
-//        if(index.row()%100 == 0){
-//            QApplication::processEvents();
-//        }
-        Process tmpProcess = processList->at(index.row());
-        QString s = QString::number(tmpProcess.getId()) + tmpProcess.getName();
-        return s;
+            if(index.row() == 0){
+                QString s = QString("ID\tName\tPriority\tSize");
+                return s;
+            }
+            else{
+            Process tmpProcess = processList->at(index.row()-1);
+            QString s = QString::number(tmpProcess.getId()) + "\t" + tmpProcess.getName() + "\t" + QString::number(tmpProcess.getPriority()) + "\t" + QString::number(tmpProcess.getProcessSize());
+            return s;
+        }
     }
 
     return QVariant();
@@ -70,15 +73,7 @@ void ProcessListModel::updateProcessList(QList<Process> *p, Algorithm *, bool ha
     if(hasChanged){
         processList = p;
         listSet = true;
-
-
-
-            this->dataChanged(createIndex(0,0),createIndex(p->length(),0));
-
-
-        //beginResetModel();
-        //endResetModel();
-
+        this->dataChanged(createIndex(0,0),createIndex(p->length(),0));
     }
 
 }

@@ -18,7 +18,6 @@
 #include <QMutex>
 #include <QTableWidget>
 #include "QTableWidgetItem"
-#include "customlistitem.h"
 #include "processlistmodel.h"
 
 
