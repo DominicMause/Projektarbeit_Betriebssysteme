@@ -1,24 +1,30 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QtDebug"
-#include "processlistdatagnereration.h"
+#include "QElapsedTimer"
+
 
 
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    qDebug() << sizeof (Process);
     ui->setupUi(this);
     this->setFixedSize(800,800);
     this->setWindowTitle("Scheduling Simulator");
     topLayout = new QHBoxLayout;
+    bottomLayout = new QHBoxLayout;
     mainBox = new QVBoxLayout;
     topChildLayout = new QHBoxLayout;
     infoLayout = new QVBoxLayout;
     algorithmusSelector = new QHBoxLayout;
-    processList = new QListWidget(this);
+    processList = new QListView;
+    model = new ProcessListModel;
     logBox = new QTextEdit();
     logBox->setReadOnly(true);
+    logBox2 = new QTextEdit();
+    logBox2->setReadOnly(true);
     algoSelectLabel = new QLabel("Algorithm");
     algoSelectComboBox = new QComboBox();
     algoSelectComboBox->setPlaceholderText("empty");
@@ -29,15 +35,23 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     algoWorktime = new MyInfoLabel("Worktime ");
     algoSize = new MyInfoLabel("Size ");
     processCount = new MyInfoLabel("Process Count ");
+    //processList->setUniformItemSizes(true);
 
+    //processList->show();
+    QListView *view = new QListView;
     mainBox->addLayout(topLayout);
-    mainBox->addWidget(logBox);
+    mainBox->addLayout(bottomLayout);
+    bottomLayout->addWidget(logBox);
+    bottomLayout->addWidget(logBox2);
     topLayout->addLayout(topChildLayout,2);
     topChildLayout->addItem(new QSpacerItem(50, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
     topChildLayout->addLayout(infoLayout);
-    topChildLayout->addItem(new QSpacerItem(100, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
-    topChildLayout->addWidget(processList);
-
+    topChildLayout->addItem(new QSpacerItem(136, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    topChildLayout->addWidget(view);
+    view->setModel(model);
+    view->uniformItemSizes();
+    view->setBatchSize(100);
+    view->setLayoutMode(QListView::Batched);
     infoLayout->addLayout(algorithmusSelector);
     infoLayout->addLayout(algoID);
     infoLayout->addLayout(algoName);
@@ -47,6 +61,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     algorithmusSelector->addWidget(algoSelectLabel);
     algorithmusSelector->addWidget(algoSelectComboBox);
     centralWidget()->setLayout(mainBox);
+
 
 
     //Tests
@@ -78,19 +93,20 @@ void MainWindow::logUpdate(QString string)
 
 }
 
+void MainWindow::log2Clear()
+{
+    logBox2->clear();
+}
+
+void MainWindow::log2Update(QString string)
+{
+    //Updating the Log Text Box's content
+    logBox2->append(string);
+
+}
+
 void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm * a,bool hasChanged)
 {
-    //Update the Process list
-    //Start thread
-    if(hasChanged){
-
-    workerThread = new processListDataGnereration();
-    workerThread->input = *inputProcessList;
-    connect(workerThread, SIGNAL(processListOut(QList<QString> *)), this, SLOT(setProcessList(QList<QString> *)));
-    connect(workerThread, SIGNAL(finished()), workerThread, SLOT(deleteLater()));
-    workerThread->start();
-    }
-
     if(currentAlgorythm == nullptr || a->getId()!= currentAlgorythm->getId()){
         currentAlgorythm = a;
     }
@@ -104,17 +120,10 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
     processCount->setValue(inputProcessList->count());
 }
 
-void MainWindow::setProcessList(QList<QString> *s)
-{
-    processList->clear();
-    processList->addItems(*s);
-    workerThread->quit();
-}
-
 void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
 {
     //Update the content of the algorithm Drop-Down
-    foreach(QString s,inputAlgoList){
+    foreach(QString s,inputAlgoList){        
         algoSelectComboBox->addItem(s);
     }
 }
@@ -139,11 +148,14 @@ void MainWindow::debugSlot(QString s)
 
 MainWindow::~MainWindow()
 {
-    delete currentAlgorythm;
+    if(currentAlgorythm != nullptr){
+        delete currentAlgorythm;
+    }
     delete algoID;
     delete algoName;
     delete algoWorktime;
     delete algoSize;
+    delete processCount;
     delete processList;
     delete algoSelectComboBox;
     delete logBox;
@@ -151,10 +163,9 @@ MainWindow::~MainWindow()
     delete algorithmusSelector;
     delete infoLayout;
     delete topChildLayout;
-    delete mainBox;
     delete topLayout;
-    delete processCount;
-    delete workerThread;
+    delete mainBox;
     delete ui;
+
 }
 

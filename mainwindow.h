@@ -7,17 +7,20 @@
 #include "QLabel"
 #include "QComboBox"
 #include "QHBoxLayout"
-#include "QList"
+#include "qlistview.h"
 #include "process.h"
 #include "QListWidgetItem"
 #include "algorithm.h"
 #include "myinfolabel.h"
 #include "QThread"
-#include "processlistdatagnereration.h"
 #include "QMetaType"
 #include "QSpacerItem"
+#include <QMutex>
 #include <QTableWidget>
 #include "QTableWidgetItem"
+#include "customlistitem.h"
+#include "processlistmodel.h"
+
 
 
 QT_BEGIN_NAMESPACE
@@ -31,12 +34,14 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QThread thread;
+    ProcessListModel *model;
+    QThread *worker;
 public slots:
     void logUpdate(QString);
     void logClear();
+    void log2Update(QString);
+    void log2Clear();
     void processListUpdate(QList<Process> *, Algorithm *, bool hasChanged);
-    void setProcessList(QList<QString> *);
     void algorithmusBoxUpdate(QList<QString>);
 signals:
     void algorithmusBoxChanged(QString);
@@ -44,14 +49,15 @@ signals:
 private slots:
     void boxChanged(int);
     void debugSlot(int);
-     void debugSlot(QString);
+    void debugSlot(QString);
 
 private:
     Ui::MainWindow *ui;
     bool isTesting = false;
     QTextEdit *logBox;
+    QTextEdit *logBox2;
     QComboBox *algoSelectComboBox;
-    QListWidget *processList;
+    QListView *processList;
     MyInfoLabel *algoID, *algoName, *algoWorktime, *algoSize;
     Algorithm *currentAlgorythm = nullptr;
     QList<QString> tmpItem;
@@ -61,9 +67,10 @@ private:
     QHBoxLayout *topChildLayout;
     QVBoxLayout *mainBox;
     QHBoxLayout *topLayout;
+    QHBoxLayout *bottomLayout;
     MyInfoLabel *processCount;
-    processListDataGnereration *worker;
-    processListDataGnereration *workerThread;
+
+
 
 };
 #endif // MAINWINDOW_H

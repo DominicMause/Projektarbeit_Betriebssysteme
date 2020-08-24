@@ -9,7 +9,7 @@ SimulationController::SimulationController()
     thread = new SimulationThread();
 
     processTable = new QList<Process>();
-    for(int i = 0; i < 500000; i++){
+    for(int i = 0; i < 50000; i++){
         processTable->append(Process(i,"TestProcess ",QRandomGenerator::global()->generate()));
     }
 
@@ -28,6 +28,7 @@ void SimulationController::pushAlgorithmList(){
 void SimulationController::setWindow(MainWindow * mainWindow){
     this->mainWindow = mainWindow;
     connect(thread,&SimulationThread::resultReady,mainWindow,&MainWindow::processListUpdate);
+    connect(thread,&SimulationThread::resultReady,mainWindow->model,&ProcessListModel::updateProcessList);
     connect(mainWindow,&MainWindow::algorithmusBoxChanged,this,&SimulationController::setActiveAlgorithm);
     connect(this,&SimulationController::getAlgorithms,mainWindow,&MainWindow::algorithmusBoxUpdate);
     connect(mainWindow,&MainWindow::algorithmusBoxChanged,this,&SimulationController::setActiveAlgorithm);
