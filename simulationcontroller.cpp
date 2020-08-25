@@ -13,12 +13,6 @@ SimulationController::SimulationController()
         processTable->append(Process(i,"TestProcess ",QRandomGenerator::global()->generate()));
     }
 
-    mainWindow->show();
-
-    setWindow();
-    addExampleAlgorithms();
-    setActiveAlgorithm("First Come First Served");
-
     thread->setProcessTable(processTable);
     thread->start();
 }
@@ -31,7 +25,8 @@ void SimulationController::pushAlgorithmList(){
     emit getAlgorithms(list);
 }
 
-void SimulationController::setWindow(){
+void SimulationController::setWindow(MainWindow * mainWindow){
+    this->mainWindow = mainWindow;
     connect(thread,&SimulationThread::resultReady,mainWindow,&MainWindow::processListUpdate);
     connect(thread,&SimulationThread::resultReady,mainWindow->model,&ProcessListModel::updateProcessList);
     connect(mainWindow,&MainWindow::algorithmusBoxChanged,this,&SimulationController::setActiveAlgorithm);
@@ -39,6 +34,9 @@ void SimulationController::setWindow(){
     connect(mainWindow,&MainWindow::algorithmusBoxChanged,this,&SimulationController::setActiveAlgorithm);
     connect(this,&SimulationController::updateLog,mainWindow,&MainWindow::logUpdate);
     connect(thread,&SimulationThread::updateLog,mainWindow,&MainWindow::logUpdate);
+
+    addExampleAlgorithms();
+    setActiveAlgorithm("First Come First Served");
 }
 
 void SimulationController::addExampleAlgorithms(){
