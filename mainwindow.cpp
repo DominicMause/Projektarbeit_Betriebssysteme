@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setFixedSize(800,800);
+    //this->setFixedSize(800,800);
     this->setWindowTitle("Scheduling Simulator");
     topLayout = new QHBoxLayout;
     bottomLayout = new QHBoxLayout;
@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     topChildLayout = new QHBoxLayout;
     infoLayout = new QVBoxLayout;
     algorithmusSelector = new QHBoxLayout;
-    processList = new QListView;
     model = new ProcessListModel;
     logBox = new QTextEdit();
     logBox->setReadOnly(true);
@@ -29,15 +28,25 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     algoSelectComboBox->setPlaceholderText("empty");
     connect(algoSelectComboBox, SIGNAL(activated(int)), this,SLOT(boxChanged(int)));
     algoSelectComboBox->setMinimumWidth(150);
-    algoID = new MyInfoLabel("ID ");
+    algoID = new MyInfoLabel("ID");
     algoName = new MyInfoLabel("Name ");
     algoWorktime = new MyInfoLabel("Worktime ");
     algoSize = new MyInfoLabel("Size ");
     processCount = new MyInfoLabel("Process Count ");
-    //processList->setUniformItemSizes(true);
+    idHeader = new QLabel("ID");
+    QWidget *w = new QWidget;
+    nameHeader = new QLabel("Name");
+    prioHeader = new QLabel("Priority");
+    sizeHeader = new QLabel("Size");
+    headerLayout = new QHBoxLayout(w);
+    w->setFixedHeight(30);
 
-    //processList->show();
-    QListView *view = new QListView;
+
+    processListHeaderLayout = new QVBoxLayout;
+
+
+
+    view = new QListView;
     mainBox->addLayout(topLayout);
     mainBox->addLayout(bottomLayout);
     bottomLayout->addWidget(logBox);
@@ -46,7 +55,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     topChildLayout->addItem(new QSpacerItem(50, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
     topChildLayout->addLayout(infoLayout);
     topChildLayout->addItem(new QSpacerItem(137, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
-    topChildLayout->addWidget(view);
+    topChildLayout->addLayout(processListHeaderLayout);
+    processListHeaderLayout->addWidget(w);
+    headerLayout->addWidget(idHeader);
+    headerLayout->addWidget(nameHeader);
+    headerLayout->addWidget(prioHeader);
+    headerLayout->addWidget(sizeHeader);
+    headerLayout->addItem(new QSpacerItem(45,10,QSizePolicy::Minimum, QSizePolicy::Expanding));
+    processListHeaderLayout->addWidget(view);
     view->setModel(model);
     view->uniformItemSizes();
     view->setBatchSize(100);
@@ -131,18 +147,7 @@ void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
 void MainWindow::boxChanged(int)
 {
     QString selectedName = algoSelectComboBox->currentText();
-    qDebug() << selectedName;
     emit algorithmusBoxChanged(selectedName);
-}
-
-void MainWindow::debugSlot(int s)
-{
-    qDebug() << s;
-}
-
-void MainWindow::debugSlot(QString s)
-{
-    qDebug() << s;
 }
 
 MainWindow::~MainWindow()

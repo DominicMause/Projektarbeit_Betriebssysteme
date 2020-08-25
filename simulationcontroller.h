@@ -19,6 +19,7 @@ public:
     QList<Process> * processTable;
     QList<Algorithm*> algorithms;
     Algorithm * activeAlgorithm = nullptr;
+    MainWindow * mainWindow;
 
     SimulationController();
     ~SimulationController();
@@ -30,7 +31,7 @@ public:
 
 private:
     SimulationThread * thread;
-    MainWindow * mainWindow;
+
 
 
 public slots:

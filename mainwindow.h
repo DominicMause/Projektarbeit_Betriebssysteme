@@ -47,8 +47,6 @@ signals:
 
 private slots:
     void boxChanged(int);
-    void debugSlot(int);
-    void debugSlot(QString);
 
 private:
     Ui::MainWindow *ui;
@@ -68,6 +66,13 @@ private:
     QHBoxLayout *topLayout;
     QHBoxLayout *bottomLayout;
     MyInfoLabel *processCount;
+    QLabel *idHeader;
+    QLabel *nameHeader;
+    QLabel *prioHeader;
+    QLabel *sizeHeader;
+    QHBoxLayout *headerLayout;
+    QVBoxLayout *processListHeaderLayout;
+    QListView *view;
 
 
 

@@ -14,23 +14,6 @@ ProcessListModel::~ProcessListModel()
     }
 }
 
-QVariant ProcessListModel::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
-        switch (section) {
-        case 0:
-            return QString("ID");
-        case 1:
-            return QString("Name");
-        case 2:
-            return QString("Priority");
-        case 3:
-            return QString("Size");
-        }
-    }
-    return QVariant();
-}
-
 int ProcessListModel::rowCount(const QModelIndex &parent) const
 {
     // For list models only the root node (an invalid parent) should return the list's size. For all
@@ -40,7 +23,7 @@ int ProcessListModel::rowCount(const QModelIndex &parent) const
 
     if(processList != nullptr || listSet){
         //return processList->count();
-        return processList->length()+1;
+        return processList->length();
     }
     return 0;
 }
@@ -52,15 +35,9 @@ QVariant ProcessListModel::data(const QModelIndex &index, int role) const
         return QVariant();
     }
     if (role == Qt::DisplayRole){
-            if(index.row() == 0){
-                QString s = QString("ID\tName\tPriority\tSize");
-                return s;
-            }
-            else{
-            Process tmpProcess = processList->at(index.row()-1);
+            Process tmpProcess = processList->at(index.row());
             QString s = QString::number(tmpProcess.getId()) + "\t" + tmpProcess.getName() + "\t" + QString::number(tmpProcess.getPriority()) + "\t" + QString::number(tmpProcess.getProcessSize());
             return s;
-        }
     }
 
     return QVariant();
