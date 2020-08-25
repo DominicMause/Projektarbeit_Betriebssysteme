@@ -36,7 +36,6 @@ void SimulationController::setWindow(MainWindow * mainWindow){
     connect(thread,&SimulationThread::updateLog,mainWindow,&MainWindow::logUpdate);
 
     addExampleAlgorithms();
-    setActiveAlgorithm("First Come First Served");
 }
 
 void SimulationController::addExampleAlgorithms(){
