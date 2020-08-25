@@ -38,7 +38,7 @@ void SimulationController::setWindow(MainWindow * mainWindow){
 
 void SimulationController::addExampleAlgorithms(){
 
-    emit updateLog("----------------------------------------------------------------------------------------------\n");
+    emit updateLog("------------------------------------------------------------------------------------------\n");
     emit updateLog("Adding example algorithms to list\n");
 
     Algorithm * firstCome = new Algorithm("First Come First Served");
