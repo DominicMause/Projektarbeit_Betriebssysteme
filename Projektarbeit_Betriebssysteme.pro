@@ -21,7 +21,6 @@ DEFINES += SHEDULINGSIMULATOR_LIBRARY
 SOURCES += \
     algorithm.cpp \
     helper.cpp \
-    main.cpp \
     mainwindow.cpp \
     myinfolabel.cpp \
     process.cpp \

@@ -23,7 +23,7 @@ public:
     SimulationController();
     ~SimulationController();
 
-    void setWindow(MainWindow *);
+    void setWindow();
     void addAlgorithm(Algorithm *);
     void addExampleAlgorithms();
     void pushAlgorithmList();
