@@ -9,6 +9,7 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    qDebug() << sizeof (Process);
     ui->setupUi(this);
     this->setFixedSize(800,800);
     this->setWindowTitle("Scheduling Simulator");
@@ -45,7 +46,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     topLayout->addLayout(topChildLayout,2);
     topChildLayout->addItem(new QSpacerItem(50, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
     topChildLayout->addLayout(infoLayout);
-    topChildLayout->addItem(new QSpacerItem(137, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    topChildLayout->addItem(new QSpacerItem(136, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
     topChildLayout->addWidget(view);
     view->setModel(model);
     view->uniformItemSizes();

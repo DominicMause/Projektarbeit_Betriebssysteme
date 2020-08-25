@@ -52,9 +52,9 @@ int SimulationThread::exec(){
 void SimulationThread::activeAlgorithmChanged(Algorithm * algorithm){
     currentAlgorithm = algorithm;
 
-    emit updateLog("\n------------------------------------------------------------------------------------------\n");
+    emit updateLog("\n----------------------------------------------------------------------------------------------\n");
     emit updateLog("Active algorithm changed to " + algorithm->getName());
-    emit updateLog("\n------------------------------------------------------------------------------------------\n");
+    emit updateLog("\n----------------------------------------------------------------------------------------------\n");
 }
 
 void SimulationThread::setProcessTable(QList<Process> * list){
