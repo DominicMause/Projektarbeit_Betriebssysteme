@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('process_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -70,36 +90,46 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_process.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_process.html">Process</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">enum</span> Priority { low, middle, high };</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_process.html">Process</a>(<span class="keywordtype">int</span>, QString, <span class="keywordtype">int</span> = 0, Priority = middle);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> getId();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    QString getName();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> getProcessSize();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> getPriority();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> setProcessSize(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> setPriotity(Priority);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> ID;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QString name;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> processSize;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Priority priority;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_process.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_process.html">Process</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">enum</span> Priority { low, middle, high };</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_process.html#ae34b5b25c8b382529d390a4a4e0b16e6">Process</a>(<span class="keywordtype">int</span>, QString, <span class="keywordtype">int</span> = 0, Priority = middle);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif // PROCESS_H</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_process.html#a4a5b2f6a945300fd6ecd243bc14e8073">getId</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    QString <a class="code" href="class_process.html#a300574735e15e87c4c00006fcd43e56c">getName</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_process.html#a22210836483a0d3fa6978c790b8cf7d0">getProcessSize</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_process.html#af5103e08c032d9247110f0a7655bf37c">getPriority</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_process.html#aac3c3ebed7fcf6f95636e5a146a81e8a">setProcessSize</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_process.html#afbce316a308735fb912f1cf7fb198d38">setPriotity</a>(Priority);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> ID; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    QString name; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> processSize; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Priority priority; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif // PROCESS_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_process_html"><div class="ttname"><a href="class_process.html">Process</a></div><div class="ttdef"><b>Definition:</b> process.h:7</div></div>
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_process_html_a4a5b2f6a945300fd6ecd243bc14e8073"><div class="ttname"><a href="class_process.html#a4a5b2f6a945300fd6ecd243bc14e8073">Process::getId</a></div><div class="ttdeci">int getId()</div><div class="ttdef"><b>Definition:</b> process.cpp:11</div></div>
+<div class="ttc" id="aclass_process_html_aac3c3ebed7fcf6f95636e5a146a81e8a"><div class="ttname"><a href="class_process.html#aac3c3ebed7fcf6f95636e5a146a81e8a">Process::setProcessSize</a></div><div class="ttdeci">void setProcessSize(int)</div><div class="ttdef"><b>Definition:</b> process.cpp:27</div></div>
+<div class="ttc" id="aclass_process_html_a300574735e15e87c4c00006fcd43e56c"><div class="ttname"><a href="class_process.html#a300574735e15e87c4c00006fcd43e56c">Process::getName</a></div><div class="ttdeci">QString getName()</div><div class="ttdef"><b>Definition:</b> process.cpp:15</div></div>
+<div class="ttc" id="aclass_process_html_a22210836483a0d3fa6978c790b8cf7d0"><div class="ttname"><a href="class_process.html#a22210836483a0d3fa6978c790b8cf7d0">Process::getProcessSize</a></div><div class="ttdeci">int getProcessSize()</div><div class="ttdef"><b>Definition:</b> process.cpp:19</div></div>
+<div class="ttc" id="aclass_process_html_ae34b5b25c8b382529d390a4a4e0b16e6"><div class="ttname"><a href="class_process.html#ae34b5b25c8b382529d390a4a4e0b16e6">Process::Process</a></div><div class="ttdeci">Process(int, QString, int=0, Priority=middle)</div><div class="ttdef"><b>Definition:</b> process.cpp:3</div></div>
+<div class="ttc" id="aclass_process_html_af5103e08c032d9247110f0a7655bf37c"><div class="ttname"><a href="class_process.html#af5103e08c032d9247110f0a7655bf37c">Process::getPriority</a></div><div class="ttdeci">int getPriority()</div><div class="ttdef"><b>Definition:</b> process.cpp:23</div></div>
+<div class="ttc" id="aclass_process_html"><div class="ttname"><a href="class_process.html">Process</a></div><div class="ttdef"><b>Definition:</b> process.h:11</div></div>
+<div class="ttc" id="aclass_process_html_afbce316a308735fb912f1cf7fb198d38"><div class="ttname"><a href="class_process.html#afbce316a308735fb912f1cf7fb198d38">Process::setPriotity</a></div><div class="ttdeci">void setPriotity(Priority)</div><div class="ttdef"><b>Definition:</b> process.cpp:31</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>process.h</b></li>
+    <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
 </body>
 </html>

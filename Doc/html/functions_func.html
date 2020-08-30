@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_func.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,21 +81,65 @@ $(function() {
 </div>
 
 <div class="contents">
-&#160;<ul>
-<li>algorithmusBoxUpdate()
-: <a class="el" href="class_main_window.html#a7a1fba217a791eb3d72717f710d97bf1">MainWindow</a>
+&#160;
+
+<h3><a id="index_a"></a>- a -</h3><ul>
+<li>activeAlgorithmChanged()
+: <a class="el" href="class_simulation_thread.html#ab1ea82310703e5e656d0a5dd1d64bfda">SimulationThread</a>
 </li>
+<li>addAlgorithm()
+: <a class="el" href="class_simulation_controller.html#a2a1ff5c2f98708f4dad71bdd72a29981">SimulationController</a>
+</li>
+<li>algorithmusBoxChanged()
+: <a class="el" href="class_main_window.html#af1c93a51f4452d708d800c5a615805d7">MainWindow</a>
+</li>
+<li>algorithmusBoxUpdate()
+: <a class="el" href="class_main_window.html#aa0583b7d003cd58e03407c83518493a8">MainWindow</a>
+</li>
+</ul>
+
+
+<h3><a id="index_d"></a>- d -</h3><ul>
 <li>data()
 : <a class="el" href="class_process_list_model.html#a8b981e29dc75cd2c4d599c9fe128e4ba">ProcessListModel</a>
 </li>
+</ul>
+
+
+<h3><a id="index_e"></a>- e -</h3><ul>
 <li>execute()
 : <a class="el" href="class_algorithm.html#a83c43fb8e04d20691fe543a477e1ef30">Algorithm</a>
 </li>
+</ul>
+
+
+<h3><a id="index_f"></a>- f -</h3><ul>
+<li>firstComeFirstServed()
+: <a class="el" href="class_helper.html#a2a3f4fe27b3f2cf14b0fe224859eafeb">Helper</a>
+</li>
+</ul>
+
+
+<h3><a id="index_g"></a>- g -</h3><ul>
+<li>getActiveAlgorithm()
+: <a class="el" href="class_simulation_controller.html#a8513b619157d282160c9238940da3b14">SimulationController</a>
+</li>
+<li>getAlgorithms()
+: <a class="el" href="class_simulation_controller.html#a8a67edb192bd73a56e01cab7014ac0e8">SimulationController</a>
+</li>
 <li>getId()
 : <a class="el" href="class_algorithm.html#a5cc5bc75b9fa29247f155904fc199644">Algorithm</a>
+, <a class="el" href="class_process.html#a4a5b2f6a945300fd6ecd243bc14e8073">Process</a>
 </li>
 <li>getName()
 : <a class="el" href="class_algorithm.html#a5cd4793c1caa46a89884fcf1c92e5677">Algorithm</a>
+, <a class="el" href="class_process.html#a300574735e15e87c4c00006fcd43e56c">Process</a>
+</li>
+<li>getPriority()
+: <a class="el" href="class_process.html#af5103e08c032d9247110f0a7655bf37c">Process</a>
+</li>
+<li>getProcessSize()
+: <a class="el" href="class_process.html#a22210836483a0d3fa6978c790b8cf7d0">Process</a>
 </li>
 <li>getSize()
 : <a class="el" href="class_algorithm.html#aff1dbe9d15f03e796c89ef953e632229">Algorithm</a>
@@ -83,29 +147,61 @@ $(function() {
 <li>getWorkTime()
 : <a class="el" href="class_algorithm.html#aee690f6b684ac956030eb80e506ce3c9">Algorithm</a>
 </li>
+</ul>
+
+
+<h3><a id="index_l"></a>- l -</h3><ul>
+<li>lastComeFirstServed()
+: <a class="el" href="class_helper.html#aadd38883c64c072582c362841ac226b4">Helper</a>
+</li>
 <li>log2Clear()
 : <a class="el" href="class_main_window.html#ada9f65cf28d24ab86cca80a615597876">MainWindow</a>
 </li>
 <li>log2Update()
-: <a class="el" href="class_main_window.html#a2deee779fc7494860bbdfc8ec49b8c6b">MainWindow</a>
+: <a class="el" href="class_main_window.html#a9452d2e3e12447deef4fa9de76460c5b">MainWindow</a>
 </li>
 <li>logClear()
 : <a class="el" href="class_main_window.html#a26d66e799aedfbbb957aa2b00f6b591b">MainWindow</a>
 </li>
 <li>logUpdate()
-: <a class="el" href="class_main_window.html#ae824b57afcc8d6b2f848dde8ef54e91a">MainWindow</a>
+: <a class="el" href="class_main_window.html#a0f2f770c146a8b1216271d68a3355bdb">MainWindow</a>
 </li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
 <li>MainWindow()
 : <a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a>
 </li>
 <li>MyInfoLabel()
-: <a class="el" href="class_my_info_label.html#a9117ab1048d07c17d9c053ac470e4c2f">MyInfoLabel</a>
+: <a class="el" href="class_my_info_label.html#a9670d67fca20e5d80e59fa4f4b4839f0">MyInfoLabel</a>
+</li>
+</ul>
+
+
+<h3><a id="index_p"></a>- p -</h3><ul>
+<li>Process()
+: <a class="el" href="class_process.html#ae34b5b25c8b382529d390a4a4e0b16e6">Process</a>
 </li>
 <li>processListUpdate()
-: <a class="el" href="class_main_window.html#a9a544e0ca30f1987e16c58ea764eb536">MainWindow</a>
+: <a class="el" href="class_main_window.html#a3e3ebc5318bc8fbf933371b2ce77c594">MainWindow</a>
+</li>
+</ul>
+
+
+<h3><a id="index_r"></a>- r -</h3><ul>
+<li>resultReady()
+: <a class="el" href="class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412">SimulationThread</a>
 </li>
 <li>rowCount()
 : <a class="el" href="class_process_list_model.html#ad86bea7c7c526ccd54781fb043c349fe">ProcessListModel</a>
+</li>
+</ul>
+
+
+<h3><a id="index_s"></a>- s -</h3><ul>
+<li>setActiveAlgorithm()
+: <a class="el" href="class_simulation_controller.html#afa6cadec6e8ac7e97cf7434afbc29062">SimulationController</a>
 </li>
 <li>setFunction()
 : <a class="el" href="class_algorithm.html#a64060db6afb7ac48471d4300d8fce5de">Algorithm</a>
@@ -113,26 +209,53 @@ $(function() {
 <li>setId()
 : <a class="el" href="class_algorithm.html#a6a6fad5c9f5406477e2eb97968524d08">Algorithm</a>
 </li>
+<li>setPriotity()
+: <a class="el" href="class_process.html#afbce316a308735fb912f1cf7fb198d38">Process</a>
+</li>
+<li>setProcessSize()
+: <a class="el" href="class_process.html#aac3c3ebed7fcf6f95636e5a146a81e8a">Process</a>
+</li>
+<li>setProcessTable()
+: <a class="el" href="class_simulation_thread.html#ac2f901f902aa3bfd4da525434c432dd9">SimulationThread</a>
+</li>
 <li>setValue()
-: <a class="el" href="class_my_info_label.html#ab1c4cf2298029943bcce5fc4e0085f70">MyInfoLabel</a>
+: <a class="el" href="class_my_info_label.html#ada0002e1d132b2f79dd5a43069986e47">MyInfoLabel</a>
+</li>
+<li>setWindow()
+: <a class="el" href="class_simulation_controller.html#a405ab8796550aec16e4847812bbfcf04">SimulationController</a>
 </li>
 <li>setWorkTime()
 : <a class="el" href="class_algorithm.html#ae946c6b0e3cca99e9936bf05003e19bf">Algorithm</a>
 </li>
+<li>shortestJobFirst()
+: <a class="el" href="class_helper.html#a5ce1f66de4aa2e619f1aba19d16eb40a">Helper</a>
+</li>
+</ul>
+
+
+<h3><a id="index_u"></a>- u -</h3><ul>
+<li>updateLog()
+: <a class="el" href="class_simulation_controller.html#a1fcfec22d6d02dc878d0f587e84be49e">SimulationController</a>
+, <a class="el" href="class_simulation_thread.html#ad35f789d2c4c21c957cd49aa90f5f0e6">SimulationThread</a>
+</li>
 <li>updateProcessList()
 : <a class="el" href="class_process_list_model.html#ae0d700a19c77c43c83d2aa57fe7bc0e0">ProcessListModel</a>
 </li>
-<li>~MainWindow()
-: <a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow</a>
-</li>
+</ul>
+
+
+<h3><a id="index__7E"></a>- ~ -</h3><ul>
 <li>~MyInfoLabel()
 : <a class="el" href="class_my_info_label.html#a6000481c87ca743c71c86992e7cd3d80">MyInfoLabel</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
 </body>
 </html>
