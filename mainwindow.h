@@ -26,36 +26,83 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+/**
+ * @brief This class is responsible for the UI.
+ *
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
+    /**
+     * @brief Creates a UI to display Algorythm and process Data.
+     *
+     */
     MainWindow(QWidget *parent = nullptr);
+    /**
+     * @brief
+     *
+     */
     ~MainWindow();
-    ProcessListModel *model;
-    QThread *worker;
 public slots:
-    void logUpdate(QString);
+    /**
+     * @brief This Slot recives a string that gets appended to the left Log.
+     *
+     * @param string String that gets appended.
+     */
+    void logUpdate(QString string);
+    /**
+     * @brief  This Slot clears the left Log in the UI.
+     *
+     */
     void logClear();
-    void log2Update(QString);
+    /**
+     * @brief This Slot recives a string that gets appended to the right Log.
+     *
+     * @param string string String that gets appended.
+     */
+    void log2Update(QString string);
+    /**
+     * @brief This Slot clears the right Log in the UI.
+     *
+     */
     void log2Clear();
-    void processListUpdate(QList<Process> *, Algorithm *, bool hasChanged);
-    void algorithmusBoxUpdate(QList<QString>);
+    /**
+     * @brief Calling this Slot Updates the processList and Algorithm Information based on the Parameters
+     *
+     * @param inputProcessList Recieves a list of type Process that gets Displayed in the processList dependend on the hasChanged Parameter.
+     * @param a overrides the Selected Algorithm.
+     * @param hasChanged Marks if the contents of inputProcessList differ from the previous version to reduce performance of the UI due to unnecessary reloads of the UI.
+     */
+    void processListUpdate(QList<Process> *inputProcessList, Algorithm *a, bool hasChanged);
+    /**
+     * @brief This Slot is for stetting the items of the Algorithm Select combobox.
+     *
+     * @param inputAlgoList Recieves a list of Strings to be displayed in the Algorithm select Combobox menu.
+     */
+    void algorithmusBoxUpdate(QList<QString> inputAlgoList);
 signals:
-    void algorithmusBoxChanged(QString);
+    /**
+     * @brief This Signal gets emited when the user selects a new Algorithm.
+     *
+     * @param algorithm Name of the selected algorithm.
+     */
+    void algorithmusBoxChanged(QString algorithm);
 
 private slots:
+    /**
+     * @brief This Signal gets emited if another Algorithm in the Algorithm Select Combobox gets selected.
+     */
     void boxChanged(int);
 
 private:
-    Ui::MainWindow *ui;
-    bool isTesting = false;
-    QTextEdit *logBox;
-    QTextEdit *logBox2;
-    QComboBox *algoSelectComboBox;
-    QListView *processList;
-    MyInfoLabel *algoID, *algoName, *algoWorktime, *algoSize;
+    Ui::MainWindow *ui; /**< The UI Object of this Window. */
+    QTextEdit *logBox; /**< Left log box. */
+    QTextEdit *logBox2; /**< Right log box. */
+    ProcessListModel *model; /**< The Model that provieds the information for the processList. */
+    QComboBox *algoSelectComboBox; /**< Combobox to select the algorithm. */
+    MyInfoLabel *algoID, *algoName, *algoWorktime, *algoSize; /**< Displayed algorithm infos. */
     Algorithm *currentAlgorythm = nullptr;
     QList<QString> tmpItem;
     QLabel *algoSelectLabel;
@@ -72,7 +119,7 @@ private:
     QLabel *sizeHeader;
     QHBoxLayout *headerLayout;
     QVBoxLayout *processListHeaderLayout;
-    QListView *view;
+    QListView *processList;
 
 
 

@@ -1,5 +1,14 @@
 \hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
 \label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+This class is responsible for the UI.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
 Inheritance diagram for Main\+Window\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,65 +18,53 @@ Inheritance diagram for Main\+Window\+:\begin{figure}[H]
 \doxysubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_main_window_ae824b57afcc8d6b2f848dde8ef54e91a}{log\+Update}} (Q\+String)
+void \mbox{\hyperlink{class_main_window_a0f2f770c146a8b1216271d68a3355bdb}{log\+Update}} (Q\+String string)
 \begin{DoxyCompactList}\small\item\em This Slot recives a string that gets appended to the left Log. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_main_window_a26d66e799aedfbbb957aa2b00f6b591b}\label{class_main_window_a26d66e799aedfbbb957aa2b00f6b591b}} 
 void \mbox{\hyperlink{class_main_window_a26d66e799aedfbbb957aa2b00f6b591b}{log\+Clear}} ()
 \begin{DoxyCompactList}\small\item\em This Slot clears the left Log in the UI. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_main_window_a2deee779fc7494860bbdfc8ec49b8c6b}{log2\+Update}} (Q\+String)
+void \mbox{\hyperlink{class_main_window_a9452d2e3e12447deef4fa9de76460c5b}{log2\+Update}} (Q\+String string)
 \begin{DoxyCompactList}\small\item\em This Slot recives a string that gets appended to the right Log. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_main_window_ada9f65cf28d24ab86cca80a615597876}\label{class_main_window_ada9f65cf28d24ab86cca80a615597876}} 
 void \mbox{\hyperlink{class_main_window_ada9f65cf28d24ab86cca80a615597876}{log2\+Clear}} ()
 \begin{DoxyCompactList}\small\item\em This Slot clears the right Log in the UI. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_main_window_a9a544e0ca30f1987e16c58ea764eb536}{process\+List\+Update}} (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$, \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$, bool has\+Changed)
+void \mbox{\hyperlink{class_main_window_a3e3ebc5318bc8fbf933371b2ce77c594}{process\+List\+Update}} (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$input\+Process\+List, \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$a, bool has\+Changed)
 \begin{DoxyCompactList}\small\item\em Calling this Slot Updates the process\+List and \mbox{\hyperlink{class_algorithm}{Algorithm}} Information based on the Parameters. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_main_window_a7a1fba217a791eb3d72717f710d97bf1}{algorithmus\+Box\+Update}} (Q\+List$<$ Q\+String $>$)
+void \mbox{\hyperlink{class_main_window_aa0583b7d003cd58e03407c83518493a8}{algorithmus\+Box\+Update}} (Q\+List$<$ Q\+String $>$ input\+Algo\+List)
 \begin{DoxyCompactList}\small\item\em This Slot is for stetting the items of the \mbox{\hyperlink{class_algorithm}{Algorithm}} Select combobox. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_main_window_a94c021ffac9f75f0d4c60aad1b55291e}\label{class_main_window_a94c021ffac9f75f0d4c60aad1b55291e}} 
-void {\bfseries algorithmus\+Box\+Changed} (Q\+String)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_main_window_af1c93a51f4452d708d800c5a615805d7}{algorithmus\+Box\+Changed}} (Q\+String algorithm)
+\begin{DoxyCompactList}\small\item\em This Signal gets emited when the user selects a new \mbox{\hyperlink{class_algorithm}{Algorithm}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (Q\+Widget $\ast$parent=nullptr)
-\begin{DoxyCompactList}\small\item\em This class is responsible for the UI. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
-\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
-\begin{DoxyCompactList}\small\item\em destructor of the UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_main_window_abf09a928ec65318372a645e07a00e6eb}\label{class_main_window_abf09a928ec65318372a645e07a00e6eb}} 
-\mbox{\hyperlink{class_process_list_model}{Process\+List\+Model}} $\ast$ {\bfseries model}
-\item 
-\mbox{\Hypertarget{class_main_window_a8efb500f09308b781cdc810f49e51109}\label{class_main_window_a8efb500f09308b781cdc810f49e51109}} 
-Q\+Thread $\ast$ {\bfseries worker}
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
-\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
-\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
-\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
-{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Creates a UI to display Algorythm and process Data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-
+\doxysubsection{Detailed Description}
 This class is responsible for the UI. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_af1c93a51f4452d708d800c5a615805d7}\label{class_main_window_af1c93a51f4452d708d800c5a615805d7}} 
+\index{MainWindow@{MainWindow}!algorithmusBoxChanged@{algorithmusBoxChanged}}
+\index{algorithmusBoxChanged@{algorithmusBoxChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{algorithmusBoxChanged}{algorithmusBoxChanged}}
+{\footnotesize\ttfamily void Main\+Window\+::algorithmus\+Box\+Changed (\begin{DoxyParamCaption}\item[{Q\+String}]{algorithm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+This Signal gets emited when the user selects a new \mbox{\hyperlink{class_algorithm}{Algorithm}}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em parent} & not used \\
+{\em algorithm} & Name of the selected algorithm. \\
 \hline
 \end{DoxyParams}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_main_window_a7a1fba217a791eb3d72717f710d97bf1}\label{class_main_window_a7a1fba217a791eb3d72717f710d97bf1}} 
+\mbox{\Hypertarget{class_main_window_aa0583b7d003cd58e03407c83518493a8}\label{class_main_window_aa0583b7d003cd58e03407c83518493a8}} 
 \index{MainWindow@{MainWindow}!algorithmusBoxUpdate@{algorithmusBoxUpdate}}
 \index{algorithmusBoxUpdate@{algorithmusBoxUpdate}!MainWindow@{MainWindow}}
 \doxysubsubsection{\texorpdfstring{algorithmusBoxUpdate}{algorithmusBoxUpdate}}
@@ -82,7 +79,7 @@ This Slot is for stetting the items of the \mbox{\hyperlink{class_algorithm}{Alg
 {\em input\+Algo\+List} & Recieves a list of Strings to be displayed in the \mbox{\hyperlink{class_algorithm}{Algorithm}} select Combobox menu. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_main_window_a2deee779fc7494860bbdfc8ec49b8c6b}\label{class_main_window_a2deee779fc7494860bbdfc8ec49b8c6b}} 
+\mbox{\Hypertarget{class_main_window_a9452d2e3e12447deef4fa9de76460c5b}\label{class_main_window_a9452d2e3e12447deef4fa9de76460c5b}} 
 \index{MainWindow@{MainWindow}!log2Update@{log2Update}}
 \index{log2Update@{log2Update}!MainWindow@{MainWindow}}
 \doxysubsubsection{\texorpdfstring{log2Update}{log2Update}}
@@ -97,7 +94,7 @@ This Slot recives a string that gets appended to the right Log.
 {\em string} & string String that gets appended. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_main_window_ae824b57afcc8d6b2f848dde8ef54e91a}\label{class_main_window_ae824b57afcc8d6b2f848dde8ef54e91a}} 
+\mbox{\Hypertarget{class_main_window_a0f2f770c146a8b1216271d68a3355bdb}\label{class_main_window_a0f2f770c146a8b1216271d68a3355bdb}} 
 \index{MainWindow@{MainWindow}!logUpdate@{logUpdate}}
 \index{logUpdate@{logUpdate}!MainWindow@{MainWindow}}
 \doxysubsubsection{\texorpdfstring{logUpdate}{logUpdate}}
@@ -112,7 +109,7 @@ This Slot recives a string that gets appended to the left Log.
 {\em string} & String that gets appended. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_main_window_a9a544e0ca30f1987e16c58ea764eb536}\label{class_main_window_a9a544e0ca30f1987e16c58ea764eb536}} 
+\mbox{\Hypertarget{class_main_window_a3e3ebc5318bc8fbf933371b2ce77c594}\label{class_main_window_a3e3ebc5318bc8fbf933371b2ce77c594}} 
 \index{MainWindow@{MainWindow}!processListUpdate@{processListUpdate}}
 \index{processListUpdate@{processListUpdate}!MainWindow@{MainWindow}}
 \doxysubsubsection{\texorpdfstring{processListUpdate}{processListUpdate}}

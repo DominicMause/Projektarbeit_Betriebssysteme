@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -45,6 +49,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_main_window.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,18 +80,21 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_main_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MainWindow Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is responsible for the UI.  
+ <a href="class_main_window.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MainWindow:</div>
 <div class="dyncontent">
@@ -80,82 +104,79 @@ Inheritance diagram for MainWindow:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:ae824b57afcc8d6b2f848dde8ef54e91a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae824b57afcc8d6b2f848dde8ef54e91a">logUpdate</a> (QString)</td></tr>
-<tr class="memdesc:ae824b57afcc8d6b2f848dde8ef54e91a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Slot recives a string that gets appended to the left Log.  <a href="class_main_window.html#ae824b57afcc8d6b2f848dde8ef54e91a">More...</a><br /></td></tr>
-<tr class="separator:ae824b57afcc8d6b2f848dde8ef54e91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f2f770c146a8b1216271d68a3355bdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0f2f770c146a8b1216271d68a3355bdb">logUpdate</a> (QString string)</td></tr>
+<tr class="memdesc:a0f2f770c146a8b1216271d68a3355bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Slot recives a string that gets appended to the left Log.  <a href="class_main_window.html#a0f2f770c146a8b1216271d68a3355bdb">More...</a><br /></td></tr>
+<tr class="separator:a0f2f770c146a8b1216271d68a3355bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26d66e799aedfbbb957aa2b00f6b591b"><td class="memItemLeft" align="right" valign="top"><a id="a26d66e799aedfbbb957aa2b00f6b591b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a26d66e799aedfbbb957aa2b00f6b591b">logClear</a> ()</td></tr>
 <tr class="memdesc:a26d66e799aedfbbb957aa2b00f6b591b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Slot clears the left Log in the UI. <br /></td></tr>
 <tr class="separator:a26d66e799aedfbbb957aa2b00f6b591b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2deee779fc7494860bbdfc8ec49b8c6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2deee779fc7494860bbdfc8ec49b8c6b">log2Update</a> (QString)</td></tr>
-<tr class="memdesc:a2deee779fc7494860bbdfc8ec49b8c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Slot recives a string that gets appended to the right Log.  <a href="class_main_window.html#a2deee779fc7494860bbdfc8ec49b8c6b">More...</a><br /></td></tr>
-<tr class="separator:a2deee779fc7494860bbdfc8ec49b8c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9452d2e3e12447deef4fa9de76460c5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9452d2e3e12447deef4fa9de76460c5b">log2Update</a> (QString string)</td></tr>
+<tr class="memdesc:a9452d2e3e12447deef4fa9de76460c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Slot recives a string that gets appended to the right Log.  <a href="class_main_window.html#a9452d2e3e12447deef4fa9de76460c5b">More...</a><br /></td></tr>
+<tr class="separator:a9452d2e3e12447deef4fa9de76460c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada9f65cf28d24ab86cca80a615597876"><td class="memItemLeft" align="right" valign="top"><a id="ada9f65cf28d24ab86cca80a615597876"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ada9f65cf28d24ab86cca80a615597876">log2Clear</a> ()</td></tr>
 <tr class="memdesc:ada9f65cf28d24ab86cca80a615597876"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Slot clears the right Log in the UI. <br /></td></tr>
 <tr class="separator:ada9f65cf28d24ab86cca80a615597876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a544e0ca30f1987e16c58ea764eb536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9a544e0ca30f1987e16c58ea764eb536">processListUpdate</a> (QList&lt; <a class="el" href="class_process.html">Process</a> &gt; *, <a class="el" href="class_algorithm.html">Algorithm</a> *, bool hasChanged)</td></tr>
-<tr class="memdesc:a9a544e0ca30f1987e16c58ea764eb536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calling this Slot Updates the processList and <a class="el" href="class_algorithm.html">Algorithm</a> Information based on the Parameters.  <a href="class_main_window.html#a9a544e0ca30f1987e16c58ea764eb536">More...</a><br /></td></tr>
-<tr class="separator:a9a544e0ca30f1987e16c58ea764eb536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a1fba217a791eb3d72717f710d97bf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7a1fba217a791eb3d72717f710d97bf1">algorithmusBoxUpdate</a> (QList&lt; QString &gt;)</td></tr>
-<tr class="memdesc:a7a1fba217a791eb3d72717f710d97bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Slot is for stetting the items of the <a class="el" href="class_algorithm.html">Algorithm</a> Select combobox.  <a href="class_main_window.html#a7a1fba217a791eb3d72717f710d97bf1">More...</a><br /></td></tr>
-<tr class="separator:a7a1fba217a791eb3d72717f710d97bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3ebc5318bc8fbf933371b2ce77c594"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3e3ebc5318bc8fbf933371b2ce77c594">processListUpdate</a> (QList&lt; <a class="el" href="class_process.html">Process</a> &gt; *inputProcessList, <a class="el" href="class_algorithm.html">Algorithm</a> *a, bool hasChanged)</td></tr>
+<tr class="memdesc:a3e3ebc5318bc8fbf933371b2ce77c594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calling this Slot Updates the processList and <a class="el" href="class_algorithm.html">Algorithm</a> Information based on the Parameters.  <a href="class_main_window.html#a3e3ebc5318bc8fbf933371b2ce77c594">More...</a><br /></td></tr>
+<tr class="separator:a3e3ebc5318bc8fbf933371b2ce77c594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0583b7d003cd58e03407c83518493a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa0583b7d003cd58e03407c83518493a8">algorithmusBoxUpdate</a> (QList&lt; QString &gt; inputAlgoList)</td></tr>
+<tr class="memdesc:aa0583b7d003cd58e03407c83518493a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Slot is for stetting the items of the <a class="el" href="class_algorithm.html">Algorithm</a> Select combobox.  <a href="class_main_window.html#aa0583b7d003cd58e03407c83518493a8">More...</a><br /></td></tr>
+<tr class="separator:aa0583b7d003cd58e03407c83518493a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a94c021ffac9f75f0d4c60aad1b55291e"><td class="memItemLeft" align="right" valign="top"><a id="a94c021ffac9f75f0d4c60aad1b55291e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>algorithmusBoxChanged</b> (QString)</td></tr>
-<tr class="separator:a94c021ffac9f75f0d4c60aad1b55291e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c93a51f4452d708d800c5a615805d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af1c93a51f4452d708d800c5a615805d7">algorithmusBoxChanged</a> (QString algorithm)</td></tr>
+<tr class="memdesc:af1c93a51f4452d708d800c5a615805d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Signal gets emited when the user selects a new <a class="el" href="class_algorithm.html">Algorithm</a>.  <a href="class_main_window.html#af1c93a51f4452d708d800c5a615805d7">More...</a><br /></td></tr>
+<tr class="separator:af1c93a51f4452d708d800c5a615805d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a> (QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a996c5a2b6f77944776856f08ec30858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class is responsible for the UI.  <a href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">More...</a><br /></td></tr>
+<tr class="memitem:a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top"><a id="a996c5a2b6f77944776856f08ec30858d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a996c5a2b6f77944776856f08ec30858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a UI to display Algorythm and process Data. <br /></td></tr>
 <tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top"><a id="ae98d00a93bc118200eeef9f9bba1dba7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
-<tr class="memdesc:ae98d00a93bc118200eeef9f9bba1dba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor of the UI. <br /></td></tr>
-<tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:abf09a928ec65318372a645e07a00e6eb"><td class="memItemLeft" align="right" valign="top"><a id="abf09a928ec65318372a645e07a00e6eb"></a>
-<a class="el" href="class_process_list_model.html">ProcessListModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>model</b></td></tr>
-<tr class="separator:abf09a928ec65318372a645e07a00e6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8efb500f09308b781cdc810f49e51109"><td class="memItemLeft" align="right" valign="top"><a id="a8efb500f09308b781cdc810f49e51109"></a>
-QThread *&#160;</td><td class="memItemRight" valign="bottom"><b>worker</b></td></tr>
-<tr class="separator:a8efb500f09308b781cdc810f49e51109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a996c5a2b6f77944776856f08ec30858d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a996c5a2b6f77944776856f08ec30858d">&#9670;&nbsp;</a></span>MainWindow()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class is responsible for the UI. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af1c93a51f4452d708d800c5a615805d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c93a51f4452d708d800c5a615805d7">&#9670;&nbsp;</a></span>algorithmusBoxChanged</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">MainWindow::MainWindow </td>
+          <td class="memname">void MainWindow::algorithmusBoxChanged </td>
           <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>algorithm</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>This class is responsible for the UI. </p>
+<p>This Signal gets emited when the user selects a new <a class="el" href="class_algorithm.html">Algorithm</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>not used </td></tr>
+    <tr><td class="paramname">algorithm</td><td>Name of the selected algorithm. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7a1fba217a791eb3d72717f710d97bf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a1fba217a791eb3d72717f710d97bf1">&#9670;&nbsp;</a></span>algorithmusBoxUpdate</h2>
+<a id="aa0583b7d003cd58e03407c83518493a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0583b7d003cd58e03407c83518493a8">&#9670;&nbsp;</a></span>algorithmusBoxUpdate</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,8 +209,8 @@ QThread *&#160;</td><td class="memItemRight" valign="bottom"><b>worker</b></td><
 
 </div>
 </div>
-<a id="a2deee779fc7494860bbdfc8ec49b8c6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2deee779fc7494860bbdfc8ec49b8c6b">&#9670;&nbsp;</a></span>log2Update</h2>
+<a id="a9452d2e3e12447deef4fa9de76460c5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9452d2e3e12447deef4fa9de76460c5b">&#9670;&nbsp;</a></span>log2Update</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,8 +243,8 @@ QThread *&#160;</td><td class="memItemRight" valign="bottom"><b>worker</b></td><
 
 </div>
 </div>
-<a id="ae824b57afcc8d6b2f848dde8ef54e91a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae824b57afcc8d6b2f848dde8ef54e91a">&#9670;&nbsp;</a></span>logUpdate</h2>
+<a id="a0f2f770c146a8b1216271d68a3355bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f2f770c146a8b1216271d68a3355bdb">&#9670;&nbsp;</a></span>logUpdate</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,8 +277,8 @@ QThread *&#160;</td><td class="memItemRight" valign="bottom"><b>worker</b></td><
 
 </div>
 </div>
-<a id="a9a544e0ca30f1987e16c58ea764eb536"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a544e0ca30f1987e16c58ea764eb536">&#9670;&nbsp;</a></span>processListUpdate</h2>
+<a id="a3e3ebc5318bc8fbf933371b2ce77c594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e3ebc5318bc8fbf933371b2ce77c594">&#9670;&nbsp;</a></span>processListUpdate</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -313,9 +334,13 @@ QThread *&#160;</td><td class="memItemRight" valign="bottom"><b>worker</b></td><
 <li>mainwindow.cpp</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_main_window.html">MainWindow</a></li>
+    <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
 </body>
 </html>
