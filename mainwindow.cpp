@@ -6,6 +6,11 @@
 
 
 
+/**
+ * @brief This class is responsible for the UI.
+ *
+ * @param parent not used
+ */
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
@@ -96,11 +101,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     //Tests end
 }
 
+/**
+ * @brief This Slot clears the left Log in the UI.
+ *
+ */
 void MainWindow::logClear()
 {
     logBox->clear();
 }
 
+/**
+ * @brief This Slot recives a string that gets appended to the left Log.
+ *
+ * @param string String that gets appended.
+ */
 void MainWindow::logUpdate(QString string)
 {
     //Updating the Log Text Box's content
@@ -108,11 +122,20 @@ void MainWindow::logUpdate(QString string)
 
 }
 
+/**
+ * @brief This Slot clears the right Log in the UI.
+ *
+ */
 void MainWindow::log2Clear()
 {
     logBox2->clear();
 }
 
+/**
+ * @brief This Slot recives a string that gets appended to the right Log.
+ *
+ * @param string string String that gets appended.
+ */
 void MainWindow::log2Update(QString string)
 {
     //Updating the Log Text Box's content
@@ -120,6 +143,13 @@ void MainWindow::log2Update(QString string)
 
 }
 
+/**
+ * @brief Calling this Slot Updates the processList and Algorithm Information based on the Parameters
+ *
+ * @param inputProcessList Recieves a list of type Process that gets Displayed in the processList dependend on the hasChanged Parameter.
+ * @param a overrides the Selected Algorithm.
+ * @param hasChanged Marks if the contents of inputProcessList differ from the previous version to reduce performance of the UI due to unnecessary reloads of the UI.
+ */
 void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm * a,bool hasChanged)
 {
     if(currentAlgorythm == nullptr || a->getId()!= currentAlgorythm->getId()){
@@ -135,6 +165,11 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
     processCount->setValue(inputProcessList->count());
 }
 
+/**
+ * @brief This Slot is for stetting the items of the Algorithm Select combobox.
+ *
+ * @param inputAlgoList Recieves a list of Strings to be displayed in the Algorithm select Combobox menu.
+ */
 void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
 {
     //Update the content of the algorithm Drop-Down
@@ -144,12 +179,20 @@ void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
 }
 
 
+/**
+ * @brief This Signal gets emited if another Algorithm in the Algorithm Select Combobox gets selected.
+
+ */
 void MainWindow::boxChanged(int)
 {
     QString selectedName = algoSelectComboBox->currentText();
     emit algorithmusBoxChanged(selectedName);
 }
 
+/**
+ * @brief destructor of the UI.
+ *
+ */
 MainWindow::~MainWindow()
 {
     if(currentAlgorythm != nullptr){

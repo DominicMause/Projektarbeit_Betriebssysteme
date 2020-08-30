@@ -1,0 +1,96 @@
+\hypertarget{class_process_list_model}{}\doxysection{Process\+List\+Model Class Reference}
+\label{class_process_list_model}\index{ProcessListModel@{ProcessListModel}}
+
+
+This class inhertis from Q\+Abstract\+Item\+List\+Model to function as a model for the process\+List. Its function is to providing the information for the process\+List that will be displayed.  
+
+
+
+
+{\ttfamily \#include $<$processlistmodel.\+h$>$}
+
+Inheritance diagram for Process\+List\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_process_list_model}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_process_list_model_ae0d700a19c77c43c83d2aa57fe7bc0e0}{update\+Process\+List}} (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$processes, \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$algorithm, bool has\+Changed)
+\begin{DoxyCompactList}\small\item\em This slot updates the model internal data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_process_list_model_abce733866ccf175f0a53af8528981cca}\label{class_process_list_model_abce733866ccf175f0a53af8528981cca}} 
+{\bfseries Process\+List\+Model} (Q\+Object $\ast$parent=nullptr)
+\item 
+int \mbox{\hyperlink{class_process_list_model_ad86bea7c7c526ccd54781fb043c349fe}{row\+Count}} (const Q\+Model\+Index \&parent=Q\+Model\+Index()) const override
+\begin{DoxyCompactList}\small\item\em This function provieds the process\+List with the number of rows to be displayed. \end{DoxyCompactList}\item 
+Q\+Variant \mbox{\hyperlink{class_process_list_model_a8b981e29dc75cd2c4d599c9fe128e4ba}{data}} (const Q\+Model\+Index \&index, int role=Qt\+::\+Display\+Role) const override
+\begin{DoxyCompactList}\small\item\em This function provied the process list with the data for the row entrys. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class inhertis from Q\+Abstract\+Item\+List\+Model to function as a model for the process\+List. Its function is to providing the information for the process\+List that will be displayed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_process_list_model_a8b981e29dc75cd2c4d599c9fe128e4ba}\label{class_process_list_model_a8b981e29dc75cd2c4d599c9fe128e4ba}} 
+\index{ProcessListModel@{ProcessListModel}!data@{data}}
+\index{data@{data}!ProcessListModel@{ProcessListModel}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Variant Process\+List\+Model\+::data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+This function provied the process list with the data for the row entrys. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of wich the informations get returned. \\
+\hline
+{\em role} & The role of the data that gets requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Variant The data that gets displayed. In this case a String. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_process_list_model_ad86bea7c7c526ccd54781fb043c349fe}\label{class_process_list_model_ad86bea7c7c526ccd54781fb043c349fe}} 
+\index{ProcessListModel@{ProcessListModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!ProcessListModel@{ProcessListModel}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily int Process\+List\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+This function provieds the process\+List with the number of rows to be displayed. 
+
+\begin{DoxyReturn}{Returns}
+int The number of rows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_process_list_model_ae0d700a19c77c43c83d2aa57fe7bc0e0}\label{class_process_list_model_ae0d700a19c77c43c83d2aa57fe7bc0e0}} 
+\index{ProcessListModel@{ProcessListModel}!updateProcessList@{updateProcessList}}
+\index{updateProcessList@{updateProcessList}!ProcessListModel@{ProcessListModel}}
+\doxysubsubsection{\texorpdfstring{updateProcessList}{updateProcessList}}
+{\footnotesize\ttfamily void Process\+List\+Model\+::update\+Process\+List (\begin{DoxyParamCaption}\item[{Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$}]{processes,  }\item[{\mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$}]{algorithm,  }\item[{bool}]{has\+Changed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+This slot updates the model internal data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em processes} & the new processes that will be istplayed if has\+Changed ist true. \\
+\hline
+{\em algorithm} & not used in this case. \\
+\hline
+{\em has\+Changed} & signals that the data of processes is different to the previous version. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+processlistmodel.\+h\item 
+processlistmodel.\+cpp\end{DoxyCompactItemize}
