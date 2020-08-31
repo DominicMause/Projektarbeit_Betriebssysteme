@@ -27,7 +27,7 @@ public:
      * @param int
      * @param Priority
      */
-    Process(int, QString, /*func,*/ Priority = middle);
+    Process(int, QString, func, Priority = middle);
 
     /**
      * @brief returns the ID of the process
@@ -75,6 +75,8 @@ public:
      * @brief sets the function that the process executes
      */
     void setFunction(func);
+
+    void execute();
 
 private:
     int ID; /**< TODO: describe */
