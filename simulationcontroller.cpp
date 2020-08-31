@@ -51,8 +51,6 @@ void SimulationController::addExampleAlgorithms(){
     Algorithm * shortestJob = new Algorithm("Shortest Job First");
     shortestJob->setFunction(Helper::shortestJobFirst);
     addAlgorithm(shortestJob);
-
-    pushAlgorithmList();
 }
 
 void SimulationController::addAlgorithm(Algorithm *algorithm){

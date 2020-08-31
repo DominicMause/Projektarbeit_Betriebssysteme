@@ -126,6 +126,7 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
 void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
 {
     //Update the content of the algorithm Drop-Down
+    algoSelectComboBox->clear();
     foreach(QString s,inputAlgoList){        
         algoSelectComboBox->addItem(s);
     }
