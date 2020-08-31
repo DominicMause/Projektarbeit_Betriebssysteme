@@ -2,7 +2,6 @@
 #include <QDateTime>
 
 void SimulationThread::run(){
-
     exec();
 }
 

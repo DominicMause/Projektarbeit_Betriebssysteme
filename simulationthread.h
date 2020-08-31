@@ -7,7 +7,7 @@
 #include "process.h"
 
 /**
- * @brief
+ * @brief thread used for sorting and executing algorithms and processes
  *
  */
 class SimulationThread : public QThread
@@ -15,40 +15,37 @@ class SimulationThread : public QThread
     Q_OBJECT
 
 public:
-    /**
-     * @brief
-     *
-     */
+
     ~SimulationThread();
 
     /**
-     * @brief
+     * @brief resets the sorting algorithm
      *
-     * @param
+     * @param Algorithm
      */
     void activeAlgorithmChanged(Algorithm *);
+
     /**
-     * @brief
+     * @brief resets the process table
      *
-     * @param
+     * @param QList<Process>
      */
     void setProcessTable(QList<Process> *);
-    /**
-     * @brief
-     *
-     */
-    void doWork();
 
-    bool isRunning = true; /**< TODO: describe */
+    /**
+     * @brief tells if the thread should run
+     */
+    bool isRunning = true;
 
 private:
+
     /**
-     * @brief
-     *
+     * @brief is called during initialization
      */
     void run() override;
+
     /**
-     * @brief
+     * @brief command to execute the thread
      *
      * @return int
      */
@@ -60,15 +57,16 @@ private:
 
 signals:
     /**
-     * @brief
+     * @brief is used when the algorithm is through to transfer data to the ui
      *
-     * @param
-     * @param
-     * @param bool
+     * @param List of Processes
+     * @param Algorithm Data
+     * @param Changed flag
      */
     void resultReady(QList<Process> *,Algorithm *,bool);
+
     /**
-     * @brief
+     * @brief writes a QString to the log
      *
      * @param QString
      */

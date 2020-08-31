@@ -4,13 +4,16 @@
 #include <QString>
 
 /**
- * @brief
+ * @brief the process class represents an execution with the process function
  *
  */
 class Process
 {
 
 public:
+    /**
+     *  default function for process execution
+     */
     typedef void (*func)();
 
     /**
@@ -76,13 +79,35 @@ public:
      */
     void setFunction(func);
 
+    /**
+     * @brief executes the process function
+     */
     void execute();
 
 private:
-    int ID; /**< TODO: describe */
-    QString name; /**< TODO: describe */
-    int processSize; /**< TODO: describe */
-    Priority priority; /**< TODO: describe */
+    /**
+     * @brief process ID
+     */
+    int ID;
+
+    /**
+     * @brief the name of the process
+     */
+    QString name;
+
+    /**
+     * @brief process size in byte
+     */
+    int processSize;
+
+    /**
+     * @brief priority of the process
+     */
+    Priority priority;
+
+    /**
+     * @brief the function to be executed
+     */
     func function;
 
 };

@@ -11,76 +11,88 @@
 #include "algorithm.h"
 
 /**
- * @brief
+ * @brief A controller that runs the simulation in a separate thread
  *
  */
 class SimulationController : public QObject
 {
     Q_OBJECT
 public:
-    QString output; /**< TODO: describe */
-
-    QList<Process> * processTable; /**< TODO: describe */
-    QList<Algorithm*> algorithms; /**< TODO: describe */
-    Algorithm * activeAlgorithm = nullptr; /**< TODO: describe */
-    MainWindow * mainWindow; /**< TODO: describe */
+    /**
+     * @brief table with all processes, which should be ordered and executed
+     */
+    QList<Process> * processTable;
 
     /**
-     * @brief
-     *
+     * @brief table with algorithms, which are used for sorting
      */
+    QList<Algorithm*> algorithms;
+
+    /**
+     * @brief the active sort algorithm
+     */
+    Algorithm * activeAlgorithm = nullptr;
+
+    /**
+     * @brief the UI that represents the simulation
+     */
+    MainWindow * mainWindow;
+
     SimulationController();
-    /**
-     * @brief
-     *
-     */
     ~SimulationController();
 
     /**
-     * @brief
+     * @brief Assigns a ui to the controller
      *
-     * @param
+     * @param MainWindow
      */
     void setWindow(MainWindow *);
+
     /**
-     * @brief
+     * @brief adds an algorithm to the list
      *
-     * @param
+     * @param Algorithm
      */
     void addAlgorithm(Algorithm *);
 
     /**
-     * @brief
+     * @brief adds a process to the list
      *
-     * @param
+     * @param Process
      */
     void addProcess(Process);
 
     /**
-     * @brief
+     * @brief adds a list of processes to the list
      *
-     * @param
+     * @param QList<Process>
      */
+
     void addProcesses(QList<Process>);
+
     /**
-     * @brief
+     * @brief provides a series of sample algorithms
      *
      */
     void addExampleAlgorithms();
+
     /**
-     * @brief
+     * @brief provides the ui with the current list of algorithms
      *
      */
     void pushAlgorithmList();
 
 private:
-    SimulationThread * thread; /**< TODO: describe */
+    /**
+     * @brief the simulation thread, which sorts and executes the processes in the background
+     */
+    SimulationThread * thread;
 
 
 
 public slots:
     /**
-     * @brief
+     * @brief sets the active algorithm
      *
      * @param QString
      */
@@ -88,19 +100,14 @@ public slots:
 
 signals:
     /**
-     * @brief
+     * @brief writes a QString to the log
      *
      * @param QString
      */
     void updateLog(QString);
+
     /**
-     * @brief
-     *
-     * @param
-     */
-    void getActiveAlgorithm(Algorithm *);
-    /**
-     * @brief
+     * @brief gives the ui a list of algorithms in strings
      *
      * @param QList<QString>
      */

@@ -4,13 +4,18 @@
 #include "process.h"
 #include <QString>
 #include <QList>
-//#include "SHEDULINGSIMULATOR_LIBRARY.h"
 
+/**
+ * @brief describes an algorithm with sorting function
+ */
 class Algorithm
 {
 public:
     Algorithm(QString name);
 
+    /**
+     *  default function for sorting algorithm
+     */
     typedef QList<Process> (*func)(QList<Process>);
 
     /**
