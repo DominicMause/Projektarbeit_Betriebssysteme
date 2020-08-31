@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -49,23 +45,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('class_simulation_controller.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -80,6 +59,7 @@ $(document).ready(function(){initNavTree('class_simulation_controller.html','');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">SimulationController Member List</div>  </div>
@@ -91,6 +71,8 @@ $(document).ready(function(){initNavTree('class_simulation_controller.html','');
   <tr class="even"><td class="entry"><a class="el" href="class_simulation_controller.html#a1184429fb4b41211d88de33c76b03479">activeAlgorithm</a></td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_simulation_controller.html#a2a1ff5c2f98708f4dad71bdd72a29981">addAlgorithm</a>(Algorithm *)</td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>addExampleAlgorithms</b>() (defined in <a class="el" href="class_simulation_controller.html">SimulationController</a>)</td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_simulation_controller.html#a7f73f95eccf60385981b1b352499052e">addProcess</a>(Process)</td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_simulation_controller.html#a87e1f1f39c8f4f8bb3b013ade85e3161">addProcesses</a>(QList&lt; Process &gt;)</td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_simulation_controller.html#af33ef5be51250f6711cb3533d7be0d76">algorithms</a></td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_simulation_controller.html#a8513b619157d282160c9238940da3b14">getActiveAlgorithm</a>(Algorithm *)</td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_simulation_controller.html#a8a67edb192bd73a56e01cab7014ac0e8">getAlgorithms</a>(QList&lt; QString &gt;)</td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
@@ -104,12 +86,9 @@ $(document).ready(function(){initNavTree('class_simulation_controller.html','');
   <tr><td class="entry"><a class="el" href="class_simulation_controller.html#a1fcfec22d6d02dc878d0f587e84be49e">updateLog</a>(QString)</td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~SimulationController</b>() (defined in <a class="el" href="class_simulation_controller.html">SimulationController</a>)</td><td class="entry"><a class="el" href="class_simulation_controller.html">SimulationController</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
 </body>
 </html>

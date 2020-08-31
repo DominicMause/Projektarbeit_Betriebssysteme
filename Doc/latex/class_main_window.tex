@@ -31,7 +31,9 @@ void \mbox{\hyperlink{class_main_window_ada9f65cf28d24ab86cca80a615597876}{log2\
 void \mbox{\hyperlink{class_main_window_a3e3ebc5318bc8fbf933371b2ce77c594}{process\+List\+Update}} (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$input\+Process\+List, \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$a, bool has\+Changed)
 \begin{DoxyCompactList}\small\item\em Calling this Slot Updates the process\+List and \mbox{\hyperlink{class_algorithm}{Algorithm}} Information based on the Parameters. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_main_window_aa0583b7d003cd58e03407c83518493a8}{algorithmus\+Box\+Update}} (Q\+List$<$ Q\+String $>$ input\+Algo\+List)
-\begin{DoxyCompactList}\small\item\em This Slot is for stetting the items of the \mbox{\hyperlink{class_algorithm}{Algorithm}} Select combobox. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This Slot is for stetting the items of the \mbox{\hyperlink{class_algorithm}{Algorithm}} Select combobox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a30ae7436bcedd48fbca4d14c04f010fe}{update\+Progress\+Bar}} (int progress)
+\begin{DoxyCompactList}\small\item\em This Slot is for stetting the value of the Progressbar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,6 +45,11 @@ void \mbox{\hyperlink{class_main_window_af1c93a51f4452d708d800c5a615805d7}{algor
 \mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
 \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (Q\+Widget $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Creates a UI to display Algorythm and process Data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_process_list_model}{Process\+List\+Model}} $\ast$ \mbox{\hyperlink{class_main_window_abf09a928ec65318372a645e07a00e6eb}{model}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -128,7 +135,31 @@ Calling this Slot Updates the process\+List and \mbox{\hyperlink{class_algorithm
 {\em has\+Changed} & Marks if the contents of input\+Process\+List differ from the previous version to reduce performance of the UI due to unnecessary reloads of the UI. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a30ae7436bcedd48fbca4d14c04f010fe}\label{class_main_window_a30ae7436bcedd48fbca4d14c04f010fe}} 
+\index{MainWindow@{MainWindow}!updateProgressBar@{updateProgressBar}}
+\index{updateProgressBar@{updateProgressBar}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateProgressBar}{updateProgressBar}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+Progress\+Bar (\begin{DoxyParamCaption}\item[{int}]{progress }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
+
+
+This Slot is for stetting the value of the Progressbar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em progress} & the value that the progressbar should be set to(dependent on the bars max and min values). The bars max value ist equal to the amount of items displayed in the process\+List. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_main_window_abf09a928ec65318372a645e07a00e6eb}\label{class_main_window_abf09a928ec65318372a645e07a00e6eb}} 
+\index{MainWindow@{MainWindow}!model@{model}}
+\index{model@{model}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_process_list_model}{Process\+List\+Model}}$\ast$ Main\+Window\+::model}
+
+The Model that provieds the information for the process\+List. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

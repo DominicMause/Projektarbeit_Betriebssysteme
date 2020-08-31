@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -50,22 +46,6 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('helper_8h_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -98,21 +78,23 @@ $(document).ready(function(){initNavTree('helper_8h_source.html',''); initResiza
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">static</span> QList&lt;Process&gt; <a class="code" href="class_helper.html#a2a3f4fe27b3f2cf14b0fe224859eafeb">firstComeFirstServed</a>(QList&lt;Process&gt;);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">static</span> QList&lt;Process&gt; <a class="code" href="class_helper.html#aadd38883c64c072582c362841ac226b4">lastComeFirstServed</a>(QList&lt;Process&gt;);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> QList&lt;Process&gt; <a class="code" href="class_helper.html#a5ce1f66de4aa2e619f1aba19d16eb40a">shortestJobFirst</a>(QList&lt;Process&gt;);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif // HELPER_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">static</span> QList&lt;Process&gt; roundRobin(QList&lt;Process&gt;);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">static</span> QList&lt;Process&gt; roundRobinWithPrio(QList&lt;Process&gt;);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> processingTime = 5;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // HELPER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <div class="ttc" id="aclass_helper_html"><div class="ttname"><a href="class_helper.html">Helper</a></div><div class="ttdef"><b>Definition:</b> helper.h:13</div></div>
-<div class="ttc" id="aclass_helper_html_a5ce1f66de4aa2e619f1aba19d16eb40a"><div class="ttname"><a href="class_helper.html#a5ce1f66de4aa2e619f1aba19d16eb40a">Helper::shortestJobFirst</a></div><div class="ttdeci">static QList&lt; Process &gt; shortestJobFirst(QList&lt; Process &gt;)</div><div class="ttdef"><b>Definition:</b> helper.cpp:15</div></div>
+<div class="ttc" id="aclass_helper_html_a5ce1f66de4aa2e619f1aba19d16eb40a"><div class="ttname"><a href="class_helper.html#a5ce1f66de4aa2e619f1aba19d16eb40a">Helper::shortestJobFirst</a></div><div class="ttdeci">static QList&lt; Process &gt; shortestJobFirst(QList&lt; Process &gt;)</div><div class="ttdef"><b>Definition:</b> helper.cpp:21</div></div>
 <div class="ttc" id="aclass_helper_html_a2a3f4fe27b3f2cf14b0fe224859eafeb"><div class="ttname"><a href="class_helper.html#a2a3f4fe27b3f2cf14b0fe224859eafeb">Helper::firstComeFirstServed</a></div><div class="ttdeci">static QList&lt; Process &gt; firstComeFirstServed(QList&lt; Process &gt;)</div><div class="ttdef"><b>Definition:</b> helper.cpp:4</div></div>
-<div class="ttc" id="aclass_helper_html_aadd38883c64c072582c362841ac226b4"><div class="ttname"><a href="class_helper.html#aadd38883c64c072582c362841ac226b4">Helper::lastComeFirstServed</a></div><div class="ttdeci">static QList&lt; Process &gt; lastComeFirstServed(QList&lt; Process &gt;)</div><div class="ttdef"><b>Definition:</b> helper.cpp:8</div></div>
+<div class="ttc" id="aclass_helper_html_aadd38883c64c072582c362841ac226b4"><div class="ttname"><a href="class_helper.html#aadd38883c64c072582c362841ac226b4">Helper::lastComeFirstServed</a></div><div class="ttdeci">static QList&lt; Process &gt; lastComeFirstServed(QList&lt; Process &gt;)</div><div class="ttdef"><b>Definition:</b> helper.cpp:11</div></div>
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><b>helper.h</b></li>
-    <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
 </body>
 </html>

@@ -37,6 +37,11 @@ public:
 
 
 signals:
+     /**
+      * @brief this signal is call to output the progress of the UI while loading the Process list.
+      *
+      * @param int index of the current data set(not precentage).
+      */
      void setProgress(int) const;
 
 private:
