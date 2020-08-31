@@ -87,8 +87,12 @@ public slots:
      * @param inputAlgoList Recieves a list of Strings to be displayed in the Algorithm select Combobox menu.
      */
     void algorithmusBoxUpdate(QList<QString> inputAlgoList);
-
-    void updateProgressBar(int);
+    /**
+     * @brief This Slot is for stetting the value of the Progressbar.
+     *
+     * @param progress the value that the progressbar should be set to(dependent on the bars max and min values). The bars max value ist equal to the amount of items displayed in the processList.
+     */
+    void updateProgressBar(int progress);
 signals:
     /**
      * @brief This Signal gets emited when the user selects a new Algorithm.
@@ -102,7 +106,6 @@ private slots:
      * @brief This Signal gets emited if another Algorithm in the Algorithm Select Combobox gets selected.
      */
     void boxChanged(int);
-    void barChanged(int);
 
 
 private:
@@ -114,22 +117,22 @@ private:
     Algorithm *currentAlgorythm = nullptr;
     QList<QString> tmpItem;
     QLabel *algoSelectLabel;
-    QHBoxLayout *algorithmusSelector;
-    QVBoxLayout *infoLayout;
-    QHBoxLayout *topChildLayout;
-    QVBoxLayout *mainBox;
-    QHBoxLayout *topLayout;
-    QHBoxLayout *bottomLayout;
-    MyInfoLabel *processCount;
-    QLabel *idHeader;
-    QLabel *nameHeader;
-    QLabel *prioHeader;
-    QLabel *sizeHeader;
-    QHBoxLayout *headerLayout;
-    QVBoxLayout *processListHeaderLayout;
-    QListView *processList;
-    QProgressBar *bar;
-    bool hasChanged = false;
+    QHBoxLayout *algorithmusSelector; /**< TODO: describe */
+    QVBoxLayout *infoLayout; /**< TODO: describe */
+    QHBoxLayout *topChildLayout; /**< TODO: describe */
+    QVBoxLayout *mainBox; /**< TODO: describe */
+    QHBoxLayout *topLayout; /**< TODO: describe */
+    QHBoxLayout *bottomLayout; /**< TODO: describe */
+    MyInfoLabel *processCount; /**< TODO: describe */
+    QLabel *idHeader; /**< TODO: describe */
+    QLabel *nameHeader; /**< TODO: describe */
+    QLabel *prioHeader; /**< TODO: describe */
+    QLabel *sizeHeader; /**< TODO: describe */
+    QHBoxLayout *headerLayout; /**< TODO: describe */
+    QVBoxLayout *processListHeaderLayout; /**< TODO: describe */
+    QListView *processList; /**< TODO: describe */
+    QProgressBar *bar; /**< TODO: describe */
+    bool hasChanged = false; /**< TODO: describe */
 
 
 

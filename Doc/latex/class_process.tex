@@ -4,36 +4,45 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_process_aceaed831d071195da0f3ddb0ea8af57b}\label{class_process_aceaed831d071195da0f3ddb0ea8af57b}} 
-enum {\bfseries Priority} \{ {\bfseries low}, 
+enum \mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}} \{ {\bfseries low}, 
 {\bfseries middle}, 
 {\bfseries high}
  \}
+\begin{DoxyCompactList}\small\item\em the priority of the process \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_process_a7f82ca7f0e219fac194545e700b8948c}\label{class_process_a7f82ca7f0e219fac194545e700b8948c}} 
+typedef void($\ast$ {\bfseries func}) ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_process_ae34b5b25c8b382529d390a4a4e0b16e6}{Process}} (int, Q\+String, int=0, Priority=middle)
+\mbox{\hyperlink{class_process_af6e150f842875dae2edc92fae6f4d051}{Process}} (int, Q\+String, func, \mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}}=middle)
 \item 
 int \mbox{\hyperlink{class_process_a4a5b2f6a945300fd6ecd243bc14e8073}{get\+Id}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns the ID of the process \end{DoxyCompactList}\item 
 Q\+String \mbox{\hyperlink{class_process_a300574735e15e87c4c00006fcd43e56c}{get\+Name}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns the name of the process \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_process_a22210836483a0d3fa6978c790b8cf7d0}{get\+Process\+Size}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns the process size in byte \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_process_af5103e08c032d9247110f0a7655bf37c}{get\+Priority}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns the priority in int \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_process_aac3c3ebed7fcf6f95636e5a146a81e8a}{set\+Process\+Size}} (int)
-\item 
-void \mbox{\hyperlink{class_process_afbce316a308735fb912f1cf7fb198d38}{set\+Priotity}} (Priority)
+\begin{DoxyCompactList}\small\item\em warining against use. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_process_afbce316a308735fb912f1cf7fb198d38}{set\+Priotity}} (\mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}})
+\begin{DoxyCompactList}\small\item\em set the priority with the Priority enum \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_process_a9a0d8bd390f092ae4b97a89bce4ab25d}\label{class_process_a9a0d8bd390f092ae4b97a89bce4ab25d}} 
+void \mbox{\hyperlink{class_process_a9a0d8bd390f092ae4b97a89bce4ab25d}{set\+Function}} (func)
+\begin{DoxyCompactList}\small\item\em sets the function that the process executes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_process_a7d39380197cdbeb75d8303ba7cdbeaa4}\label{class_process_a7d39380197cdbeb75d8303ba7cdbeaa4}} 
+void {\bfseries execute} ()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_process_ae34b5b25c8b382529d390a4a4e0b16e6}\label{class_process_ae34b5b25c8b382529d390a4a4e0b16e6}} 
+\mbox{\Hypertarget{class_process_af6e150f842875dae2edc92fae6f4d051}\label{class_process_af6e150f842875dae2edc92fae6f4d051}} 
 \index{Process@{Process}!Process@{Process}}
 \index{Process@{Process}!Process@{Process}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily Process\+::\+Process (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Q\+String}]{name,  }\item[{int}]{size = {\ttfamily 0},  }\item[{Priority}]{priority = {\ttfamily middle} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Process\+::\+Process (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Q\+String}]{name,  }\item[{func}]{f,  }\item[{\mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}}}]{priority = {\ttfamily middle} }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -55,6 +64,10 @@ void \mbox{\hyperlink{class_process_afbce316a308735fb912f1cf7fb198d38}{set\+Prio
 \doxysubsubsection{\texorpdfstring{getId()}{getId()}}
 {\footnotesize\ttfamily int Process\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+returns the ID of the process 
+
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
@@ -63,6 +76,10 @@ int
 \index{getName@{getName}!Process@{Process}}
 \doxysubsubsection{\texorpdfstring{getName()}{getName()}}
 {\footnotesize\ttfamily Q\+String Process\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the name of the process 
 
 \begin{DoxyReturn}{Returns}
 Q\+String 
@@ -73,6 +90,10 @@ Q\+String
 \doxysubsubsection{\texorpdfstring{getPriority()}{getPriority()}}
 {\footnotesize\ttfamily int Process\+::get\+Priority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+returns the priority in int 
+
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
@@ -82,6 +103,10 @@ int
 \doxysubsubsection{\texorpdfstring{getProcessSize()}{getProcessSize()}}
 {\footnotesize\ttfamily int Process\+::get\+Process\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+returns the process size in byte 
+
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
@@ -89,7 +114,11 @@ int
 \index{Process@{Process}!setPriotity@{setPriotity}}
 \index{setPriotity@{setPriotity}!Process@{Process}}
 \doxysubsubsection{\texorpdfstring{setPriotity()}{setPriotity()}}
-{\footnotesize\ttfamily void Process\+::set\+Priotity (\begin{DoxyParamCaption}\item[{Priority}]{priority }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Process\+::set\+Priotity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}}}]{priority }\end{DoxyParamCaption})}
+
+
+
+set the priority with the Priority enum 
 
 
 \begin{DoxyParams}{Parameters}
@@ -101,6 +130,10 @@ int
 \index{setProcessSize@{setProcessSize}!Process@{Process}}
 \doxysubsubsection{\texorpdfstring{setProcessSize()}{setProcessSize()}}
 {\footnotesize\ttfamily void Process\+::set\+Process\+Size (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+warining against use. 
 
 
 \begin{DoxyParams}{Parameters}

@@ -81,7 +81,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     this->statusBar()->addWidget(bar);
     processList->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded );
     connect(model,&ProcessListModel::setProgress,this,&MainWindow::updateProgressBar);
-    connect(bar,&QProgressBar::valueChanged,this,&MainWindow::barChanged);
 
 }
 
@@ -157,15 +156,6 @@ void MainWindow::boxChanged(int)
 {
     QString selectedName = algoSelectComboBox->currentText();
     emit algorithmusBoxChanged(selectedName);
-}
-
-void MainWindow::barChanged(int value)
-{
-    if(value >= model->rowCount()){
-        hasChanged=false;
-        bar->setDisabled(true);
-        bar->hide();
-    }
 }
 
 MainWindow::~MainWindow()
