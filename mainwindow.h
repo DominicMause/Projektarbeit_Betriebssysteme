@@ -63,17 +63,6 @@ public slots:
      */
     void logClear();
     /**
-     * @brief This Slot recives a string that gets appended to the right Log.
-     *
-     * @param string string String that gets appended.
-     */
-    void log2Update(QString string);
-    /**
-     * @brief This Slot clears the right Log in the UI.
-     *
-     */
-    void log2Clear();
-    /**
      * @brief Calling this Slot Updates the processList and Algorithm Information based on the Parameters
      *
      * @param inputProcessList Recieves a list of type Process that gets Displayed in the processList dependend on the hasChanged Parameter.
@@ -111,7 +100,6 @@ private slots:
 private:
     Ui::MainWindow *ui; /**< The UI Object of this Window. */
     QTextEdit *logBox; /**< Left log box. */
-    QTextEdit *logBox2; /**< Right log box. */
     QComboBox *algoSelectComboBox; /**< Combobox to select the algorithm. */
     MyInfoLabel *algoID, *algoName, *algoWorktime, *algoSize; /**< Displayed algorithm infos. */
     Algorithm *currentAlgorythm = nullptr;
