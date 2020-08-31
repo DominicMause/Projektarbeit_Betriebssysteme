@@ -33,6 +33,12 @@ public:
      * @return QList<Process>
      */
     static QList<Process> shortestJobFirst(QList<Process>);
+
+    static QList<Process> roundRobin(QList<Process>);
+
+    static QList<Process> roundRobinWithPrio(QList<Process>);
+
+    int processingTime = 100;
 };
 
 #endif // HELPER_H

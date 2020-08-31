@@ -26,4 +26,9 @@ QList<Process> Helper::shortestJobFirst(QList<Process> list){
     return list;
 }
 
+QList<Process> Helper::roundRobin(QList<Process>)
+{
+
+}
+
 
