@@ -1,5 +1,14 @@
 \hypertarget{class_simulation_thread}{}\doxysection{Simulation\+Thread Class Reference}
 \label{class_simulation_thread}\index{SimulationThread@{SimulationThread}}
+
+
+thread used for sorting and executing algorithms and processes  
+
+
+
+
+{\ttfamily \#include $<$simulationthread.\+h$>$}
+
 Inheritance diagram for Simulation\+Thread\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,25 +19,26 @@ Inheritance diagram for Simulation\+Thread\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_simulation_thread_ade8a1766b4fba633f92a4b8e21650412}{result\+Ready}} (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$, \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$, bool)
-\item 
+\begin{DoxyCompactList}\small\item\em is used when the algorithm is through to transfer data to the ui \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_thread_ad35f789d2c4c21c957cd49aa90f5f0e6}{update\+Log}} (Q\+String)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em writes a Q\+String to the log \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_simulation_thread_ab1ea82310703e5e656d0a5dd1d64bfda}{active\+Algorithm\+Changed}} (\mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$)
-\item 
+\begin{DoxyCompactList}\small\item\em resets the sorting algorithm \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_thread_ac2f901f902aa3bfd4da525434c432dd9}{set\+Process\+Table}} (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$)
-\item 
-\mbox{\Hypertarget{class_simulation_thread_af78ec1a1834efd05a5051b53fe6910a2}\label{class_simulation_thread_af78ec1a1834efd05a5051b53fe6910a2}} 
-void {\bfseries do\+Work} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em resets the process table \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_simulation_thread_a31f725e4e8b71d07d22a1f78f45cf6c0}\label{class_simulation_thread_a31f725e4e8b71d07d22a1f78f45cf6c0}} 
 bool \mbox{\hyperlink{class_simulation_thread_a31f725e4e8b71d07d22a1f78f45cf6c0}{is\+Running}} = true
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em tells if the thread should run \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+thread used for sorting and executing algorithms and processes 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_simulation_thread_ab1ea82310703e5e656d0a5dd1d64bfda}\label{class_simulation_thread_ab1ea82310703e5e656d0a5dd1d64bfda}} 
@@ -38,8 +48,12 @@ bool \mbox{\hyperlink{class_simulation_thread_a31f725e4e8b71d07d22a1f78f45cf6c0}
 {\footnotesize\ttfamily void Simulation\+Thread\+::active\+Algorithm\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$}]{algorithm }\end{DoxyParamCaption})}
 
 
+
+resets the sorting algorithm 
+
+
 \begin{DoxyParams}{Parameters}
-{\em } & \\
+{\em \mbox{\hyperlink{class_algorithm}{Algorithm}}} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_simulation_thread_ade8a1766b4fba633f92a4b8e21650412}\label{class_simulation_thread_ade8a1766b4fba633f92a4b8e21650412}} 
@@ -49,8 +63,16 @@ bool \mbox{\hyperlink{class_simulation_thread_a31f725e4e8b71d07d22a1f78f45cf6c0}
 {\footnotesize\ttfamily void Simulation\+Thread\+::result\+Ready (\begin{DoxyParamCaption}\item[{Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$}]{,  }\item[{\mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$}]{,  }\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
 
+
+is used when the algorithm is through to transfer data to the ui 
+
+
 \begin{DoxyParams}{Parameters}
-{\em } & \\
+{\em List} & of Processes \\
+\hline
+{\em \mbox{\hyperlink{class_algorithm}{Algorithm}}} & Data \\
+\hline
+{\em Changed} & flag \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_simulation_thread_ac2f901f902aa3bfd4da525434c432dd9}\label{class_simulation_thread_ac2f901f902aa3bfd4da525434c432dd9}} 
@@ -60,8 +82,12 @@ bool \mbox{\hyperlink{class_simulation_thread_a31f725e4e8b71d07d22a1f78f45cf6c0}
 {\footnotesize\ttfamily void Simulation\+Thread\+::set\+Process\+Table (\begin{DoxyParamCaption}\item[{Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$}]{list }\end{DoxyParamCaption})}
 
 
+
+resets the process table 
+
+
 \begin{DoxyParams}{Parameters}
-{\em } & \\
+{\em Q\+List$<$\+Process$>$} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_simulation_thread_ad35f789d2c4c21c957cd49aa90f5f0e6}\label{class_simulation_thread_ad35f789d2c4c21c957cd49aa90f5f0e6}} 
@@ -71,20 +97,15 @@ bool \mbox{\hyperlink{class_simulation_thread_a31f725e4e8b71d07d22a1f78f45cf6c0}
 {\footnotesize\ttfamily void Simulation\+Thread\+::update\+Log (\begin{DoxyParamCaption}\item[{Q\+String}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
 
+
+writes a Q\+String to the log 
+
+
 \begin{DoxyParams}{Parameters}
 {\em Q\+String} & \\
 \hline
 \end{DoxyParams}
 
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_simulation_thread_a31f725e4e8b71d07d22a1f78f45cf6c0}\label{class_simulation_thread_a31f725e4e8b71d07d22a1f78f45cf6c0}} 
-\index{SimulationThread@{SimulationThread}!isRunning@{isRunning}}
-\index{isRunning@{isRunning}!SimulationThread@{SimulationThread}}
-\doxysubsubsection{\texorpdfstring{isRunning}{isRunning}}
-{\footnotesize\ttfamily bool Simulation\+Thread\+::is\+Running = true}
-
-T\+O\+DO\+: describe 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

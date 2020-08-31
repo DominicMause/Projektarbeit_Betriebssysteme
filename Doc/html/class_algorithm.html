@@ -69,11 +69,15 @@ $(function() {
 <div class="title">Algorithm Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>describes an algorithm with sorting function  
+ <a href="class_algorithm.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="algorithm_8h_source.html">algorithm.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aa60efffed37e9f651b0f31d24e5356f4"><td class="memItemLeft" align="right" valign="top"><a id="aa60efffed37e9f651b0f31d24e5356f4"></a>
-typedef QList&lt; <a class="el" href="class_process.html">Process</a> &gt;(*&#160;</td><td class="memItemRight" valign="bottom"><b>func</b>) (QList&lt; <a class="el" href="class_process.html">Process</a> &gt;)</td></tr>
+<tr class="memitem:aa60efffed37e9f651b0f31d24e5356f4"><td class="memItemLeft" align="right" valign="top">typedef QList&lt; <a class="el" href="class_process.html">Process</a> &gt;(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_algorithm.html#aa60efffed37e9f651b0f31d24e5356f4">func</a>) (QList&lt; <a class="el" href="class_process.html">Process</a> &gt;)</td></tr>
 <tr class="separator:aa60efffed37e9f651b0f31d24e5356f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -86,7 +90,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a6a6fad5c9f5406477e2eb97968524d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">warning against use. id is set automatically <br /></td></tr>
 <tr class="separator:a6a6fad5c9f5406477e2eb97968524d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64060db6afb7ac48471d4300d8fce5de"><td class="memItemLeft" align="right" valign="top"><a id="a64060db6afb7ac48471d4300d8fce5de"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_algorithm.html#a64060db6afb7ac48471d4300d8fce5de">setFunction</a> (func)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_algorithm.html#a64060db6afb7ac48471d4300d8fce5de">setFunction</a> (<a class="el" href="class_algorithm.html#aa60efffed37e9f651b0f31d24e5356f4">func</a>)</td></tr>
 <tr class="memdesc:a64060db6afb7ac48471d4300d8fce5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the function that describes the algorithm. the function must be set up in this way: QList&lt;Process&gt; (*func)(QList&lt;Process&gt;) <br /></td></tr>
 <tr class="separator:a64060db6afb7ac48471d4300d8fce5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae946c6b0e3cca99e9936bf05003e19bf"><td class="memItemLeft" align="right" valign="top"><a id="ae946c6b0e3cca99e9936bf05003e19bf"></a>
@@ -109,6 +113,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a83c43fb8e04d20691fe543a477e1ef30"><td class="mdescLeft">&#160;</td><td class="mdescRight">executes the function of the algorithm. function can be set by calling <a class="el" href="class_algorithm.html#a64060db6afb7ac48471d4300d8fce5de" title="sets the function that describes the algorithm. the function must be set up in this way: QList&lt;Proces...">setFunction(func)</a>  <a href="class_algorithm.html#a83c43fb8e04d20691fe543a477e1ef30">More...</a><br /></td></tr>
 <tr class="separator:a83c43fb8e04d20691fe543a477e1ef30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>describes an algorithm with sorting function </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="aa60efffed37e9f651b0f31d24e5356f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60efffed37e9f651b0f31d24e5356f4">&#9670;&nbsp;</a></span>func</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QList&lt;<a class="el" href="class_process.html">Process</a>&gt;(* Algorithm::func) (QList&lt; <a class="el" href="class_process.html">Process</a> &gt;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>default function for sorting algorithm </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a83c43fb8e04d20691fe543a477e1ef30"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83c43fb8e04d20691fe543a477e1ef30">&#9670;&nbsp;</a></span>execute()</h2>

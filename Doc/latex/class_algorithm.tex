@@ -1,10 +1,18 @@
 \hypertarget{class_algorithm}{}\doxysection{Algorithm Class Reference}
 \label{class_algorithm}\index{Algorithm@{Algorithm}}
+
+
+describes an algorithm with sorting function  
+
+
+
+
+{\ttfamily \#include $<$algorithm.\+h$>$}
+
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_algorithm_aa60efffed37e9f651b0f31d24e5356f4}\label{class_algorithm_aa60efffed37e9f651b0f31d24e5356f4}} 
-typedef Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$($\ast$ {\bfseries func}) (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$)
+typedef Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$($\ast$ \mbox{\hyperlink{class_algorithm_aa60efffed37e9f651b0f31d24e5356f4}{func}}) (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -16,7 +24,7 @@ typedef Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$($\ast$ {\bfseri
 void \mbox{\hyperlink{class_algorithm_a6a6fad5c9f5406477e2eb97968524d08}{set\+Id}} (int)
 \begin{DoxyCompactList}\small\item\em warning against use. id is set automatically \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_algorithm_a64060db6afb7ac48471d4300d8fce5de}\label{class_algorithm_a64060db6afb7ac48471d4300d8fce5de}} 
-void \mbox{\hyperlink{class_algorithm_a64060db6afb7ac48471d4300d8fce5de}{set\+Function}} (func)
+void \mbox{\hyperlink{class_algorithm_a64060db6afb7ac48471d4300d8fce5de}{set\+Function}} (\mbox{\hyperlink{class_algorithm_aa60efffed37e9f651b0f31d24e5356f4}{func}})
 \begin{DoxyCompactList}\small\item\em sets the function that describes the algorithm. the function must be set up in this way\+: Q\+List$<$\+Process$>$ ($\ast$func)(Q\+List$<$\+Process$>$) \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_algorithm_ae946c6b0e3cca99e9936bf05003e19bf}\label{class_algorithm_ae946c6b0e3cca99e9936bf05003e19bf}} 
 void \mbox{\hyperlink{class_algorithm_ae946c6b0e3cca99e9936bf05003e19bf}{set\+Work\+Time}} (qint64)
@@ -32,6 +40,18 @@ long \mbox{\hyperlink{class_algorithm_aff1dbe9d15f03e796c89ef953e632229}{get\+Si
 Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ \mbox{\hyperlink{class_algorithm_a83c43fb8e04d20691fe543a477e1ef30}{execute}} (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$)
 \begin{DoxyCompactList}\small\item\em executes the function of the algorithm. function can be set by calling \mbox{\hyperlink{class_algorithm_a64060db6afb7ac48471d4300d8fce5de}{set\+Function(func)}} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+describes an algorithm with sorting function 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_algorithm_aa60efffed37e9f651b0f31d24e5356f4}\label{class_algorithm_aa60efffed37e9f651b0f31d24e5356f4}} 
+\index{Algorithm@{Algorithm}!func@{func}}
+\index{func@{func}!Algorithm@{Algorithm}}
+\doxysubsubsection{\texorpdfstring{func}{func}}
+{\footnotesize\ttfamily typedef Q\+List$<$\mbox{\hyperlink{class_process}{Process}}$>$($\ast$ Algorithm\+::func) (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$)}
+
+default function for sorting algorithm 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_algorithm_a83c43fb8e04d20691fe543a477e1ef30}\label{class_algorithm_a83c43fb8e04d20691fe543a477e1ef30}} 

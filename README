@@ -16,6 +16,29 @@
     10.  Neues Projekt qmake ausführen und erstellen.
     11. Fertig
 
+Bedienungsanleitung
+
+1. Nachdem die library erfolgreich hinzugefügt wurde müssen nun mainwindow.h und simulationcontroller.h includiert werden.
+
+2. Nun kann eine instanz vom Typ MainWindow angelegt werden sowie eine weitere vom Typ SimulationController.
+
+3. Als nächstes muss dem SimulationController über die setWindow() funktion ein Pointer der MainWindow übergeben werden.
+
+
+Anmerkuung: Eine grundlegende Auswahl an algorithmen zur sortierung der Processe ist bereits vorhanden diese lässt sich jedoch erweitern.
+
+
+Eigene Prozesse hinzufügen:
+
+Mithilfe der addProcess() Funktion ist es möglich eine Liste an Prozessen vom Typ Process zu übergeben.
+
+
+Eigene Algorithmen Hinzufügen:
+
+Mithilfe der addAlgorithem() Funktion ist es möglich eine statische funktionsreferenz zu übergeben welche eine Liste an Prozessen (QList<Process>) erhält und auch zurrück giebt.
+
+
+
 # Installation English
 
     1.  move project Projektarbeit_Betriebssysteme and APITester to Qt Workplace.
@@ -33,3 +56,25 @@
             INCLUDEPATH += $$PWD/../Projektarbeit_Betriebssysteme
     9.  execute qmake and build new project.
     10. ready
+
+Instruction manual
+
+1. After the library has been successfully added, mainwindow.h and simulationcontroller.h must be included.
+
+2. The next step ist to create an instance of the type MainWindow and another one of the type SimulationController.
+
+3. Next a pointer of the MainWindow must be passed to the SimulationController via the setWindow() function.
+
+
+Note: A basic set of algorithms for sorting the process is already available but can be extended.
+
+
+Add your own processes:
+
+With the addProcess() function it is possible to pass a list of processes of type Process.
+
+
+Add custom algorithms:
+
+With the help of the addAlgorithem() function it is possible to pass a static function reference that receives and returns a list of processes (QList<Process>).
+

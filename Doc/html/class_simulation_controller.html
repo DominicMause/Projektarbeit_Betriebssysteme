@@ -71,6 +71,11 @@ $(function() {
 <div class="title">SimulationController Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A controller that runs the simulation in a separate thread.  
+ <a href="class_simulation_controller.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="simulationcontroller_8h_source.html">simulationcontroller.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SimulationController:</div>
 <div class="dyncontent">
@@ -81,48 +86,63 @@ Inheritance diagram for SimulationController:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:afa6cadec6e8ac7e97cf7434afbc29062"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#afa6cadec6e8ac7e97cf7434afbc29062">setActiveAlgorithm</a> (QString)</td></tr>
+<tr class="memdesc:afa6cadec6e8ac7e97cf7434afbc29062"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the active algorithm  <a href="class_simulation_controller.html#afa6cadec6e8ac7e97cf7434afbc29062">More...</a><br /></td></tr>
 <tr class="separator:afa6cadec6e8ac7e97cf7434afbc29062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a1fcfec22d6d02dc878d0f587e84be49e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a1fcfec22d6d02dc878d0f587e84be49e">updateLog</a> (QString)</td></tr>
+<tr class="memdesc:a1fcfec22d6d02dc878d0f587e84be49e"><td class="mdescLeft">&#160;</td><td class="mdescRight">writes a QString to the log  <a href="class_simulation_controller.html#a1fcfec22d6d02dc878d0f587e84be49e">More...</a><br /></td></tr>
 <tr class="separator:a1fcfec22d6d02dc878d0f587e84be49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8513b619157d282160c9238940da3b14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a8513b619157d282160c9238940da3b14">getActiveAlgorithm</a> (<a class="el" href="class_algorithm.html">Algorithm</a> *)</td></tr>
-<tr class="separator:a8513b619157d282160c9238940da3b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a67edb192bd73a56e01cab7014ac0e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a8a67edb192bd73a56e01cab7014ac0e8">getAlgorithms</a> (QList&lt; QString &gt;)</td></tr>
+<tr class="memdesc:a8a67edb192bd73a56e01cab7014ac0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">gives the ui a list of algorithms in strings  <a href="class_simulation_controller.html#a8a67edb192bd73a56e01cab7014ac0e8">More...</a><br /></td></tr>
 <tr class="separator:a8a67edb192bd73a56e01cab7014ac0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a405ab8796550aec16e4847812bbfcf04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a405ab8796550aec16e4847812bbfcf04">setWindow</a> (<a class="el" href="class_main_window.html">MainWindow</a> *)</td></tr>
+<tr class="memdesc:a405ab8796550aec16e4847812bbfcf04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns a ui to the controller.  <a href="class_simulation_controller.html#a405ab8796550aec16e4847812bbfcf04">More...</a><br /></td></tr>
 <tr class="separator:a405ab8796550aec16e4847812bbfcf04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a1ff5c2f98708f4dad71bdd72a29981"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a2a1ff5c2f98708f4dad71bdd72a29981">addAlgorithm</a> (<a class="el" href="class_algorithm.html">Algorithm</a> *)</td></tr>
+<tr class="memdesc:a2a1ff5c2f98708f4dad71bdd72a29981"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an algorithm to the list  <a href="class_simulation_controller.html#a2a1ff5c2f98708f4dad71bdd72a29981">More...</a><br /></td></tr>
 <tr class="separator:a2a1ff5c2f98708f4dad71bdd72a29981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f73f95eccf60385981b1b352499052e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a7f73f95eccf60385981b1b352499052e">addProcess</a> (<a class="el" href="class_process.html">Process</a>)</td></tr>
+<tr class="memdesc:a7f73f95eccf60385981b1b352499052e"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a process to the list  <a href="class_simulation_controller.html#a7f73f95eccf60385981b1b352499052e">More...</a><br /></td></tr>
 <tr class="separator:a7f73f95eccf60385981b1b352499052e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87e1f1f39c8f4f8bb3b013ade85e3161"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a87e1f1f39c8f4f8bb3b013ade85e3161">addProcesses</a> (QList&lt; <a class="el" href="class_process.html">Process</a> &gt;)</td></tr>
+<tr class="memdesc:a87e1f1f39c8f4f8bb3b013ade85e3161"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a list of processes to the list  <a href="class_simulation_controller.html#a87e1f1f39c8f4f8bb3b013ade85e3161">More...</a><br /></td></tr>
 <tr class="separator:a87e1f1f39c8f4f8bb3b013ade85e3161"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1d81cc39e77701ca8888162d17b309d"><td class="memItemLeft" align="right" valign="top"><a id="af1d81cc39e77701ca8888162d17b309d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addExampleAlgorithms</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#af1d81cc39e77701ca8888162d17b309d">addExampleAlgorithms</a> ()</td></tr>
+<tr class="memdesc:af1d81cc39e77701ca8888162d17b309d"><td class="mdescLeft">&#160;</td><td class="mdescRight">provides a series of sample algorithms <br /></td></tr>
 <tr class="separator:af1d81cc39e77701ca8888162d17b309d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a766acca5b81e50320e1dd99229f41d2c"><td class="memItemLeft" align="right" valign="top"><a id="a766acca5b81e50320e1dd99229f41d2c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>pushAlgorithmList</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a766acca5b81e50320e1dd99229f41d2c">pushAlgorithmList</a> ()</td></tr>
+<tr class="memdesc:a766acca5b81e50320e1dd99229f41d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">provides the ui with the current list of algorithms <br /></td></tr>
 <tr class="separator:a766acca5b81e50320e1dd99229f41d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:abe4c26a8564913ef2a0186e500aed4ff"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#abe4c26a8564913ef2a0186e500aed4ff">output</a></td></tr>
-<tr class="separator:abe4c26a8564913ef2a0186e500aed4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f7059578a488d10a2c9c238231f05e5"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_process.html">Process</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a3f7059578a488d10a2c9c238231f05e5">processTable</a></td></tr>
+<tr class="memitem:a3f7059578a488d10a2c9c238231f05e5"><td class="memItemLeft" align="right" valign="top"><a id="a3f7059578a488d10a2c9c238231f05e5"></a>
+QList&lt; <a class="el" href="class_process.html">Process</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a3f7059578a488d10a2c9c238231f05e5">processTable</a></td></tr>
+<tr class="memdesc:a3f7059578a488d10a2c9c238231f05e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">table with all processes, which should be ordered and executed <br /></td></tr>
 <tr class="separator:a3f7059578a488d10a2c9c238231f05e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af33ef5be51250f6711cb3533d7be0d76"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_algorithm.html">Algorithm</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#af33ef5be51250f6711cb3533d7be0d76">algorithms</a></td></tr>
+<tr class="memitem:af33ef5be51250f6711cb3533d7be0d76"><td class="memItemLeft" align="right" valign="top"><a id="af33ef5be51250f6711cb3533d7be0d76"></a>
+QList&lt; <a class="el" href="class_algorithm.html">Algorithm</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#af33ef5be51250f6711cb3533d7be0d76">algorithms</a></td></tr>
+<tr class="memdesc:af33ef5be51250f6711cb3533d7be0d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">table with algorithms, which are used for sorting <br /></td></tr>
 <tr class="separator:af33ef5be51250f6711cb3533d7be0d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1184429fb4b41211d88de33c76b03479"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_algorithm.html">Algorithm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a1184429fb4b41211d88de33c76b03479">activeAlgorithm</a> = nullptr</td></tr>
+<tr class="memitem:a1184429fb4b41211d88de33c76b03479"><td class="memItemLeft" align="right" valign="top"><a id="a1184429fb4b41211d88de33c76b03479"></a>
+<a class="el" href="class_algorithm.html">Algorithm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a1184429fb4b41211d88de33c76b03479">activeAlgorithm</a> = nullptr</td></tr>
+<tr class="memdesc:a1184429fb4b41211d88de33c76b03479"><td class="mdescLeft">&#160;</td><td class="mdescRight">the active sort algorithm <br /></td></tr>
 <tr class="separator:a1184429fb4b41211d88de33c76b03479"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7817b7443f81e8d9031d3ca6b98136d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_main_window.html">MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a7817b7443f81e8d9031d3ca6b98136d9">mainWindow</a></td></tr>
+<tr class="memitem:a7817b7443f81e8d9031d3ca6b98136d9"><td class="memItemLeft" align="right" valign="top"><a id="a7817b7443f81e8d9031d3ca6b98136d9"></a>
+<a class="el" href="class_main_window.html">MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_controller.html#a7817b7443f81e8d9031d3ca6b98136d9">mainWindow</a></td></tr>
+<tr class="memdesc:a7817b7443f81e8d9031d3ca6b98136d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">the UI that represents the simulation <br /></td></tr>
 <tr class="separator:a7817b7443f81e8d9031d3ca6b98136d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A controller that runs the simulation in a separate thread. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2a1ff5c2f98708f4dad71bdd72a29981"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a1ff5c2f98708f4dad71bdd72a29981">&#9670;&nbsp;</a></span>addAlgorithm()</h2>
 
@@ -138,9 +158,11 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>adds an algorithm to the list </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="class_algorithm.html" title="describes an algorithm with sorting function">Algorithm</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -162,9 +184,11 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>adds a process to the list </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="class_process.html" title="the process class represents an execution with the process function">Process</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -186,41 +210,11 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>adds a list of processes to the list </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8513b619157d282160c9238940da3b14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8513b619157d282160c9238940da3b14">&#9670;&nbsp;</a></span>getActiveAlgorithm</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SimulationController::getActiveAlgorithm </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_algorithm.html">Algorithm</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname">QList&lt;Process&gt;</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -250,6 +244,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>gives the ui a list of algorithms in strings </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">QList&lt;QString&gt;</td><td></td></tr>
@@ -282,6 +278,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>sets the active algorithm </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">QString</td><td></td></tr>
@@ -306,9 +304,11 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Assigns a ui to the controller. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="class_main_window.html" title="This class is responsible for the UI.">MainWindow</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -338,88 +338,14 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>writes a QString to the log </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">QString</td><td></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1184429fb4b41211d88de33c76b03479"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1184429fb4b41211d88de33c76b03479">&#9670;&nbsp;</a></span>activeAlgorithm</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_algorithm.html">Algorithm</a>* SimulationController::activeAlgorithm = nullptr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TODO: describe </p>
-
-</div>
-</div>
-<a id="af33ef5be51250f6711cb3533d7be0d76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af33ef5be51250f6711cb3533d7be0d76">&#9670;&nbsp;</a></span>algorithms</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QList&lt;<a class="el" href="class_algorithm.html">Algorithm</a>*&gt; SimulationController::algorithms</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TODO: describe </p>
-
-</div>
-</div>
-<a id="a7817b7443f81e8d9031d3ca6b98136d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7817b7443f81e8d9031d3ca6b98136d9">&#9670;&nbsp;</a></span>mainWindow</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_main_window.html">MainWindow</a>* SimulationController::mainWindow</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TODO: describe </p>
-
-</div>
-</div>
-<a id="abe4c26a8564913ef2a0186e500aed4ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe4c26a8564913ef2a0186e500aed4ff">&#9670;&nbsp;</a></span>output</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString SimulationController::output</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TODO: describe </p>
-
-</div>
-</div>
-<a id="a3f7059578a488d10a2c9c238231f05e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f7059578a488d10a2c9c238231f05e5">&#9670;&nbsp;</a></span>processTable</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QList&lt;<a class="el" href="class_process.html">Process</a>&gt;* SimulationController::processTable</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TODO: describe </p>
 
 </div>
 </div>

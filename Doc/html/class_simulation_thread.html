@@ -70,6 +70,11 @@ $(function() {
 <div class="title">SimulationThread Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>thread used for sorting and executing algorithms and processes  
+ <a href="class_simulation_thread.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="simulationthread_8h_source.html">simulationthread.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SimulationThread:</div>
 <div class="dyncontent">
@@ -80,26 +85,31 @@ Inheritance diagram for SimulationThread:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:ade8a1766b4fba633f92a4b8e21650412"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412">resultReady</a> (QList&lt; <a class="el" href="class_process.html">Process</a> &gt; *, <a class="el" href="class_algorithm.html">Algorithm</a> *, bool)</td></tr>
+<tr class="memdesc:ade8a1766b4fba633f92a4b8e21650412"><td class="mdescLeft">&#160;</td><td class="mdescRight">is used when the algorithm is through to transfer data to the ui  <a href="class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412">More...</a><br /></td></tr>
 <tr class="separator:ade8a1766b4fba633f92a4b8e21650412"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35f789d2c4c21c957cd49aa90f5f0e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_thread.html#ad35f789d2c4c21c957cd49aa90f5f0e6">updateLog</a> (QString)</td></tr>
+<tr class="memdesc:ad35f789d2c4c21c957cd49aa90f5f0e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">writes a QString to the log  <a href="class_simulation_thread.html#ad35f789d2c4c21c957cd49aa90f5f0e6">More...</a><br /></td></tr>
 <tr class="separator:ad35f789d2c4c21c957cd49aa90f5f0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab1ea82310703e5e656d0a5dd1d64bfda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_thread.html#ab1ea82310703e5e656d0a5dd1d64bfda">activeAlgorithmChanged</a> (<a class="el" href="class_algorithm.html">Algorithm</a> *)</td></tr>
+<tr class="memdesc:ab1ea82310703e5e656d0a5dd1d64bfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">resets the sorting algorithm  <a href="class_simulation_thread.html#ab1ea82310703e5e656d0a5dd1d64bfda">More...</a><br /></td></tr>
 <tr class="separator:ab1ea82310703e5e656d0a5dd1d64bfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2f901f902aa3bfd4da525434c432dd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_thread.html#ac2f901f902aa3bfd4da525434c432dd9">setProcessTable</a> (QList&lt; <a class="el" href="class_process.html">Process</a> &gt; *)</td></tr>
+<tr class="memdesc:ac2f901f902aa3bfd4da525434c432dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">resets the process table  <a href="class_simulation_thread.html#ac2f901f902aa3bfd4da525434c432dd9">More...</a><br /></td></tr>
 <tr class="separator:ac2f901f902aa3bfd4da525434c432dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af78ec1a1834efd05a5051b53fe6910a2"><td class="memItemLeft" align="right" valign="top"><a id="af78ec1a1834efd05a5051b53fe6910a2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>doWork</b> ()</td></tr>
-<tr class="separator:af78ec1a1834efd05a5051b53fe6910a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a31f725e4e8b71d07d22a1f78f45cf6c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_thread.html#a31f725e4e8b71d07d22a1f78f45cf6c0">isRunning</a> = true</td></tr>
+<tr class="memitem:a31f725e4e8b71d07d22a1f78f45cf6c0"><td class="memItemLeft" align="right" valign="top"><a id="a31f725e4e8b71d07d22a1f78f45cf6c0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_thread.html#a31f725e4e8b71d07d22a1f78f45cf6c0">isRunning</a> = true</td></tr>
+<tr class="memdesc:a31f725e4e8b71d07d22a1f78f45cf6c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">tells if the thread should run <br /></td></tr>
 <tr class="separator:a31f725e4e8b71d07d22a1f78f45cf6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>thread used for sorting and executing algorithms and processes </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab1ea82310703e5e656d0a5dd1d64bfda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1ea82310703e5e656d0a5dd1d64bfda">&#9670;&nbsp;</a></span>activeAlgorithmChanged()</h2>
 
@@ -115,9 +125,11 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>resets the sorting algorithm </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="class_algorithm.html" title="describes an algorithm with sorting function">Algorithm</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -163,9 +175,13 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>is used when the algorithm is through to transfer data to the ui </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname">List</td><td>of Processes </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_algorithm.html" title="describes an algorithm with sorting function">Algorithm</a></td><td>Data </td></tr>
+    <tr><td class="paramname">Changed</td><td>flag </td></tr>
   </table>
   </dd>
 </dl>
@@ -187,9 +203,11 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>resets the process table </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname">QList&lt;Process&gt;</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -219,28 +237,14 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>writes a QString to the log </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">QString</td><td></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a31f725e4e8b71d07d22a1f78f45cf6c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31f725e4e8b71d07d22a1f78f45cf6c0">&#9670;&nbsp;</a></span>isRunning</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool SimulationThread::isRunning = true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TODO: describe </p>
 
 </div>
 </div>

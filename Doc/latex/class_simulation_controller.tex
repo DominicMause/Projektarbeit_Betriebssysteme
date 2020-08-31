@@ -1,5 +1,14 @@
 \hypertarget{class_simulation_controller}{}\doxysection{Simulation\+Controller Class Reference}
 \label{class_simulation_controller}\index{SimulationController@{SimulationController}}
+
+
+A controller that runs the simulation in a separate thread.  
+
+
+
+
+{\ttfamily \#include $<$simulationcontroller.\+h$>$}
+
 Inheritance diagram for Simulation\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,47 +19,50 @@ Inheritance diagram for Simulation\+Controller\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_simulation_controller_afa6cadec6e8ac7e97cf7434afbc29062}{set\+Active\+Algorithm}} (Q\+String)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em sets the active algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_simulation_controller_a1fcfec22d6d02dc878d0f587e84be49e}{update\+Log}} (Q\+String)
-\item 
-void \mbox{\hyperlink{class_simulation_controller_a8513b619157d282160c9238940da3b14}{get\+Active\+Algorithm}} (\mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$)
-\item 
+\begin{DoxyCompactList}\small\item\em writes a Q\+String to the log \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_controller_a8a67edb192bd73a56e01cab7014ac0e8}{get\+Algorithms}} (Q\+List$<$ Q\+String $>$)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em gives the ui a list of algorithms in strings \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_simulation_controller_a405ab8796550aec16e4847812bbfcf04}{set\+Window}} (\mbox{\hyperlink{class_main_window}{Main\+Window}} $\ast$)
-\item 
+\begin{DoxyCompactList}\small\item\em Assigns a ui to the controller. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_controller_a2a1ff5c2f98708f4dad71bdd72a29981}{add\+Algorithm}} (\mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$)
-\item 
+\begin{DoxyCompactList}\small\item\em adds an algorithm to the list \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_controller_a7f73f95eccf60385981b1b352499052e}{add\+Process}} (\mbox{\hyperlink{class_process}{Process}})
-\item 
+\begin{DoxyCompactList}\small\item\em adds a process to the list \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_controller_a87e1f1f39c8f4f8bb3b013ade85e3161}{add\+Processes}} (Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$)
-\item 
+\begin{DoxyCompactList}\small\item\em adds a list of processes to the list \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_simulation_controller_af1d81cc39e77701ca8888162d17b309d}\label{class_simulation_controller_af1d81cc39e77701ca8888162d17b309d}} 
-void {\bfseries add\+Example\+Algorithms} ()
-\item 
+void \mbox{\hyperlink{class_simulation_controller_af1d81cc39e77701ca8888162d17b309d}{add\+Example\+Algorithms}} ()
+\begin{DoxyCompactList}\small\item\em provides a series of sample algorithms \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_simulation_controller_a766acca5b81e50320e1dd99229f41d2c}\label{class_simulation_controller_a766acca5b81e50320e1dd99229f41d2c}} 
-void {\bfseries push\+Algorithm\+List} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_simulation_controller_a766acca5b81e50320e1dd99229f41d2c}{push\+Algorithm\+List}} ()
+\begin{DoxyCompactList}\small\item\em provides the ui with the current list of algorithms \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Q\+String \mbox{\hyperlink{class_simulation_controller_abe4c26a8564913ef2a0186e500aed4ff}{output}}
-\item 
+\mbox{\Hypertarget{class_simulation_controller_a3f7059578a488d10a2c9c238231f05e5}\label{class_simulation_controller_a3f7059578a488d10a2c9c238231f05e5}} 
 Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$ $\ast$ \mbox{\hyperlink{class_simulation_controller_a3f7059578a488d10a2c9c238231f05e5}{process\+Table}}
-\item 
+\begin{DoxyCompactList}\small\item\em table with all processes, which should be ordered and executed \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_controller_af33ef5be51250f6711cb3533d7be0d76}\label{class_simulation_controller_af33ef5be51250f6711cb3533d7be0d76}} 
 Q\+List$<$ \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$ $>$ \mbox{\hyperlink{class_simulation_controller_af33ef5be51250f6711cb3533d7be0d76}{algorithms}}
-\item 
+\begin{DoxyCompactList}\small\item\em table with algorithms, which are used for sorting \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_controller_a1184429fb4b41211d88de33c76b03479}\label{class_simulation_controller_a1184429fb4b41211d88de33c76b03479}} 
 \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$ \mbox{\hyperlink{class_simulation_controller_a1184429fb4b41211d88de33c76b03479}{active\+Algorithm}} = nullptr
-\item 
+\begin{DoxyCompactList}\small\item\em the active sort algorithm \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_controller_a7817b7443f81e8d9031d3ca6b98136d9}\label{class_simulation_controller_a7817b7443f81e8d9031d3ca6b98136d9}} 
 \mbox{\hyperlink{class_main_window}{Main\+Window}} $\ast$ \mbox{\hyperlink{class_simulation_controller_a7817b7443f81e8d9031d3ca6b98136d9}{main\+Window}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em the UI that represents the simulation \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A controller that runs the simulation in a separate thread. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_simulation_controller_a2a1ff5c2f98708f4dad71bdd72a29981}\label{class_simulation_controller_a2a1ff5c2f98708f4dad71bdd72a29981}} 
@@ -60,8 +72,12 @@ Q\+List$<$ \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$ $>$ \mbox{\hyper
 {\footnotesize\ttfamily void Simulation\+Controller\+::add\+Algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$}]{algorithm }\end{DoxyParamCaption})}
 
 
+
+adds an algorithm to the list 
+
+
 \begin{DoxyParams}{Parameters}
-{\em } & \\
+{\em \mbox{\hyperlink{class_algorithm}{Algorithm}}} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_simulation_controller_a7f73f95eccf60385981b1b352499052e}\label{class_simulation_controller_a7f73f95eccf60385981b1b352499052e}} 
@@ -71,8 +87,12 @@ Q\+List$<$ \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$ $>$ \mbox{\hyper
 {\footnotesize\ttfamily void Simulation\+Controller\+::add\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_process}{Process}}}]{p }\end{DoxyParamCaption})}
 
 
+
+adds a process to the list 
+
+
 \begin{DoxyParams}{Parameters}
-{\em } & \\
+{\em \mbox{\hyperlink{class_process}{Process}}} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_simulation_controller_a87e1f1f39c8f4f8bb3b013ade85e3161}\label{class_simulation_controller_a87e1f1f39c8f4f8bb3b013ade85e3161}} 
@@ -82,19 +102,12 @@ Q\+List$<$ \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$ $>$ \mbox{\hyper
 {\footnotesize\ttfamily void Simulation\+Controller\+::add\+Processes (\begin{DoxyParamCaption}\item[{Q\+List$<$ \mbox{\hyperlink{class_process}{Process}} $>$}]{p }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
-{\em } & \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_simulation_controller_a8513b619157d282160c9238940da3b14}\label{class_simulation_controller_a8513b619157d282160c9238940da3b14}} 
-\index{SimulationController@{SimulationController}!getActiveAlgorithm@{getActiveAlgorithm}}
-\index{getActiveAlgorithm@{getActiveAlgorithm}!SimulationController@{SimulationController}}
-\doxysubsubsection{\texorpdfstring{getActiveAlgorithm}{getActiveAlgorithm}}
-{\footnotesize\ttfamily void Simulation\+Controller\+::get\+Active\+Algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+adds a list of processes to the list 
 
 
 \begin{DoxyParams}{Parameters}
-{\em } & \\
+{\em Q\+List$<$\+Process$>$} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_simulation_controller_a8a67edb192bd73a56e01cab7014ac0e8}\label{class_simulation_controller_a8a67edb192bd73a56e01cab7014ac0e8}} 
@@ -102,6 +115,10 @@ Q\+List$<$ \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$ $>$ \mbox{\hyper
 \index{getAlgorithms@{getAlgorithms}!SimulationController@{SimulationController}}
 \doxysubsubsection{\texorpdfstring{getAlgorithms}{getAlgorithms}}
 {\footnotesize\ttfamily void Simulation\+Controller\+::get\+Algorithms (\begin{DoxyParamCaption}\item[{Q\+List$<$ Q\+String $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+gives the ui a list of algorithms in strings 
 
 
 \begin{DoxyParams}{Parameters}
@@ -115,6 +132,10 @@ Q\+List$<$ \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$ $>$ \mbox{\hyper
 {\footnotesize\ttfamily void Simulation\+Controller\+::set\+Active\+Algorithm (\begin{DoxyParamCaption}\item[{Q\+String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
+
+sets the active algorithm 
+
+
 \begin{DoxyParams}{Parameters}
 {\em Q\+String} & \\
 \hline
@@ -126,8 +147,12 @@ Q\+List$<$ \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$ $>$ \mbox{\hyper
 {\footnotesize\ttfamily void Simulation\+Controller\+::set\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_main_window}{Main\+Window}} $\ast$}]{main\+Window }\end{DoxyParamCaption})}
 
 
+
+Assigns a ui to the controller. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em } & \\
+{\em \mbox{\hyperlink{class_main_window}{Main\+Window}}} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_simulation_controller_a1fcfec22d6d02dc878d0f587e84be49e}\label{class_simulation_controller_a1fcfec22d6d02dc878d0f587e84be49e}} 
@@ -137,44 +162,15 @@ Q\+List$<$ \mbox{\hyperlink{class_algorithm}{Algorithm}} $\ast$ $>$ \mbox{\hyper
 {\footnotesize\ttfamily void Simulation\+Controller\+::update\+Log (\begin{DoxyParamCaption}\item[{Q\+String}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
 
+
+writes a Q\+String to the log 
+
+
 \begin{DoxyParams}{Parameters}
 {\em Q\+String} & \\
 \hline
 \end{DoxyParams}
 
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_simulation_controller_a1184429fb4b41211d88de33c76b03479}\label{class_simulation_controller_a1184429fb4b41211d88de33c76b03479}} 
-\index{SimulationController@{SimulationController}!activeAlgorithm@{activeAlgorithm}}
-\index{activeAlgorithm@{activeAlgorithm}!SimulationController@{SimulationController}}
-\doxysubsubsection{\texorpdfstring{activeAlgorithm}{activeAlgorithm}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_algorithm}{Algorithm}}$\ast$ Simulation\+Controller\+::active\+Algorithm = nullptr}
-
-T\+O\+DO\+: describe \mbox{\Hypertarget{class_simulation_controller_af33ef5be51250f6711cb3533d7be0d76}\label{class_simulation_controller_af33ef5be51250f6711cb3533d7be0d76}} 
-\index{SimulationController@{SimulationController}!algorithms@{algorithms}}
-\index{algorithms@{algorithms}!SimulationController@{SimulationController}}
-\doxysubsubsection{\texorpdfstring{algorithms}{algorithms}}
-{\footnotesize\ttfamily Q\+List$<$\mbox{\hyperlink{class_algorithm}{Algorithm}}$\ast$$>$ Simulation\+Controller\+::algorithms}
-
-T\+O\+DO\+: describe \mbox{\Hypertarget{class_simulation_controller_a7817b7443f81e8d9031d3ca6b98136d9}\label{class_simulation_controller_a7817b7443f81e8d9031d3ca6b98136d9}} 
-\index{SimulationController@{SimulationController}!mainWindow@{mainWindow}}
-\index{mainWindow@{mainWindow}!SimulationController@{SimulationController}}
-\doxysubsubsection{\texorpdfstring{mainWindow}{mainWindow}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_main_window}{Main\+Window}}$\ast$ Simulation\+Controller\+::main\+Window}
-
-T\+O\+DO\+: describe \mbox{\Hypertarget{class_simulation_controller_abe4c26a8564913ef2a0186e500aed4ff}\label{class_simulation_controller_abe4c26a8564913ef2a0186e500aed4ff}} 
-\index{SimulationController@{SimulationController}!output@{output}}
-\index{output@{output}!SimulationController@{SimulationController}}
-\doxysubsubsection{\texorpdfstring{output}{output}}
-{\footnotesize\ttfamily Q\+String Simulation\+Controller\+::output}
-
-T\+O\+DO\+: describe \mbox{\Hypertarget{class_simulation_controller_a3f7059578a488d10a2c9c238231f05e5}\label{class_simulation_controller_a3f7059578a488d10a2c9c238231f05e5}} 
-\index{SimulationController@{SimulationController}!processTable@{processTable}}
-\index{processTable@{processTable}!SimulationController@{SimulationController}}
-\doxysubsubsection{\texorpdfstring{processTable}{processTable}}
-{\footnotesize\ttfamily Q\+List$<$\mbox{\hyperlink{class_process}{Process}}$>$$\ast$ Simulation\+Controller\+::process\+Table}
-
-T\+O\+DO\+: describe 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

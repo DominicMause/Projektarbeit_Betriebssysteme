@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['process_87',['Process',['../class_process.html#af6e150f842875dae2edc92fae6f4d051',1,'Process']]],
-  ['processlistupdate_88',['processListUpdate',['../class_main_window.html#a3e3ebc5318bc8fbf933371b2ce77c594',1,'MainWindow']]]
+  ['resultready_86',['resultReady',['../class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412',1,'SimulationThread']]],
+  ['rowcount_87',['rowCount',['../class_process_list_model.html#ad86bea7c7c526ccd54781fb043c349fe',1,'ProcessListModel']]]
 ];

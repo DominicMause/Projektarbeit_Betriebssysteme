@@ -69,6 +69,11 @@ $(function() {
 <div class="title">Process Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>the process class represents an execution with the process function  
+ <a href="class_process.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="process_8h_source.html">process.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -78,13 +83,12 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:aceaed831d071195da0f3ddb0ea8af57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">the priority of the process <br /></td></tr>
 <tr class="separator:aceaed831d071195da0f3ddb0ea8af57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f82ca7f0e219fac194545e700b8948c"><td class="memItemLeft" align="right" valign="top"><a id="a7f82ca7f0e219fac194545e700b8948c"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>func</b>) ()</td></tr>
+<tr class="memitem:a7f82ca7f0e219fac194545e700b8948c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process.html#a7f82ca7f0e219fac194545e700b8948c">func</a>) ()</td></tr>
 <tr class="separator:a7f82ca7f0e219fac194545e700b8948c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af6e150f842875dae2edc92fae6f4d051"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process.html#af6e150f842875dae2edc92fae6f4d051">Process</a> (int, QString, func, <a class="el" href="class_process.html#aceaed831d071195da0f3ddb0ea8af57b">Priority</a>=middle)</td></tr>
+<tr class="memitem:af6e150f842875dae2edc92fae6f4d051"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process.html#af6e150f842875dae2edc92fae6f4d051">Process</a> (int, QString, <a class="el" href="class_process.html#a7f82ca7f0e219fac194545e700b8948c">func</a>, <a class="el" href="class_process.html#aceaed831d071195da0f3ddb0ea8af57b">Priority</a>=middle)</td></tr>
 <tr class="separator:af6e150f842875dae2edc92fae6f4d051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a5b2f6a945300fd6ecd243bc14e8073"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process.html#a4a5b2f6a945300fd6ecd243bc14e8073">getId</a> ()</td></tr>
 <tr class="memdesc:a4a5b2f6a945300fd6ecd243bc14e8073"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the ID of the process  <a href="class_process.html#a4a5b2f6a945300fd6ecd243bc14e8073">More...</a><br /></td></tr>
@@ -105,13 +109,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:afbce316a308735fb912f1cf7fb198d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the priority with the Priority enum  <a href="class_process.html#afbce316a308735fb912f1cf7fb198d38">More...</a><br /></td></tr>
 <tr class="separator:afbce316a308735fb912f1cf7fb198d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a0d8bd390f092ae4b97a89bce4ab25d"><td class="memItemLeft" align="right" valign="top"><a id="a9a0d8bd390f092ae4b97a89bce4ab25d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process.html#a9a0d8bd390f092ae4b97a89bce4ab25d">setFunction</a> (func)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process.html#a9a0d8bd390f092ae4b97a89bce4ab25d">setFunction</a> (<a class="el" href="class_process.html#a7f82ca7f0e219fac194545e700b8948c">func</a>)</td></tr>
 <tr class="memdesc:a9a0d8bd390f092ae4b97a89bce4ab25d"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the function that the process executes <br /></td></tr>
 <tr class="separator:a9a0d8bd390f092ae4b97a89bce4ab25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d39380197cdbeb75d8303ba7cdbeaa4"><td class="memItemLeft" align="right" valign="top"><a id="a7d39380197cdbeb75d8303ba7cdbeaa4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_process.html#a7d39380197cdbeb75d8303ba7cdbeaa4">execute</a> ()</td></tr>
+<tr class="memdesc:a7d39380197cdbeb75d8303ba7cdbeaa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">executes the process function <br /></td></tr>
 <tr class="separator:a7d39380197cdbeb75d8303ba7cdbeaa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>the process class represents an execution with the process function </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a7f82ca7f0e219fac194545e700b8948c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f82ca7f0e219fac194545e700b8948c">&#9670;&nbsp;</a></span>func</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* Process::func) ()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>default function for process execution </p>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af6e150f842875dae2edc92fae6f4d051"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af6e150f842875dae2edc92fae6f4d051">&#9670;&nbsp;</a></span>Process()</h2>
@@ -134,7 +157,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> ()</td></
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">func&#160;</td>
+          <td class="paramtype"><a class="el" href="class_process.html#a7f82ca7f0e219fac194545e700b8948c">func</a>&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>

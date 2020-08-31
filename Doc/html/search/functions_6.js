@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['mainwindow_85',['MainWindow',['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]],
-  ['myinfolabel_86',['MyInfoLabel',['../class_my_info_label.html#a9670d67fca20e5d80e59fa4f4b4839f0',1,'MyInfoLabel::MyInfoLabel(QString name, QString value)'],['../class_my_info_label.html#a9117ab1048d07c17d9c053ac470e4c2f',1,'MyInfoLabel::MyInfoLabel(QString name)']]]
+  ['process_83',['Process',['../class_process.html#af6e150f842875dae2edc92fae6f4d051',1,'Process']]],
+  ['processlistupdate_84',['processListUpdate',['../class_main_window.html#a3e3ebc5318bc8fbf933371b2ce77c594',1,'MainWindow']]],
+  ['pushalgorithmlist_85',['pushAlgorithmList',['../class_simulation_controller.html#a766acca5b81e50320e1dd99229f41d2c',1,'SimulationController']]]
 ];

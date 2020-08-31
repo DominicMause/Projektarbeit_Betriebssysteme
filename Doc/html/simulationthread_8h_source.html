@@ -78,34 +78,39 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ~<a class="code" href="class_simulation_thread.html">SimulationThread</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_simulation_thread.html#ab1ea82310703e5e656d0a5dd1d64bfda">activeAlgorithmChanged</a>(<a class="code" href="class_algorithm.html">Algorithm</a> *);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_simulation_thread.html#ac2f901f902aa3bfd4da525434c432dd9">setProcessTable</a>(QList&lt;Process&gt; *);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> doWork();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ~<a class="code" href="class_simulation_thread.html">SimulationThread</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_simulation_thread.html#ab1ea82310703e5e656d0a5dd1d64bfda">activeAlgorithmChanged</a>(<a class="code" href="class_algorithm.html">Algorithm</a> *);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_simulation_thread.html#ac2f901f902aa3bfd4da525434c432dd9">setProcessTable</a>(QList&lt;Process&gt; *);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_simulation_thread.html#a31f725e4e8b71d07d22a1f78f45cf6c0">   38</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_simulation_thread.html#a31f725e4e8b71d07d22a1f78f45cf6c0">isRunning</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_simulation_thread.html#a31f725e4e8b71d07d22a1f78f45cf6c0">   42</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_simulation_thread.html#a31f725e4e8b71d07d22a1f78f45cf6c0">isRunning</a> = <span class="keyword">true</span>; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> run() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">int</span> exec();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="class_algorithm.html">Algorithm</a> * currentAlgorithm = <span class="keyword">nullptr</span>; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QList&lt;Process&gt; * processTable = <span class="keyword">nullptr</span>; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    QList&lt;Process&gt; sortedProcessTable; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;signals:</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412">   69</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412">resultReady</a>(QList&lt;Process&gt; *,<a class="code" href="class_algorithm.html">Algorithm</a> *,<span class="keywordtype">bool</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_simulation_thread.html#ad35f789d2c4c21c957cd49aa90f5f0e6">   75</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_simulation_thread.html#ad35f789d2c4c21c957cd49aa90f5f0e6">updateLog</a>(QString);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif // SIMULATIONTHREAD_H</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> run() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span> exec();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="class_algorithm.html">Algorithm</a> * currentAlgorithm = <span class="keyword">nullptr</span>; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    QList&lt;Process&gt; * processTable = <span class="keyword">nullptr</span>; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    QList&lt;Process&gt; sortedProcessTable; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;signals:</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412">resultReady</a>(QList&lt;Process&gt; *,<a class="code" href="class_algorithm.html">Algorithm</a> *,<span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_simulation_thread.html#ad35f789d2c4c21c957cd49aa90f5f0e6">   73</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_simulation_thread.html#ad35f789d2c4c21c957cd49aa90f5f0e6">updateLog</a>(QString);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif // SIMULATIONTHREAD_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_simulation_thread_html_a31f725e4e8b71d07d22a1f78f45cf6c0"><div class="ttname"><a href="class_simulation_thread.html#a31f725e4e8b71d07d22a1f78f45cf6c0">SimulationThread::isRunning</a></div><div class="ttdeci">bool isRunning</div><div class="ttdef"><b>Definition:</b> simulationthread.h:42</div></div>
-<div class="ttc" id="aclass_simulation_thread_html"><div class="ttname"><a href="class_simulation_thread.html">SimulationThread</a></div><div class="ttdef"><b>Definition:</b> simulationthread.h:14</div></div>
-<div class="ttc" id="aclass_simulation_thread_html_ade8a1766b4fba633f92a4b8e21650412"><div class="ttname"><a href="class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412">SimulationThread::resultReady</a></div><div class="ttdeci">void resultReady(QList&lt; Process &gt; *, Algorithm *, bool)</div></div>
-<div class="ttc" id="aclass_algorithm_html"><div class="ttname"><a href="class_algorithm.html">Algorithm</a></div><div class="ttdef"><b>Definition:</b> algorithm.h:10</div></div>
-<div class="ttc" id="aclass_simulation_thread_html_ac2f901f902aa3bfd4da525434c432dd9"><div class="ttname"><a href="class_simulation_thread.html#ac2f901f902aa3bfd4da525434c432dd9">SimulationThread::setProcessTable</a></div><div class="ttdeci">void setProcessTable(QList&lt; Process &gt; *)</div><div class="ttdef"><b>Definition:</b> simulationthread.cpp:61</div></div>
-<div class="ttc" id="aclass_simulation_thread_html_ad35f789d2c4c21c957cd49aa90f5f0e6"><div class="ttname"><a href="class_simulation_thread.html#ad35f789d2c4c21c957cd49aa90f5f0e6">SimulationThread::updateLog</a></div><div class="ttdeci">void updateLog(QString)</div></div>
-<div class="ttc" id="aclass_simulation_thread_html_ab1ea82310703e5e656d0a5dd1d64bfda"><div class="ttname"><a href="class_simulation_thread.html#ab1ea82310703e5e656d0a5dd1d64bfda">SimulationThread::activeAlgorithmChanged</a></div><div class="ttdeci">void activeAlgorithmChanged(Algorithm *)</div><div class="ttdef"><b>Definition:</b> simulationthread.cpp:53</div></div>
+<div class="ttc" id="aclass_simulation_thread_html_a31f725e4e8b71d07d22a1f78f45cf6c0"><div class="ttname"><a href="class_simulation_thread.html#a31f725e4e8b71d07d22a1f78f45cf6c0">SimulationThread::isRunning</a></div><div class="ttdeci">bool isRunning</div><div class="ttdoc">tells if the thread should run</div><div class="ttdef"><b>Definition:</b> simulationthread.h:38</div></div>
+<div class="ttc" id="aclass_simulation_thread_html"><div class="ttname"><a href="class_simulation_thread.html">SimulationThread</a></div><div class="ttdoc">thread used for sorting and executing algorithms and processes</div><div class="ttdef"><b>Definition:</b> simulationthread.h:14</div></div>
+<div class="ttc" id="aclass_simulation_thread_html_ade8a1766b4fba633f92a4b8e21650412"><div class="ttname"><a href="class_simulation_thread.html#ade8a1766b4fba633f92a4b8e21650412">SimulationThread::resultReady</a></div><div class="ttdeci">void resultReady(QList&lt; Process &gt; *, Algorithm *, bool)</div><div class="ttdoc">is used when the algorithm is through to transfer data to the ui</div></div>
+<div class="ttc" id="aclass_algorithm_html"><div class="ttname"><a href="class_algorithm.html">Algorithm</a></div><div class="ttdoc">describes an algorithm with sorting function</div><div class="ttdef"><b>Definition:</b> algorithm.h:12</div></div>
+<div class="ttc" id="aclass_simulation_thread_html_ac2f901f902aa3bfd4da525434c432dd9"><div class="ttname"><a href="class_simulation_thread.html#ac2f901f902aa3bfd4da525434c432dd9">SimulationThread::setProcessTable</a></div><div class="ttdeci">void setProcessTable(QList&lt; Process &gt; *)</div><div class="ttdoc">resets the process table</div><div class="ttdef"><b>Definition:</b> simulationthread.cpp:60</div></div>
+<div class="ttc" id="aclass_simulation_thread_html_ad35f789d2c4c21c957cd49aa90f5f0e6"><div class="ttname"><a href="class_simulation_thread.html#ad35f789d2c4c21c957cd49aa90f5f0e6">SimulationThread::updateLog</a></div><div class="ttdeci">void updateLog(QString)</div><div class="ttdoc">writes a QString to the log</div></div>
+<div class="ttc" id="aclass_simulation_thread_html_ab1ea82310703e5e656d0a5dd1d64bfda"><div class="ttname"><a href="class_simulation_thread.html#ab1ea82310703e5e656d0a5dd1d64bfda">SimulationThread::activeAlgorithmChanged</a></div><div class="ttdeci">void activeAlgorithmChanged(Algorithm *)</div><div class="ttdoc">resets the sorting algorithm</div><div class="ttdef"><b>Definition:</b> simulationthread.cpp:52</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

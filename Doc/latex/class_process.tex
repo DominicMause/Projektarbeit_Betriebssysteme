@@ -1,5 +1,14 @@
 \hypertarget{class_process}{}\doxysection{Process Class Reference}
 \label{class_process}\index{Process@{Process}}
+
+
+the process class represents an execution with the process function  
+
+
+
+
+{\ttfamily \#include $<$process.\+h$>$}
+
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -9,13 +18,12 @@ enum \mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}
 {\bfseries high}
  \}
 \begin{DoxyCompactList}\small\item\em the priority of the process \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_process_a7f82ca7f0e219fac194545e700b8948c}\label{class_process_a7f82ca7f0e219fac194545e700b8948c}} 
-typedef void($\ast$ {\bfseries func}) ()
+typedef void($\ast$ \mbox{\hyperlink{class_process_a7f82ca7f0e219fac194545e700b8948c}{func}}) ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_process_af6e150f842875dae2edc92fae6f4d051}{Process}} (int, Q\+String, func, \mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}}=middle)
+\mbox{\hyperlink{class_process_af6e150f842875dae2edc92fae6f4d051}{Process}} (int, Q\+String, \mbox{\hyperlink{class_process_a7f82ca7f0e219fac194545e700b8948c}{func}}, \mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}}=middle)
 \item 
 int \mbox{\hyperlink{class_process_a4a5b2f6a945300fd6ecd243bc14e8073}{get\+Id}} ()
 \begin{DoxyCompactList}\small\item\em returns the ID of the process \end{DoxyCompactList}\item 
@@ -30,19 +38,31 @@ void \mbox{\hyperlink{class_process_aac3c3ebed7fcf6f95636e5a146a81e8a}{set\+Proc
 void \mbox{\hyperlink{class_process_afbce316a308735fb912f1cf7fb198d38}{set\+Priotity}} (\mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}})
 \begin{DoxyCompactList}\small\item\em set the priority with the Priority enum \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_process_a9a0d8bd390f092ae4b97a89bce4ab25d}\label{class_process_a9a0d8bd390f092ae4b97a89bce4ab25d}} 
-void \mbox{\hyperlink{class_process_a9a0d8bd390f092ae4b97a89bce4ab25d}{set\+Function}} (func)
+void \mbox{\hyperlink{class_process_a9a0d8bd390f092ae4b97a89bce4ab25d}{set\+Function}} (\mbox{\hyperlink{class_process_a7f82ca7f0e219fac194545e700b8948c}{func}})
 \begin{DoxyCompactList}\small\item\em sets the function that the process executes \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_process_a7d39380197cdbeb75d8303ba7cdbeaa4}\label{class_process_a7d39380197cdbeb75d8303ba7cdbeaa4}} 
-void {\bfseries execute} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_process_a7d39380197cdbeb75d8303ba7cdbeaa4}{execute}} ()
+\begin{DoxyCompactList}\small\item\em executes the process function \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+the process class represents an execution with the process function 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_process_a7f82ca7f0e219fac194545e700b8948c}\label{class_process_a7f82ca7f0e219fac194545e700b8948c}} 
+\index{Process@{Process}!func@{func}}
+\index{func@{func}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{func}{func}}
+{\footnotesize\ttfamily typedef void($\ast$ Process\+::func) ()}
+
+default function for process execution 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_process_af6e150f842875dae2edc92fae6f4d051}\label{class_process_af6e150f842875dae2edc92fae6f4d051}} 
 \index{Process@{Process}!Process@{Process}}
 \index{Process@{Process}!Process@{Process}}
 \doxysubsubsection{\texorpdfstring{Process()}{Process()}}
-{\footnotesize\ttfamily Process\+::\+Process (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Q\+String}]{name,  }\item[{func}]{f,  }\item[{\mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}}}]{priority = {\ttfamily middle} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Process\+::\+Process (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Q\+String}]{name,  }\item[{\mbox{\hyperlink{class_process_a7f82ca7f0e219fac194545e700b8948c}{func}}}]{f,  }\item[{\mbox{\hyperlink{class_process_aceaed831d071195da0f3ddb0ea8af57b}{Priority}}}]{priority = {\ttfamily middle} }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}

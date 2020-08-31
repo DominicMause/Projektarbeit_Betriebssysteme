@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['firstcomefirstserved_11',['firstComeFirstServed',['../class_helper.html#a2a3f4fe27b3f2cf14b0fe224859eafeb',1,'Helper']]]
+  ['func_12',['func',['../class_algorithm.html#aa60efffed37e9f651b0f31d24e5356f4',1,'Algorithm::func()'],['../class_process.html#a7f82ca7f0e219fac194545e700b8948c',1,'Process::func()']]]
 ];
