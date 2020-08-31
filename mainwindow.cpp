@@ -22,8 +22,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     model = new ProcessListModel;
     logBox = new QTextEdit();
     logBox->setReadOnly(true);
-    logBox2 = new QTextEdit();
-    logBox2->setReadOnly(true);
     algoSelectLabel = new QLabel("Algorithm");
     algoSelectComboBox = new QComboBox();
     algoSelectComboBox->setPlaceholderText("empty");
@@ -52,7 +50,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     mainBox->addLayout(topLayout);
     mainBox->addLayout(bottomLayout);
     bottomLayout->addWidget(logBox);
-    bottomLayout->addWidget(logBox2);
     topLayout->addLayout(topChildLayout,2);
     topChildLayout->addItem(new QSpacerItem(50, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
     topChildLayout->addLayout(infoLayout);
@@ -96,21 +93,6 @@ void MainWindow::logUpdate(QString string)
     logBox->append(string);
 
 }
-
-
-void MainWindow::log2Clear()
-{
-    logBox2->clear();
-}
-
-
-void MainWindow::log2Update(QString string)
-{
-    //Updating the Log Text Box's content
-    logBox2->append(string);
-
-}
-
 
 void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm * a,bool hasChanged)
 {
