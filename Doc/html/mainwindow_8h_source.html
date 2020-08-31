@@ -107,58 +107,53 @@ $(function() {
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span> slots:</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a0f2f770c146a8b1216271d68a3355bdb">logUpdate</a>(QString <span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a26d66e799aedfbbb957aa2b00f6b591b">logClear</a>();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a9452d2e3e12447deef4fa9de76460c5b">log2Update</a>(QString <span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#ada9f65cf28d24ab86cca80a615597876">log2Clear</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a3e3ebc5318bc8fbf933371b2ce77c594">processListUpdate</a>(QList&lt;Process&gt; *inputProcessList, <a class="code" href="class_algorithm.html">Algorithm</a> *a, <span class="keywordtype">bool</span> hasChanged);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aa0583b7d003cd58e03407c83518493a8">algorithmusBoxUpdate</a>(QList&lt;QString&gt; inputAlgoList);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a30ae7436bcedd48fbca4d14c04f010fe">updateProgressBar</a>(<span class="keywordtype">int</span> progress);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;signals:</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_main_window.html#af1c93a51f4452d708d800c5a615805d7">  102</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#af1c93a51f4452d708d800c5a615805d7">algorithmusBoxChanged</a>(QString algorithm);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> boxChanged(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    Ui::MainWindow *ui; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    QTextEdit *logBox; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QTextEdit *logBox2; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    QComboBox *algoSelectComboBox; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="class_my_info_label.html">MyInfoLabel</a> *algoID, *algoName, *algoWorktime, *algoSize; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="class_algorithm.html">Algorithm</a> *currentAlgorythm = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    QList&lt;QString&gt; tmpItem;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    QLabel *algoSelectLabel;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    QHBoxLayout *algorithmusSelector; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    QVBoxLayout *infoLayout; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    QHBoxLayout *topChildLayout; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    QVBoxLayout *mainBox; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    QHBoxLayout *topLayout; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    QHBoxLayout *bottomLayout; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="class_my_info_label.html">MyInfoLabel</a> *processCount; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    QLabel *idHeader; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    QLabel *nameHeader; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    QLabel *prioHeader; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    QLabel *sizeHeader; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    QHBoxLayout *headerLayout; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    QVBoxLayout *processListHeaderLayout; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    QListView *processList; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    QProgressBar *bar; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">bool</span> hasChanged = <span class="keyword">false</span>; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;};</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif // MAINWINDOW_H</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a3e3ebc5318bc8fbf933371b2ce77c594">processListUpdate</a>(QList&lt;Process&gt; *inputProcessList, <a class="code" href="class_algorithm.html">Algorithm</a> *a, <span class="keywordtype">bool</span> hasChanged);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aa0583b7d003cd58e03407c83518493a8">algorithmusBoxUpdate</a>(QList&lt;QString&gt; inputAlgoList);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a30ae7436bcedd48fbca4d14c04f010fe">updateProgressBar</a>(<span class="keywordtype">int</span> progress);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;signals:</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_main_window.html#af1c93a51f4452d708d800c5a615805d7">   91</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#af1c93a51f4452d708d800c5a615805d7">algorithmusBoxChanged</a>(QString algorithm);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> boxChanged(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    Ui::MainWindow *ui; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    QTextEdit *logBox; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    QComboBox *algoSelectComboBox; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="class_my_info_label.html">MyInfoLabel</a> *algoID, *algoName, *algoWorktime, *algoSize; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="class_algorithm.html">Algorithm</a> *currentAlgorythm = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    QList&lt;QString&gt; tmpItem;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    QLabel *algoSelectLabel;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    QHBoxLayout *algorithmusSelector; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    QVBoxLayout *infoLayout; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    QHBoxLayout *topChildLayout; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    QVBoxLayout *mainBox; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QHBoxLayout *topLayout; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    QHBoxLayout *bottomLayout; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="class_my_info_label.html">MyInfoLabel</a> *processCount; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    QLabel *idHeader; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    QLabel *nameHeader; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    QLabel *prioHeader; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    QLabel *sizeHeader; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    QHBoxLayout *headerLayout; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    QVBoxLayout *processListHeaderLayout; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    QListView *processList; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    QProgressBar *bar; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">bool</span> hasChanged = <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif // MAINWINDOW_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_my_info_label_html"><div class="ttname"><a href="class_my_info_label.html">MyInfoLabel</a></div><div class="ttdoc">This class is a reued combination of two Labels to display Informations.</div><div class="ttdef"><b>Definition:</b> myinfolabel.h:17</div></div>
 <div class="ttc" id="aclass_main_window_html_af1c93a51f4452d708d800c5a615805d7"><div class="ttname"><a href="class_main_window.html#af1c93a51f4452d708d800c5a615805d7">MainWindow::algorithmusBoxChanged</a></div><div class="ttdeci">void algorithmusBoxChanged(QString algorithm)</div><div class="ttdoc">This Signal gets emited when the user selects a new Algorithm.</div></div>
 <div class="ttc" id="aclass_algorithm_html"><div class="ttname"><a href="class_algorithm.html">Algorithm</a></div><div class="ttdoc">describes an algorithm with sorting function</div><div class="ttdef"><b>Definition:</b> algorithm.h:12</div></div>
 <div class="ttc" id="aclass_process_list_model_html"><div class="ttname"><a href="class_process_list_model.html">ProcessListModel</a></div><div class="ttdoc">This class inhertis from QAbstractItemListModel to function as a model for the processList....</div><div class="ttdef"><b>Definition:</b> processlistmodel.h:12</div></div>
-<div class="ttc" id="aclass_main_window_html_a26d66e799aedfbbb957aa2b00f6b591b"><div class="ttname"><a href="class_main_window.html#a26d66e799aedfbbb957aa2b00f6b591b">MainWindow::logClear</a></div><div class="ttdeci">void logClear()</div><div class="ttdoc">This Slot clears the left Log in the UI.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:87</div></div>
+<div class="ttc" id="aclass_main_window_html_a26d66e799aedfbbb957aa2b00f6b591b"><div class="ttname"><a href="class_main_window.html#a26d66e799aedfbbb957aa2b00f6b591b">MainWindow::logClear</a></div><div class="ttdeci">void logClear()</div><div class="ttdoc">This Slot clears the left Log in the UI.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:84</div></div>
 <div class="ttc" id="aclass_main_window_html_abf09a928ec65318372a645e07a00e6eb"><div class="ttname"><a href="class_main_window.html#abf09a928ec65318372a645e07a00e6eb">MainWindow::model</a></div><div class="ttdeci">ProcessListModel * model</div><div class="ttdef"><b>Definition:</b> mainwindow.h:46</div></div>
-<div class="ttc" id="aclass_main_window_html_ada9f65cf28d24ab86cca80a615597876"><div class="ttname"><a href="class_main_window.html#ada9f65cf28d24ab86cca80a615597876">MainWindow::log2Clear</a></div><div class="ttdeci">void log2Clear()</div><div class="ttdoc">This Slot clears the right Log in the UI.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:101</div></div>
-<div class="ttc" id="aclass_main_window_html_a9452d2e3e12447deef4fa9de76460c5b"><div class="ttname"><a href="class_main_window.html#a9452d2e3e12447deef4fa9de76460c5b">MainWindow::log2Update</a></div><div class="ttdeci">void log2Update(QString string)</div><div class="ttdoc">This Slot recives a string that gets appended to the right Log.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:107</div></div>
-<div class="ttc" id="aclass_main_window_html_a30ae7436bcedd48fbca4d14c04f010fe"><div class="ttname"><a href="class_main_window.html#a30ae7436bcedd48fbca4d14c04f010fe">MainWindow::updateProgressBar</a></div><div class="ttdeci">void updateProgressBar(int progress)</div><div class="ttdoc">This Slot is for stetting the value of the Progressbar.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:145</div></div>
-<div class="ttc" id="aclass_main_window_html_a3e3ebc5318bc8fbf933371b2ce77c594"><div class="ttname"><a href="class_main_window.html#a3e3ebc5318bc8fbf933371b2ce77c594">MainWindow::processListUpdate</a></div><div class="ttdeci">void processListUpdate(QList&lt; Process &gt; *inputProcessList, Algorithm *a, bool hasChanged)</div><div class="ttdoc">Calling this Slot Updates the processList and Algorithm Information based on the Parameters.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:115</div></div>
-<div class="ttc" id="aclass_main_window_html_aa0583b7d003cd58e03407c83518493a8"><div class="ttname"><a href="class_main_window.html#aa0583b7d003cd58e03407c83518493a8">MainWindow::algorithmusBoxUpdate</a></div><div class="ttdeci">void algorithmusBoxUpdate(QList&lt; QString &gt; inputAlgoList)</div><div class="ttdoc">This Slot is for stetting the items of the Algorithm Select combobox.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:136</div></div>
-<div class="ttc" id="aclass_main_window_html_a0f2f770c146a8b1216271d68a3355bdb"><div class="ttname"><a href="class_main_window.html#a0f2f770c146a8b1216271d68a3355bdb">MainWindow::logUpdate</a></div><div class="ttdeci">void logUpdate(QString string)</div><div class="ttdoc">This Slot recives a string that gets appended to the left Log.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:93</div></div>
+<div class="ttc" id="aclass_main_window_html_a30ae7436bcedd48fbca4d14c04f010fe"><div class="ttname"><a href="class_main_window.html#a30ae7436bcedd48fbca4d14c04f010fe">MainWindow::updateProgressBar</a></div><div class="ttdeci">void updateProgressBar(int progress)</div><div class="ttdoc">This Slot is for stetting the value of the Progressbar.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:127</div></div>
+<div class="ttc" id="aclass_main_window_html_a3e3ebc5318bc8fbf933371b2ce77c594"><div class="ttname"><a href="class_main_window.html#a3e3ebc5318bc8fbf933371b2ce77c594">MainWindow::processListUpdate</a></div><div class="ttdeci">void processListUpdate(QList&lt; Process &gt; *inputProcessList, Algorithm *a, bool hasChanged)</div><div class="ttdoc">Calling this Slot Updates the processList and Algorithm Information based on the Parameters.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:97</div></div>
+<div class="ttc" id="aclass_main_window_html_aa0583b7d003cd58e03407c83518493a8"><div class="ttname"><a href="class_main_window.html#aa0583b7d003cd58e03407c83518493a8">MainWindow::algorithmusBoxUpdate</a></div><div class="ttdeci">void algorithmusBoxUpdate(QList&lt; QString &gt; inputAlgoList)</div><div class="ttdoc">This Slot is for stetting the items of the Algorithm Select combobox.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:118</div></div>
+<div class="ttc" id="aclass_main_window_html_a0f2f770c146a8b1216271d68a3355bdb"><div class="ttname"><a href="class_main_window.html#a0f2f770c146a8b1216271d68a3355bdb">MainWindow::logUpdate</a></div><div class="ttdeci">void logUpdate(QString string)</div><div class="ttdoc">This Slot recives a string that gets appended to the left Log.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:90</div></div>
 <div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">This class is responsible for the UI.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:36</div></div>
 <div class="ttc" id="aclass_main_window_html_a996c5a2b6f77944776856f08ec30858d"><div class="ttname"><a href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(QWidget *parent=nullptr)</div><div class="ttdoc">Creates a UI to display Algorythm and process Data.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:10</div></div>
 <!-- start footer part -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['algorithm_53',['Algorithm',['../class_algorithm.html',1,'']]]
+  ['algorithm_51',['Algorithm',['../class_algorithm.html',1,'']]]
 ];
