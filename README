@@ -36,6 +36,15 @@
 
     Ein Beispiel zum Prozess hinzufügen liegt in Bildern bei (maincpp.JPG und createProcess.JPG)
 
+#   Konzept Deutsch
+
+    Die Idee des Projekts ist es, verschiedene Sortieralgorithmen zu simulieren und zu vergleichen.
+    Hierzu schufen wir eine Umgebung, in welcher ein Algorithmus eine Liste an Prozessen soriteren und ausführen soll.
+    Nach jedem durchlauf soll die vergangede Zeit sowie die sortierte Liste ausgegeben werden.
+    Dafür stellten wir dem Controller ein UI zur verfügung, über welches sowhol der aktuelle Algorithmus ausgelsen wird,
+    sowie die Prozessliste.
+    Außerdem haben wir ein Log hinzugefügt, um genauer zu sehen was in der Simulation gerade geschieht.
+
 #   Installation English
 
     1.  move project Projektarbeit_Betriebssysteme and APITester to Qt Workplace.
@@ -70,3 +79,12 @@
         reference that receives and returns a list of processes (QList<Process>).
 
     An example of adding a process is included in images (maincpp.JPG and createProcess.JPG)
+
+#   Concept English
+
+    The idea of the project is to simulate and compare different sorting algorithms.
+    For this purpose, we created an environment in which one algorithm should sort and execute a list of processes.
+    After each run the elapsed time and the sorted list should be displayed.
+    For this purpose we provided the controller with a UI, which is used to evaluate the current algorithm,
+    and the process list.
+    We have also added a log to see what is happening in the simulation.
