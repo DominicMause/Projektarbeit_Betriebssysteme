@@ -19,10 +19,11 @@
 # Installation English
 
 1.  move project Projektarbeit_Betriebssysteme and APITester to Qt Workplace.
+2.  create new project.
 2.  open both projects in Qt Creator
-3.  execute and create qmake project Projektarbeit_Betriebssysteme.
+3.  execute qmake and build project Projektarbeit_Betriebssysteme.
     (a Release folder will be created here)
-4.  right click APITester project and add library.
+4.  right click new project and add library.
 5.  select external library.
 6.  select library file -> release folder from step 3
     into the subfolder release and select the SchedulingSimulatorLib.lib file.
@@ -30,5 +31,5 @@
 8.  it is possible that Qt does not link the project correctly, therefore open the APITester.pro file and select the following
     Write line to the very end of the file.
         INCLUDEPATH += $$PWD/../Projektarbeit_Betriebssysteme
-9.  execute and create APITester qmake.
+9.  execute qmake and build new project.
 10. ready
