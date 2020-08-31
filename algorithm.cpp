@@ -23,11 +23,7 @@ void Algorithm::setFunction(func func){
 }
 
 QList<Process> Algorithm::execute(QList<Process> * list){
-    QList<Process> processes = function_(*list);
-    for(Process p : processes){
-        p.execute();
-    }
-    return processes;
+    return function_(*list);
 }
 
 void Algorithm::setWorkTime(qint64 elapsedTime){

@@ -68,6 +68,8 @@ void SimulationController::addAlgorithm(Algorithm *algorithm){
     }
     emit updateLog(algorithm->getName() + " added to algorithm list");
     algorithms.append(algorithm);
+
+    pushAlgorithmList();
 }
 
 void SimulationController::setActiveAlgorithm(QString name){
