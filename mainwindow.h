@@ -40,6 +40,9 @@ public:
      *
      */
     MainWindow(QWidget *parent = nullptr);
+
+    ProcessListModel *model; /**< The Model that provieds the information for the processList. */
+
     /**
      * @brief
      *
@@ -100,7 +103,6 @@ private:
     Ui::MainWindow *ui; /**< The UI Object of this Window. */
     QTextEdit *logBox; /**< Left log box. */
     QTextEdit *logBox2; /**< Right log box. */
-    ProcessListModel *model; /**< The Model that provieds the information for the processList. */
     QComboBox *algoSelectComboBox; /**< Combobox to select the algorithm. */
     MyInfoLabel *algoID, *algoName, *algoWorktime, *algoSize; /**< Displayed algorithm infos. */
     Algorithm *currentAlgorythm = nullptr;

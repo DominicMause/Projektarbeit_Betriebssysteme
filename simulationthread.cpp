@@ -2,6 +2,7 @@
 #include <QDateTime>
 
 void SimulationThread::run(){
+
     exec();
 }
 
@@ -59,10 +60,7 @@ void SimulationThread::activeAlgorithmChanged(Algorithm * algorithm){
 
 void SimulationThread::setProcessTable(QList<Process> * list){
     processTable = new QList<Process>();
-    processTable->clear();
-    for(Process p: *list){
-        processTable->append(p);
-    }
+    processTable = list;
 }
 
 SimulationThread::~SimulationThread(){

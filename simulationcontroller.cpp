@@ -9,9 +9,6 @@ SimulationController::SimulationController()
     thread = new SimulationThread();
 
     processTable = new QList<Process>();
-    for(int i = 0; i < 50000; i++){
-        processTable->append(Process(i,"TestProcess ",QRandomGenerator::global()->generate()));
-    }
 
     thread->setProcessTable(processTable);
     thread->start();
@@ -83,6 +80,16 @@ void SimulationController::setActiveAlgorithm(QString name){
             break;
         }
     }
+}
+
+void SimulationController::addProcess(Process p){
+    processTable->append(p);
+    thread->setProcessTable(processTable);
+}
+
+void SimulationController::addProcesses(QList<Process> p){
+    processTable->append(p);
+    thread->setProcessTable(processTable);
 }
 
 SimulationController::~SimulationController(){

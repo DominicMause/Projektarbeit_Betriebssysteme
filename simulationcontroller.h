@@ -48,6 +48,20 @@ public:
      * @param
      */
     void addAlgorithm(Algorithm *);
+
+    /**
+     * @brief
+     *
+     * @param
+     */
+    void addProcess(Process);
+
+    /**
+     * @brief
+     *
+     * @param
+     */
+    void addProcesses(QList<Process>);
     /**
      * @brief
      *

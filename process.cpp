@@ -1,10 +1,10 @@
 #include "process.h"
 
-Process::Process(int id, QString name, int size, Priority priority)
+Process::Process(int id, QString name, /*func f,*/ Priority priority)
 {
     ID = id;
     this->name = name;
-    processSize = size;
+    //setFunction(f);
     this->priority = priority;
 }
 
@@ -30,4 +30,10 @@ void Process::setProcessSize(int size){
 
 void Process::setPriotity(Priority priority){
     this->priority = priority;
+}
+
+void Process::setFunction(Process::func func)
+{
+    function = func;
+    processSize = sizeof (func);
 }

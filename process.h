@@ -11,8 +11,10 @@ class Process
 {
 
 public:
+    typedef void (*func)();
+
     /**
-     * @brief
+     * @brief the priority of the process
      *
      */
     enum Priority { low, middle, high };
@@ -25,51 +27,61 @@ public:
      * @param int
      * @param Priority
      */
-    Process(int, QString, int = 0, Priority = middle);
+    Process(int, QString, /*func,*/ Priority = middle);
 
     /**
-     * @brief
+     * @brief returns the ID of the process
      *
      * @return int
      */
     int getId();
+
     /**
-     * @brief
+     * @brief returns the name of the process
      *
      * @return QString
      */
     QString getName();
+
     /**
-     * @brief
+     * @brief returns the process size in byte
      *
      * @return int
      */
     int getProcessSize();
+
     /**
-     * @brief
+     * @brief returns the priority in int
      *
      * @return int
      */
     int getPriority();
 
     /**
-     * @brief
+     * @brief warining against use.
      *
      * @param int
      */
     void setProcessSize(int);
+
     /**
-     * @brief
+     * @brief set the priority with the Priority enum
      *
      * @param Priority
      */
     void setPriotity(Priority);
+
+    /**
+     * @brief sets the function that the process executes
+     */
+    void setFunction(func);
 
 private:
     int ID; /**< TODO: describe */
     QString name; /**< TODO: describe */
     int processSize; /**< TODO: describe */
     Priority priority; /**< TODO: describe */
+    func function;
 
 };
 
