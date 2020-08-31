@@ -35,6 +35,10 @@ public:
      */
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
+
+signals:
+     void setProgress(int) const;
+
 private:
         QList<Process> *processList = nullptr; /**< TODO: describe */
         bool listSet = false; /**< TODO: describe */

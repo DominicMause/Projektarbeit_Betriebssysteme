@@ -19,6 +19,8 @@
 #include <QTableWidget>
 #include "QTableWidgetItem"
 #include "processlistmodel.h"
+#include "QStatusBar"
+#include "QProgressBar"
 
 
 
@@ -85,6 +87,8 @@ public slots:
      * @param inputAlgoList Recieves a list of Strings to be displayed in the Algorithm select Combobox menu.
      */
     void algorithmusBoxUpdate(QList<QString> inputAlgoList);
+
+    void updateProgressBar(int);
 signals:
     /**
      * @brief This Signal gets emited when the user selects a new Algorithm.
@@ -98,6 +102,8 @@ private slots:
      * @brief This Signal gets emited if another Algorithm in the Algorithm Select Combobox gets selected.
      */
     void boxChanged(int);
+    void barChanged(int);
+
 
 private:
     Ui::MainWindow *ui; /**< The UI Object of this Window. */
@@ -122,6 +128,8 @@ private:
     QHBoxLayout *headerLayout;
     QVBoxLayout *processListHeaderLayout;
     QListView *processList;
+    QProgressBar *bar;
+    bool hasChanged = false;
 
 
 

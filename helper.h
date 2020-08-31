@@ -38,7 +38,7 @@ public:
 
     static QList<Process> roundRobinWithPrio(QList<Process>);
 
-    int processingTime = 100;
+    static const int processingTime = 5;
 };
 
 #endif // HELPER_H

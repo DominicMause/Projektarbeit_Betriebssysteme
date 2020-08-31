@@ -22,7 +22,6 @@ int ProcessListModel::rowCount(const QModelIndex &parent) const
         return 0;
 
     if(processList != nullptr || listSet){
-        //return processList->count();
         return processList->length();
     }
     return 0;
@@ -34,15 +33,17 @@ QVariant ProcessListModel::data(const QModelIndex &index, int role) const
     {
         return QVariant();
     }
+
     if (role == Qt::DisplayRole){
             Process tmpProcess = processList->at(index.row());
             QString s = QString::number(tmpProcess.getId()) + "\t" + tmpProcess.getName() + "\t" + QString::number(tmpProcess.getPriority()) + "\t" + QString::number(tmpProcess.getProcessSize());
+            emit setProgress(index.row());
             return s;
     }
 
     return QVariant();
 }
-bool x = true;
+
 void ProcessListModel::updateProcessList(QList<Process> *p, Algorithm *, bool hasChanged)
 {
 

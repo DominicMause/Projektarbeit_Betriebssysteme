@@ -41,6 +41,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     sizeHeader = new QLabel("Size");
     headerLayout = new QHBoxLayout(w);
     w->setFixedHeight(30);
+    bar = new QProgressBar;
 
 
     processListHeaderLayout = new QVBoxLayout;
@@ -62,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     headerLayout->addWidget(nameHeader);
     headerLayout->addWidget(prioHeader);
     headerLayout->addWidget(sizeHeader);
-    headerLayout->addItem(new QSpacerItem(45,10,QSizePolicy::Minimum, QSizePolicy::Expanding));
+    headerLayout->addItem(new QSpacerItem(20,10,QSizePolicy::Minimum, QSizePolicy::Expanding));
     processListHeaderLayout->addWidget(processList);
     processList->setModel(model);
     processList->uniformItemSizes();
@@ -77,6 +78,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     algorithmusSelector->addWidget(algoSelectLabel);
     algorithmusSelector->addWidget(algoSelectComboBox);
     centralWidget()->setLayout(mainBox);
+    this->statusBar()->addWidget(bar);
+    processList->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded );
+    connect(model,&ProcessListModel::setProgress,this,&MainWindow::updateProgressBar);
+    connect(bar,&QProgressBar::valueChanged,this,&MainWindow::barChanged);
+
 }
 
 void MainWindow::logClear()
@@ -113,6 +119,11 @@ void MainWindow::processListUpdate(QList<Process> * inputProcessList, Algorithm 
         currentAlgorythm = a;
     }
 
+    if(hasChanged){
+        bar->setRange(0,inputProcessList->length());
+        bar->reset();
+        bar->show();
+    }
     // Active Algorithm data Updated
     algoID->setValue(currentAlgorythm->getId());
     algoName->setValue(currentAlgorythm->getName());
@@ -132,10 +143,29 @@ void MainWindow::algorithmusBoxUpdate(QList<QString> inputAlgoList)
     }
 }
 
+void MainWindow::updateProgressBar(int progress)
+{
+    if( progress <= model->rowCount()){
+        bar->setValue(progress);
+    }
+    if(progress >= model->rowCount()-1){
+        bar->hide();
+    }
+}
+
 void MainWindow::boxChanged(int)
 {
     QString selectedName = algoSelectComboBox->currentText();
     emit algorithmusBoxChanged(selectedName);
+}
+
+void MainWindow::barChanged(int value)
+{
+    if(value >= model->rowCount()){
+        hasChanged=false;
+        bar->setDisabled(true);
+        bar->hide();
+    }
 }
 
 MainWindow::~MainWindow()

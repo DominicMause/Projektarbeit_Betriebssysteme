@@ -51,6 +51,14 @@ void SimulationController::addExampleAlgorithms(){
     Algorithm * shortestJob = new Algorithm("Shortest Job First");
     shortestJob->setFunction(Helper::shortestJobFirst);
     addAlgorithm(shortestJob);
+
+    Algorithm * roundRobin = new Algorithm("roundRobin");
+    roundRobin->setFunction(Helper::roundRobin);
+    addAlgorithm(roundRobin);
+
+    Algorithm * roundRobinWithPrio = new Algorithm("roundRobinWithPrio");
+    roundRobinWithPrio->setFunction(Helper::roundRobinWithPrio);
+    addAlgorithm(roundRobinWithPrio);
 }
 
 void SimulationController::addAlgorithm(Algorithm *algorithm){
