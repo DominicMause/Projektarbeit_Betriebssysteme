@@ -44,10 +44,12 @@ FORMS += \
     mainwindow.ui \
     myinfolabel.ui
 
+DISTFILES += \
+    README \
+    createProcesses.JPG \
+    maincpp.JPG
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-DISTFILES += \
-    README
